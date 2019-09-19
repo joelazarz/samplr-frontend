@@ -8,6 +8,11 @@ const LandingPage = () => {
                 <div className="height">
                 <h3>4-columns</h3>
                 <h4>Login</h4>
+
+                <div className="container">
+                    Toggle Container with Signup / Login Form
+                </div>
+
                 </div>
             </div>
 
@@ -15,6 +20,9 @@ const LandingPage = () => {
             <div className="height">
                 <h3>8-columns</h3>
                 <h4>Guide</h4>
+                <div className="container">
+                    Scrollable Guide
+                </div>
                 </div>
             </div>
 

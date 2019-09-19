@@ -5,8 +5,10 @@ import store from './store'
 
 import LandingPage from './components/open/LandingPage';
 import Discovery from './components/discovery/Discovery';
+import Kit from './components/kit/Kit';
+import User from './components/userDashboard/User';
 import AddKitBtn from './components/layout/AddKitBtn';
-import AddKitModal from './components/kit/AddKitModal';
+import AddKitModal from './components/layout/AddKitModal';
 
 import 'materialize-css/dist/css/materialize.min.css'
 import M from 'materialize-css/dist/js/materialize.min.js'
@@ -23,9 +25,13 @@ const App = () => {
     <Router>
       <Switch>
       <Provider store={store}>
+
         <Route exact path='/' render={props => (
+          <Fragment>
           <LandingPage />
+          </Fragment>
         )} />
+
         <Route exact path='/discovery' render={props => (
           <Fragment>
           <Discovery />
@@ -33,6 +39,21 @@ const App = () => {
           <AddKitModal />
           </Fragment>
         )} />
+
+        <Route exact path='/kit' render={props => (
+          <Fragment>
+          <Kit />
+          </Fragment>
+        )} />
+
+        <Route exact path='/user' render={props => (
+          <Fragment>
+          <User />
+          <AddKitBtn />
+          <AddKitModal />
+          </Fragment>
+        )} />
+
       </Provider>
       </Switch>
     </Router>

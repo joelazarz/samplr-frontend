@@ -24,7 +24,7 @@ const AddKitModal = () => {
             </div>
             <div className='modal-footer'>
                 <a href='#!'
-                className='modal-close waves-effect blue waves-light btn'>Enter</a>
+                className='modal-close waves-effect black waves-light btn'>Enter</a>
             </div>
         </div>
     )
