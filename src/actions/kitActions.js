@@ -1,12 +1,12 @@
 import { GET_KIT, SET_LOADING, KIT_ERROR} from './types'
 
 
-// Get kits from server
-export const getKit = () => async dispatch => {
+// Get kit from server
+export const getKit = (id) => async dispatch => {
     try {
     setLoading();
     // kit 1 is hard coded right now - figure out how to interpolate the id of whatever kit is called into this function
-    const res = await fetch('/kits/1')
+    const res = await fetch(`/kits/${id}`)
     const data = await res.json()
     dispatch({
         type: GET_KIT,

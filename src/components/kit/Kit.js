@@ -12,8 +12,9 @@ const Kit = ({ kit: { kit, loading }, getKit }) => {
     useEffect(() => {
         getKit()
     }, [])
-
-    console.log('KIT.JS /KITS/${kit.id}:', kit)
+    
+    console.log('kit.js KIT', kit)
+    
 
     if (loading || kit === null) {
         return <Spinner />
@@ -27,6 +28,8 @@ const Kit = ({ kit: { kit, loading }, getKit }) => {
             <div className="height">
                 <h3>8-columns</h3>
                 <h4>Waveform Controls</h4>
+                <p>the fetch for an individual kit happens when I click the play link on the discovery page / I'm passing the kit.id as a parameter to the kitAction - getKit function</p>
+                <h3>{kit.name}</h3>
             </div>
             </div>
 
