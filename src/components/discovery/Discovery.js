@@ -1,4 +1,5 @@
 import React, { useEffect } from 'react'
+import DiscoveryCard from './DiscoveryCard';
 import Spinner from '../layout/Spinner';
 
 import { PropTypes } from 'prop-types';
@@ -25,6 +26,9 @@ const Discovery = ({ kits: { kits, loading }, getKits }) => {
             <div className="height">
                 <h3>8-columns</h3>
                 <h4>Search / All Kits</h4>
+                <div className="container">
+                    {kits.map(kit => <DiscoveryCard key={kit.id} kit={kit} />)}
+                </div>
             </div>
             </div>
 

@@ -1,8 +1,23 @@
-import React from 'react'
+import React, { useEffect } from 'react'
+import Spinner from '../layout/Spinner';
+import { connect } from 'react-redux'
 
-const Kit = () => {
+import { getKit } from '../../actions/kitActions';
+
+
+const Kit = ({ kit: { kit, loading }, getKit }) => {
 
     // useEffect fetch individual kit
+
+    useEffect(() => {
+        getKit()
+    }, [])
+
+    console.log('KIT.JS /KITS/${kit.id}:', kit)
+
+    if (loading || kit === null) {
+        return <Spinner />
+    }
 
     return (
         <>
@@ -27,4 +42,8 @@ const Kit = () => {
     )
 }
 
-export default Kit
+const mapStateToProps = state => ({
+    kit: state.kit
+})
+
+export default connect(mapStateToProps, { getKit })(Kit)
