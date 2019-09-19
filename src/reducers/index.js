@@ -1,6 +1,6 @@
 import { combineReducers } from 'redux'
-import kitsReducer from './kitsReducer'
+import discoveryReducer from './discoveryReducer'
 
 export default combineReducers({
-    kits: kitsReducer
+    kits: discoveryReducer
 })

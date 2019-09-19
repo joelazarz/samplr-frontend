@@ -1,13 +1,15 @@
 import React, { useEffect } from 'react'
 import { PropTypes } from 'prop-types';
 import { connect } from 'react-redux'
-import { getKits } from '../../actions/kitsActions';
+import { getKits } from '../../actions/discoveryActions';
 
 const Discovery = ({ kits: { kits, loading }, getKits }) => {
 
     useEffect(() => {
         getKits()
     }, [])
+
+    console.log('DISCOVERY.JS /KITS:', kits)
 
     if (loading || kits === null) {
         return <h3>Loading...</h3>
