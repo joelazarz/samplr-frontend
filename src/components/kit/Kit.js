@@ -33,6 +33,7 @@ const Kit = ({ kit: { kit, loading }, getKit }) => {
                 <p>the fetch for an individual kit happens when I click the play link on the discovery page / I'm passing the kit.id as a parameter to the kitAction - getKit function</p>
                 <h3>{kit.name}</h3>
                 <h6>{kit.detail}</h6>
+
             </div>
             </div>
 

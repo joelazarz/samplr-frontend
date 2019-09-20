@@ -10,7 +10,7 @@ const DiscoveryCard = ({ kit }) => {
         <div className="card-panel white">
             {kit.name}
             <div>
-            <Link to ={`/kits/${kit.id}`} className="btn btn-dark btn-sm">Play</Link>
+            <Link to ={`/kits/${kit.id}`} className="btn btn-dark btn-sm">Load</Link>
             </div>
         </div>
     )
