@@ -1,4 +1,4 @@
-import { GET_KITS, SET_LOADING, KITS_ERROR } from '../actions/types'
+import { GET_KITS, SET_LOADING, KITS_ERROR, ADD_KIT } from '../actions/types'
 
 const initialState = {
     kits: null,
@@ -13,6 +13,12 @@ export default (state = initialState, action) => {
                 kits: action.payload,
                 loading: false
             }
+        case ADD_KIT:
+                return {
+                    ...state,
+                    kits: [...state.kits, action.payload],
+                    loading: false
+                }
         case SET_LOADING:
             return {
                 ...state,

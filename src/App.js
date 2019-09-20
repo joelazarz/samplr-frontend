@@ -40,9 +40,9 @@ const App = () => {
           </Fragment>
         )} />
 
-        <Route exact path='/kit/:id' render={props => (
+        <Route exact path='/kits/:id' render={props => (
           <Fragment>
-          <Kit />
+          <Kit component={Kit}/>
           </Fragment>
         )} />
 

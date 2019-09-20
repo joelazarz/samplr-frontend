@@ -6,6 +6,7 @@ export const KITS_ERROR = 'KITS_ERROR'
 // Kit
 export const GET_KIT = 'GET_KIT'
 export const KIT_ERROR = 'KIT_ERROR'
+export const ADD_KIT = 'ADD_KIT'
 
 // User
 

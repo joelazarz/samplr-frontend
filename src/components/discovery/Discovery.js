@@ -45,7 +45,8 @@ const Discovery = ({ kits: { kits, loading }, getKits }) => {
 }
 
 Discovery.propTypes = {
-    kits: PropTypes.object.isRequired
+    kits: PropTypes.object.isRequired,
+    getKits: PropTypes.func.isRequired
 }
 
 const mapStateToProps = state => ({
