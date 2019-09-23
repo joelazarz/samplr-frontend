@@ -2,25 +2,26 @@ import React, { useState } from 'react'
 import { connect } from 'react-redux';
 import { PropTypes } from 'prop-types';
 import { addKit } from '../../actions/discoveryActions';
-import InputFiles from 'react-input-files';
 
+import ReactFilestack from 'filestack-react'
 import M from 'materialize-css/dist/js/materialize.min.js'
 
 const AddKitModal = ({ addKit }) => {
     const [name, setName] = useState('')
     const [detail, setDetail] = useState('')
-    const [sampleUrl, setSampleUrl] = useState([])
-    const [imageUrl, setImageUrl] = useState([])
+    const [image, setImage] = useState('')
+    const [sample, setSample] = useState('')
 
     const onSubmit = () => {
         if(name === '' || detail === ''){
             M.toast({ html: 'Please enter Name and Detail' })
         } else {
-            console.log(name, detail, sampleUrl)
+            console.log(name, detail, image, sample)
             const newKit = {
                 name,
                 detail,
-                sampleUrl
+                image,
+                sample
             }
             console.log('onSubmit newKit', newKit)
             addKit(newKit)
@@ -28,7 +29,8 @@ const AddKitModal = ({ addKit }) => {
         }
         setName('')
         setDetail('')
-        setSampleUrl('')
+        setImage('')
+        setSample('')
     }
 
 
@@ -60,17 +62,30 @@ const AddKitModal = ({ addKit }) => {
                         <label htmlFor='message' className='active'>Detail</label>
                     </div>
                 </div>
+
+                <div className='row'>
+                    <div className='input-field'>
+                        <input 
+                        type='text'
+                        name='image'
+                        id="image-input"
+                        value={image}
+                        onChange={e => setImage(e.target.value)}/>
+                        <label htmlFor='message' className='active'>Image URL</label>
+                    </div>
+                </div>
                 
                 <div className="file-field input-field">
-                    <InputFiles 
-                    name='sample'
-                    value={sampleUrl}
-                    onChange={e => setSampleUrl(e[0])}>
-                    <button className="btn">Upload</button>
-                    </InputFiles>
+                <ReactFilestack
+                apikey={process.env.REACT_APP_FILESTACK_API_KEY}
+                componentDisplayMode={{
+                    type: 'button',
+                    customText: 'Upload Sample',
+                    customClass: 'btn'
+                }}
+                onSuccess={(res) => setSample(res.filesUploaded[0].url)}
+                />
                 </div>
-
-
 
             </div>
             <div className='modal-footer'>

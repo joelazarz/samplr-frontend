@@ -1,4 +1,5 @@
 import React, { useEffect } from 'react'
+import Waveform from '../waveform/Waveform';
 import Spinner from '../layout/Spinner';
 import { connect } from 'react-redux'
 
@@ -6,8 +7,6 @@ import { getKit } from '../../actions/kitActions';
 
 
 const Kit = ({ kit: { kit, loading }, getKit }) => {
-
-    // useEffect fetch individual kit
 
     useEffect(() => {
         getKit(window.location.pathname)
@@ -29,14 +28,17 @@ const Kit = ({ kit: { kit, loading }, getKit }) => {
             <div className="col s8 red lighten-4">
             <div className="height">
                 <h3>8-columns</h3>
-                <h4>Waveform Controls</h4>
-                <p>using the window.location.pathname to direct the action method to the specific endpoint in the api</p>
-                <p>need to configure activestorage</p>
                 <h3>{kit.name}</h3>
                 <h6>{kit.detail}</h6>
 
+                <div className="kit-waveform-container">
+                    <h1>WAVEFORM</h1>
+                    <Waveform src={kit.sample} />
+                </div>
+
             </div>
             </div>
+
 
             <div className="col s4 green lighten-1">
             <div className="height">
@@ -44,7 +46,7 @@ const Kit = ({ kit: { kit, loading }, getKit }) => {
                 <h4>Regions and Notes</h4>
             </div>
             </div>
-        
+
         </div>  
         </>
     )
