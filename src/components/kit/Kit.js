@@ -32,9 +32,11 @@ const Kit = ({ kit: { kit, loading }, getKit }) => {
                 <h6>{kit.detail}</h6>
 
                 <div className="kit-waveform-container">
-                    <h1>WAVEFORM</h1>
-                    <Waveform src={kit.sample} />
+                    <h2>playback controls</h2>
+                    <Waveform key={kit.id} src={kit.sample} />
+                    <h3>Region Controls</h3>
                 </div>
+
 
             </div>
             </div>

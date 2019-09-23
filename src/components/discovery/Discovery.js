@@ -5,10 +5,13 @@ import Spinner from '../layout/Spinner';
 import { PropTypes } from 'prop-types';
 import { connect } from 'react-redux'
 import { getKits } from '../../actions/discoveryActions';
+import M from 'materialize-css/dist/js/materialize.min.js'
+
 
 const Discovery = ({ kits: { kits, loading }, getKits }) => {
 
     useEffect(() => {
+        M.AutoInit();
         getKits()
     }, [])
 
