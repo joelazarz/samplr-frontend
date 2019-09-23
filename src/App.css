@@ -24,15 +24,42 @@
     height: 100vh;
 }
 
+.kit-name-container{
+    background: lightcyan;
+    height: 20vh;
+    margin: 1.5vw;
+}
+
 .kit-waveform-container{
-    margin-top: 13vh;
-    height: 60vh;
+    height: 40vh;
+    margin: 1.5vw;
     background: white;
+}
+
+.kit-detail-container{
+    height: 25vh;
+    margin: 1.5vw;
+    background: lightyellow;
 }
 
 .kit-image {
     width: 30%;
     height: 30%;
+}
+
+
+/* Kit Sidebar */
+
+.regions-specs{
+    background: #ffffff;
+    height: 44.5vh;
+    margin: 1.5vw;
+}
+
+.notes-specs{
+    background: #ffffff;
+    height: 44.5vh;
+    margin: 1.5vw;
 }
 
 

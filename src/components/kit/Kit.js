@@ -25,11 +25,11 @@ const Kit = ({ kit: { kit, loading }, getKit }) => {
         <>
         <div className="row">
             
-            <div className="col s8 red lighten-4">
-            <div className="height">
-                <h3>8-columns</h3>
-                <h3>{kit.name}</h3>
-                <h6>{kit.detail}</h6>
+            <div className="col s8 grey lighten-4">
+                <div className="height">
+                    <div className="kit-name-container">
+                    <h3>{kit.name}</h3>
+                </div>
 
                 <div className="kit-waveform-container">
                     <h2>playback controls</h2>
@@ -37,15 +37,25 @@ const Kit = ({ kit: { kit, loading }, getKit }) => {
                     <h3>Region Controls</h3>
                 </div>
 
+                <div className="kit-detail-container">
+                    Kit Detail
+                    <h6>{kit.detail}</h6>
+                </div>
 
             </div>
             </div>
 
 
-            <div className="col s4 green lighten-1">
+            <div className="col s4 grey lighten-3">
             <div className="height">
-                <h3>4-columns</h3>
-                <h4>Regions and Notes</h4>
+            
+                <div className="regions-specs">
+                    <h4>Region Specs</h4>
+                </div>
+                <div className="notes-specs">
+                    <h4>Notes Specs</h4>
+                </div>
+
             </div>
             </div>
 

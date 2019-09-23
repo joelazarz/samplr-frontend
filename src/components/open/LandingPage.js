@@ -1,4 +1,6 @@
 import React from 'react'
+import { Link } from 'react-router-dom'
+
 
 const LandingPage = () => {
     return (
@@ -22,6 +24,11 @@ const LandingPage = () => {
                 <h4>Guide</h4>
                 <div className="container">
                     Scrollable Guide
+
+                    <div className="container">
+                    <Link to ="/discovery">Discovery</Link>
+                    </div>
+
                 </div>
                 </div>
             </div>
