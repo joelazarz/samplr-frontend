@@ -25,7 +25,7 @@ const Discovery = ({ kits: { kits, loading }, getKits }) => {
         <>
         <div className="row">
             
-            <div className="col s8 blue lighten-4">
+            <div className="col s8 grey lighten-4">
             <div className="height">
                 <h3>8-columns</h3>
                 <h4>Search / All Kits</h4>
@@ -35,7 +35,7 @@ const Discovery = ({ kits: { kits, loading }, getKits }) => {
             </div>
             </div>
 
-            <div className="col s4 orange lighten-4">
+            <div className="col s4 grey lighten-3">
             <div className="height">
                 <h3>4-columns</h3>
                 <h4>New Kits / Featured Kits</h4>

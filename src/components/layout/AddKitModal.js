@@ -74,7 +74,7 @@ const AddKitModal = ({ addKit }) => {
                         <label htmlFor='message' className='active'>Image URL</label>
                     </div>
                 </div>
-                
+
                 <div className="file-field input-field">
                 <ReactFilestack
                 apikey={process.env.REACT_APP_FILESTACK_API_KEY}

@@ -163,6 +163,18 @@ class Waveform extends Component {
         this.wavesurfer.zoom(Number(0))
     }
 
+    onSaveBtn = () => {
+        console.log('PAD4 START:',this.wavesurfer.regions.list.pad4.start)
+        console.log('PAD4 END:',this.wavesurfer.regions.list.pad4.end)
+    }
+
+
+    // this sets the start and end time correctly but the color range does not move 
+    onCallBtn = () => {
+        this.wavesurfer.regions.list.pad4.start = 5;
+        this.wavesurfer.regions.list.pad4.end = 6;
+    }
+
     render() {
         console.log('THIS.STATE:', this.state)
         return (
@@ -176,6 +188,8 @@ class Waveform extends Component {
             <button onClick={this.stopBtn}>stop</button>
             <button onClick={this.onZoomOut}>-</button>
             <button onClick={this.onZoomIn}>+</button>
+            <button onClick={this.onSaveBtn}>SAVE</button>
+            <button onClick={this.onCallBtn}>CALL PARAMS</button>
             </div>
             {/* <li>a : play</li>
             <li>s : stop</li>
