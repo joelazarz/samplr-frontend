@@ -9,25 +9,26 @@ import M from 'materialize-css/dist/js/materialize.min.js'
 const AddKitModal = ({ addKit }) => {
     const [name, setName] = useState('')
     const [detail, setDetail] = useState('')
-    const [sample, setSample] = useState('')
-    const [image, setImage] = useState([])
+    const [sampleUrl, setSampleUrl] = useState([])
+    const [imageUrl, setImageUrl] = useState([])
 
     const onSubmit = () => {
         if(name === '' || detail === ''){
             M.toast({ html: 'Please enter Name and Detail' })
         } else {
-            console.log(name, detail, sample)
+            console.log(name, detail, sampleUrl)
             const newKit = {
                 name,
                 detail,
-                sample
+                sampleUrl
             }
+            console.log('onSubmit newKit', newKit)
             addKit(newKit)
             M.toast({ html: 'Kit Added'})
         }
         setName('')
         setDetail('')
-        setSample('')
+        setSampleUrl('')
     }
 
 
@@ -61,18 +62,10 @@ const AddKitModal = ({ addKit }) => {
                 </div>
                 
                 <div className="file-field input-field">
-                    {/* <input 
-                    type="file"
-                    name='sample'
-                    id="sample-input"
-                    value={sample}
-                    onInput={(e)=> {this.readFile(e)}}
-                    onChange={e => setSample(e.target.files[0])}/>
-                    <label htmlFor='sample' className='active'>Sample</label> */}
                     <InputFiles 
                     name='sample'
-                    value={sample}
-                    onChange={sample => setSample(sample)}>
+                    value={sampleUrl}
+                    onChange={e => setSampleUrl(e[0])}>
                     <button className="btn">Upload</button>
                     </InputFiles>
                 </div>
