@@ -19,6 +19,7 @@ export const getKits = () => async dispatch => {
     }
 }
 
+
 // Add new Kit
 export const addKit = (newKit) => async dispatch => {
     try {
@@ -44,6 +45,7 @@ export const addKit = (newKit) => async dispatch => {
     })
     }
 }
+
 
 
 // this will set loading to true
