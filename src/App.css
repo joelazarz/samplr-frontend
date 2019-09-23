@@ -1,5 +1,38 @@
+/* scroll bar styling  */
+
+::-webkit-scrollbar {
+    width: 10px;
+}
+
+::-webkit-scrollbar-track {
+    background: #ffffff;
+}
+
+
+::-webkit-scrollbar-thumb {
+    background: #888;
+}
+
+
+::-webkit-scrollbar-thumb:hover {
+    background: #555;
+}
+
+/* scroll bar styling  */
+
 .height {
     height: 100vh;
+}
+
+.kit-waveform-container{
+    margin-top: 13vh;
+    height: 60vh;
+    background: white;
+}
+
+.kit-image {
+    width: 30%;
+    height: 30%;
 }
 
 
