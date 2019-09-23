@@ -9,7 +9,7 @@ import M from 'materialize-css/dist/js/materialize.min.js'
 const AddKitModal = ({ addKit }) => {
     const [name, setName] = useState('')
     const [detail, setDetail] = useState('')
-    const [sample, setSample] = useState([])
+    const [sample, setSample] = useState('')
     const [image, setImage] = useState([])
 
     const onSubmit = () => {
@@ -27,6 +27,7 @@ const AddKitModal = ({ addKit }) => {
         }
         setName('')
         setDetail('')
+        setSample('')
     }
 
 
@@ -60,7 +61,6 @@ const AddKitModal = ({ addKit }) => {
                 </div>
                 
                 <div className="file-field input-field">
-                <div className="btn">
                     {/* <input 
                     type="file"
                     name='sample'
@@ -75,7 +75,6 @@ const AddKitModal = ({ addKit }) => {
                     onChange={sample => setSample(sample)}>
                     <button className="btn">Upload</button>
                     </InputFiles>
-                </div>
                 </div>
 
 

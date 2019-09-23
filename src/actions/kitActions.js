@@ -6,7 +6,6 @@ export const getKit = (pathname) => async dispatch => {
     try {
     setLoading();
     console.log('kitActions HREF', pathname)
-    // why does this work????
     const res = await fetch(`${pathname}`)
     const data = await res.json()
     dispatch({
