@@ -7,17 +7,19 @@ const DiscoveryCard = ({ kit }) => {
     // props from Discovery, individual kit
 
     return (
-        <div class="col s7 m5">
-        <div class="card">
-        <div class="card-image">
-            <img src={kit.image} />
-            <span class="card-title">{kit.name}</span>  
+        
+        <div className="col s4">
+        <div className="card small">
+        <div className="card-image waves-effect waves-block waves-light">
+            <img className="activator" src={kit.image} />
         </div>
-        <div class="card-content">
-            <p>{kit.detail}</p>
-        </div>
-        <div class="card-action">
+        <div className="card-content">
+            <span className="card-title activator grey-text text-darken-4">{kit.name}<i className="material-icons right">more_vert</i></span>
             <Link to ={`/kits/${kit.id}`} className="btn black btn-sm">Load</Link>
+        </div>
+        <div className="card-reveal">
+            <span className="card-title grey-text text-darken-4">{kit.name}<i className="material-icons right">close</i></span>
+            <p>{kit.detail}</p>
         </div>
         </div>
         </div>
