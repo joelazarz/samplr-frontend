@@ -1,5 +1,7 @@
 import React, { useEffect } from 'react'
 import Waveform from '../waveform/Waveform';
+import PlaybackControls from '../waveform/PlaybackControls';
+import RegionControls from '../waveform/RegionControls';
 import Spinner from '../layout/Spinner';
 import { connect } from 'react-redux'
 
@@ -28,19 +30,25 @@ const Kit = ({ kit: { kit, loading }, getKit }) => {
             <div className="col s8 grey lighten-4">
 
                 <div className="kit-waveform-container">
-                    <h2>playback controls</h2>
+                    <PlaybackControls key={kit.id}/>
                     <Waveform key={kit.id} src={kit.sample} />
-                    <h6>Region Controls</h6>
+                    <RegionControls key={kit.id} />
                 </div>
 
                 
-                    <div className="kit-name-container">
-                    <h3>{kit.name}</h3>
+                <div className="kit-name-container">
+                    <h3>[ Kit Name ] : {kit.name}</h3>
                 </div>
 
                 <div className="kit-detail-container">
-                    Kit Detail
+                <div className="kit-detail-text-container">
+                    [ Kit Detail ]
                     <h6>{kit.detail}</h6>
+                </div>
+                <div className="kit-detail-image-container">
+                    <img src={kit.image} />
+                </div>
+
                 </div>
 
                 

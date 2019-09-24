@@ -8,7 +8,7 @@ const regionsObj = [
         loop: false,
         color: 'rgb(219, 219, 219, 0.4)',
         attributes: {
-            label: '[HEY]'
+            label: "[1]"
         }
     },
     {
