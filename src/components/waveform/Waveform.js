@@ -10,14 +10,13 @@ class Waveform extends Component {
         super(props)
         this.state = {  
             data: null,
-            regions: null
+            regions: []
         }
     }
 
     componentDidMount() {
 
         this.el = ReactDOM.findDOMNode(this)
-        console.log(this.el)
         this.waveform = this.el.querySelector('.wave')
         this.wavesurfer = WaveSurfer.create({
             container: this.waveform,
@@ -31,7 +30,7 @@ class Waveform extends Component {
             plugins: [
                 RegionsPlugin.create({
                     slop: 8,
-                    regions: regionsObj
+                    regions: this.state.regions
                 })
             ]
         })
@@ -72,13 +71,14 @@ class Waveform extends Component {
 
         const stop = () => {
             this.wavesurfer.stop()
-            console.log('THIS.WAVESURFER:', this.wavesurfer)
-            console.log('PAD1:',this.wavesurfer.regions.list.pad1)
-            console.log('PAD2:',this.wavesurfer.regions.list.pad2)
-            console.log('PAD3:',this.wavesurfer.regions.list.pad3)
-            console.log('PAD4 START:',this.wavesurfer.regions.list.pad4.start)
-            console.log('PAD4 END:',this.wavesurfer.regions.list.pad4.end)
-            console.log('GETPLAYBACKSPEED:', this.wavesurfer.getPlaybackRate(this.wavesurfer))
+            // console.log('REGIONSOBJ:',regionsObj[0])
+            // console.log('THIS.WAVESURFER:', this.wavesurfer)
+            // console.log('PAD1:',this.wavesurfer.regions.list.pad1)
+            // console.log('PAD2:',this.wavesurfer.regions.list.pad2)
+            // console.log('PAD3:',this.wavesurfer.regions.list.pad3)
+            // console.log('PAD4 START:',this.wavesurfer.regions.list.pad4.start)
+            // console.log('PAD4 END:',this.wavesurfer.regions.list.pad4.end)
+            // console.log('GETPLAYBACKSPEED:', this.wavesurfer.getPlaybackRate(this.wavesurfer))
         }
 
         const slowed = () => {
@@ -151,28 +151,30 @@ class Waveform extends Component {
 
     stopBtn = () => {
         this.wavesurfer.stop()
-        console.log('PAD1:',this.wavesurfer.regions.list.pad1)
-        console.log('PAD2:',this.wavesurfer.regions.list.pad2)
     }
 
-    onZoomIn = () => {
-        this.wavesurfer.zoom(Number(50))
-    }
+    // onZoomIn = () => {
+    //     this.wavesurfer.zoom(Number(50))
+    // }
 
-    onZoomOut = () => {
-        this.wavesurfer.zoom(Number(0))
-    }
+    // onZoomOut = () => {
+    //     this.wavesurfer.zoom(Number(0))
+    // }
 
-    onSaveBtn = () => {
-        console.log('PAD4 START:',this.wavesurfer.regions.list.pad4.start)
-        console.log('PAD4 END:',this.wavesurfer.regions.list.pad4.end)
-    }
+    // onSaveBtn = () => {
+    //     console.log('PAD4 START:',this.wavesurfer.regions.list.pad4.start)
+    //     console.log('PAD4 END:',this.wavesurfer.regions.list.pad4.end)
+    // }
 
 
     // this sets the start and end time correctly but the color range does not move 
-    onCallBtn = () => {
-        this.wavesurfer.regions.list.pad4.start = 5;
-        this.wavesurfer.regions.list.pad4.end = 6;
+    // onCallBtn = () => {
+    //     this.wavesurfer.regions.list.pad4.start = 5;
+    //     this.wavesurfer.regions.list.pad4.end = 6;
+    // }
+
+    onAddRegion = () => {
+        this.wavesurfer.addRegion(regionsObj[3])
     }
 
     render() {
@@ -186,10 +188,8 @@ class Waveform extends Component {
             <button onClick={this.slowedSpeed}>0.75</button>
             <button onClick={this.normalSpeed}>norm</button>
             <button onClick={this.stopBtn}>stop</button>
-            <button onClick={this.onZoomOut}>-</button>
-            <button onClick={this.onZoomIn}>+</button>
-            <button onClick={this.onSaveBtn}>SAVE</button>
             <button onClick={this.onCallBtn}>CALL PARAMS</button>
+            <button onClick={this.onAddRegion}>ADD REGION</button>
             </div>
 
         </div>
