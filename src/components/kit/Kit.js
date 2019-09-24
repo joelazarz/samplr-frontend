@@ -1,7 +1,5 @@
 import React, { useEffect } from 'react'
 import Waveform from '../waveform/Waveform';
-import PlaybackControls from '../waveform/PlaybackControls';
-import RegionControls from '../waveform/RegionControls';
 import Spinner from '../layout/Spinner';
 import { connect } from 'react-redux'
 
@@ -30,9 +28,7 @@ const Kit = ({ kit: { kit, loading }, getKit }) => {
             <div className="col s8 grey lighten-4">
 
                 <div className="kit-waveform-container">
-                    <PlaybackControls key={kit.id}/>
                     <Waveform key={kit.id} src={kit.sample} />
-                    <RegionControls key={kit.id} />
                 </div>
 
                 
