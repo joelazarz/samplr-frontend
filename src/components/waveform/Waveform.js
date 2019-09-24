@@ -4,14 +4,19 @@ import WaveSurfer from 'wavesurfer.js'
 import RegionsPlugin from 'wavesurfer.js/src/plugin/regions.js'
 import regionsObj from './Regions';
 
+import PlaybackControls from '../waveform/PlaybackControls';
+import RegionControls from '../waveform/RegionControls';
+
 class Waveform extends Component {
 
     constructor(props) {
         super(props)
+
         this.state = {  
-            data: null,
+            playing: false,
             regions: []
         }
+
     }
 
     componentDidMount() {
@@ -63,6 +68,7 @@ class Waveform extends Component {
 
         const play = () => {
             this.wavesurfer.play()
+            console.log(this.wavesurfer.isPlaying())
         }
 
         const mute = () => {
@@ -71,6 +77,7 @@ class Waveform extends Component {
 
         const stop = () => {
             this.wavesurfer.stop()
+            console.log(this.wavesurfer.isPlaying())
             // console.log('REGIONSOBJ:',regionsObj[0])
             // console.log('THIS.WAVESURFER:', this.wavesurfer)
             // console.log('PAD1:',this.wavesurfer.regions.list.pad1)
@@ -132,35 +139,13 @@ class Waveform extends Component {
         }
 
         this.wavesurfer.load(this.props.src);
-        this.setState({ data: this.wavesurfer })
+        this.setState({ playing: this.wavesurfer.isPlaying() })
         window.addEventListener('keydown', handleKey);
-    }
-
-
-    playPause = () => {
-        this.wavesurfer.playPause()
-    }
-
-    slowedSpeed = () => {
-        this.wavesurfer.setPlaybackRate(0.75)
     }
 
     normalSpeed = () => {
         this.wavesurfer.setPlaybackRate(1)
     }
-
-    stopBtn = () => {
-        this.wavesurfer.stop()
-    }
-
-    // onZoomIn = () => {
-    //     this.wavesurfer.zoom(Number(50))
-    // }
-
-    // onZoomOut = () => {
-    //     this.wavesurfer.zoom(Number(0))
-    // }
-
     // onSaveBtn = () => {
     //     console.log('PAD4 START:',this.wavesurfer.regions.list.pad4.start)
     //     console.log('PAD4 END:',this.wavesurfer.regions.list.pad4.end)
@@ -173,23 +158,76 @@ class Waveform extends Component {
     //     this.wavesurfer.regions.list.pad4.end = 6;
     // }
 
-    onAddRegion = () => {
+    // Playback Controls /////
+    play = () => {
+        this.wavesurfer.play()
+    }
+    playPause = () => {
+        this.wavesurfer.playPause()
+    }
+    stopBtn = () => {
+        this.wavesurfer.stop()
+    }
+    slowedSpeed = () => {
+        this.wavesurfer.setPlaybackRate(0.75)
+    }
+    normalSpeed = () => {
+        this.wavesurfer.setPlaybackRate(1)
+    }
+    ///// Playback Controls //
+
+    // Region Controls /////
+    onAddRegionOne = () => {
+        this.wavesurfer.addRegion(regionsObj[0])
+    }
+    onAddRegionTwo = () => {
+        this.wavesurfer.addRegion(regionsObj[1])
+    }
+    onAddRegionThree = () => {
+        this.wavesurfer.addRegion(regionsObj[2])
+    }
+    onAddRegionFour = () => {
         this.wavesurfer.addRegion(regionsObj[3])
     }
+    onAddRegionFive = () => {
+        this.wavesurfer.addRegion(regionsObj[4])
+    }
+    onAddMemoryRegion = () => {
+        this.wavesurfer.addRegion(regionsObj[5])
+    }
+    onAddNoteRegion = () => {
+        this.wavesurfer.addRegion(regionsObj[6])
+    }
+    clearRegions = () => {
+        this.wavesurfer.clearRegions()
+    }
+    ///// Region Controls //
 
     render() {
-        console.log('THIS.STATE:', this.state)
         return (
             <div className='waveform' onClick={this.handleSKey}>
+            <PlaybackControls 
+            playControl={this.play}
+            playPauseControl={this.playPause}
+            stopControl={this.stopBtn}
+            slowedSpeed={this.slowedSpeed}
+            normalSpeed={this.normalSpeed}
+            />
             <div className='wave'>
             <div id="waveform"></div>
             <div id="wave-timeline"></div>
-            <button onClick={this.playPause}>Play/Pause</button>
-            <button onClick={this.slowedSpeed}>0.75</button>
-            <button onClick={this.normalSpeed}>norm</button>
-            <button onClick={this.stopBtn}>stop</button>
-            <button onClick={this.onCallBtn}>CALL PARAMS</button>
-            <button onClick={this.onAddRegion}>ADD REGION</button>
+            </div>
+            <RegionControls 
+            addRegionOne={this.onAddRegionOne} 
+            addRegionTwo={this.onAddRegionTwo} 
+            addRegionThree={this.onAddRegionThree} 
+            addRegionFour={this.onAddRegionFour} 
+            addRegionFive={this.onAddRegionFive} 
+            addMemoryRegion={this.onAddMemoryRegion} 
+            addNoteRegion={this.onAddNoteRegion} 
+            clearRegions={this.clearRegions} 
+            />
+            <div className="color-block">
             </div>
 
         </div>

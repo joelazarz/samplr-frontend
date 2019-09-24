@@ -40,6 +40,36 @@ const regionsObj = [
         attributes: {
             label: '[4]'
         }
+    },
+    {
+        id: 'pad5',
+        start: 10,
+        end: 15,
+        loop: false,
+        color: 'rgb(255, 150, 43, 0.4)',
+        attributes: {
+            label: '[5]'
+        }
+    },
+    {
+        id: 'pad6',
+        start: 12,
+        end: 17,
+        loop: false,
+        color: 'rgb(225, 350, 43, 0.4)',
+        attributes: {
+            label: '[6]'
+        }
+    },
+    {
+        id: 'pad7',
+        start: 12,
+        end: 17,
+        loop: false,
+        color: 'rgb(325, 150, 143, 0.4)',
+        attributes: {
+            label: '[7]'
+        }
     }
 
 ]

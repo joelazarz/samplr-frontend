@@ -1,45 +1,55 @@
 import React from 'react'
 
-const RegionControls = () => {
+const RegionControls = ({ 
+    addRegionOne,
+    addRegionTwo, 
+    addRegionThree, 
+    addRegionFour, 
+    addRegionFive, 
+    clearRegions, 
+    addMemoryRegion, 
+    addNoteRegion }) => {
+
+
     return (
         <div className="region-controls">
 
-        <div className="region-control-trigger">
+        <div onClick={addRegionOne} className="region-control-trigger">
             <i className="small material-icons">add_box </i>
             Region [1]
         </div>
             
-        <div className="region-control-trigger">
+        <div onClick={addRegionTwo} className="region-control-trigger">
             <i className="small material-icons">add_box </i>
             Region [2]
         </div>
             
-        <div className="region-control-trigger">
+        <div onClick={addRegionThree} className="region-control-trigger">
             <i className="small material-icons">add_box </i>
             Region [3]
         </div>
             
-        <div className="region-control-trigger">
+        <div onClick={addRegionFour} className="region-control-trigger">
             <i className="small material-icons">add_box </i>
             Region [4]
         </div>
             
-        <div className="region-control-trigger">
+        <div onClick={addRegionFive} className="region-control-trigger">
             <i className="small material-icons">add_box </i>
             Region [5]
         </div>
             
-        <div className="region-control-trigger">
-            <i className="small material-icons">add_box </i>
-            Hot Cue [6]
+        <div onClick={addMemoryRegion} className="region-control-trigger">
+            <i className="small material-icons">archive </i>
+            Memory [6]
         </div>
         
-        <div className="region-control-trigger">
+        <div onClick={addNoteRegion} className="region-control-trigger">
             <i className="small material-icons">note </i>
             Note
         </div>
 
-        <div className="region-control-trigger">
+        <div onClick={clearRegions} className="region-control-trigger">
             <i className="small material-icons">delete_forever </i>
             Clear All
         </div>

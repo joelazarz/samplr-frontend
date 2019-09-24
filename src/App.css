@@ -96,7 +96,7 @@
     display: flex;
     flex-direction: row;
     background: rgb(240, 240, 240);
-    margin-top: 1em;
+    margin-top: 0em;
     height: 15vh;
 }
 
@@ -105,6 +105,10 @@
     margin-bottom: 0.2em;
     margin-left: 1em;
     margin-right: 1em;
+}
+
+.region-control-trigger:hover{
+    background: rgb(150, 166, 190)
 }
 
 .region-control-trigger {
@@ -127,8 +131,19 @@
     margin-left: 0.5em;
 }
 
+.playback-controls i:hover{
+    background: rgb(235, 235, 235)
+}
+
+.color-block{
+    background: rgb(190, 193, 212);
+    height: 9vh;
+}
+
 .material-icons.false { color: rgb(121, 121, 121); }
 .material-icons.play.true { color: rgb(0, 168, 14); }
 .material-icons.stop.true { color: rgb(211, 0, 0); }
+
+.material-icons.speed.true { color: rgb(125, 96, 255); }
 
 
