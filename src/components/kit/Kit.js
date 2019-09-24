@@ -33,7 +33,7 @@ const Kit = ({ kit: { kit, loading }, getKit }) => {
                     <h6>Region Controls</h6>
                 </div>
 
-                <div className="height">
+                
                     <div className="kit-name-container">
                     <h3>{kit.name}</h3>
                 </div>
@@ -45,7 +45,7 @@ const Kit = ({ kit: { kit, loading }, getKit }) => {
 
                 
 
-            </div>
+
             </div>
 
 

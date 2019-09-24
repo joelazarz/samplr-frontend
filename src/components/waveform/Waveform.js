@@ -191,18 +191,7 @@ class Waveform extends Component {
             <button onClick={this.onSaveBtn}>SAVE</button>
             <button onClick={this.onCallBtn}>CALL PARAMS</button>
             </div>
-            {/* <li>a : play</li>
-            <li>s : stop</li>
-            <li>` : toggle mute</li>
-            <li>, : speed - 1%</li>
-            <li>. : speed 1</li>
-            <li>/ : speed + 1%</li>
-            <li>1 : trigger pad 1</li>
-            <li>2 : trigger pad 2</li>
-            <li>3 : trigger pad 3</li>
-            <li>4 : trigger pad 4</li>
-            <li>left : skip back 5 seconds</li>
-            <li>right : skip forward 5 seconds</li> */}
+
         </div>
         )
     }
