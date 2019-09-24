@@ -29,9 +29,7 @@ const Discovery = ({ kits: { kits, loading }, getKits }) => {
             <div className="height">
                 <h3>8-columns</h3>
                 <h4>Search / All Kits</h4>
-                
                     {kits.map(kit => <DiscoveryCard key={kit.id} kit={kit} />)}
-                
             </div>
             </div>
 

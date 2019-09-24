@@ -48,13 +48,12 @@
 .regions-specs{
     background: #ffffff;
     height: 44.5vh;
-    margin: 1.5vw;
-}
+    margin: 1vw}
 
 .notes-specs{
     background: #ffffff;
     height: 44.5vh;
-    margin: 1.5vw;
+    margin: 1vw;
 }
 
 .card-image img {
