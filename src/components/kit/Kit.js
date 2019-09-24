@@ -26,10 +26,6 @@ const Kit = ({ kit: { kit, loading }, getKit }) => {
         <div className="row">
             
             <div className="col s8 grey lighten-4">
-                <div className="height">
-                    <div className="kit-name-container">
-                    <h3>{kit.name}</h3>
-                </div>
 
                 <div className="kit-waveform-container">
                     <h2>playback controls</h2>
@@ -37,10 +33,17 @@ const Kit = ({ kit: { kit, loading }, getKit }) => {
                     <h6>Region Controls</h6>
                 </div>
 
+                <div className="height">
+                    <div className="kit-name-container">
+                    <h3>{kit.name}</h3>
+                </div>
+
                 <div className="kit-detail-container">
                     Kit Detail
                     <h6>{kit.detail}</h6>
                 </div>
+
+                
 
             </div>
             </div>
