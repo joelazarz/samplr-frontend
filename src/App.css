@@ -26,12 +26,12 @@
 
 .kit-name-container{
     background: lightcyan;
-    height: 20vh;
+    height: 10vh;
     margin: 1.5vw;
 }
 
 .kit-waveform-container{
-    height: 40vh;
+    height: 50vh;
     margin: 1.5vw;
     background: white;
 }
