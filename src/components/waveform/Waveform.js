@@ -77,15 +77,6 @@ class Waveform extends Component {
 
         const stop = () => {
             this.wavesurfer.stop()
-            console.log(this.wavesurfer.isPlaying())
-            // console.log('REGIONSOBJ:',regionsObj[0])
-            // console.log('THIS.WAVESURFER:', this.wavesurfer)
-            // console.log('PAD1:',this.wavesurfer.regions.list.pad1)
-            // console.log('PAD2:',this.wavesurfer.regions.list.pad2)
-            // console.log('PAD3:',this.wavesurfer.regions.list.pad3)
-            // console.log('PAD4 START:',this.wavesurfer.regions.list.pad4.start)
-            // console.log('PAD4 END:',this.wavesurfer.regions.list.pad4.end)
-            // console.log('GETPLAYBACKSPEED:', this.wavesurfer.getPlaybackRate(this.wavesurfer))
         }
 
         const slowed = () => {
@@ -146,17 +137,7 @@ class Waveform extends Component {
     normalSpeed = () => {
         this.wavesurfer.setPlaybackRate(1)
     }
-    // onSaveBtn = () => {
-    //     console.log('PAD4 START:',this.wavesurfer.regions.list.pad4.start)
-    //     console.log('PAD4 END:',this.wavesurfer.regions.list.pad4.end)
-    // }
 
-
-    // this sets the start and end time correctly but the color range does not move 
-    // onCallBtn = () => {
-    //     this.wavesurfer.regions.list.pad4.start = 5;
-    //     this.wavesurfer.regions.list.pad4.end = 6;
-    // }
 
     // Playback Controls /////
     play = () => {

@@ -15,27 +15,27 @@ const RegionControls = ({
         <div className="region-controls">
 
         <div onClick={addRegionOne} className="region-control-trigger">
-            <i className="small material-icons">add_box </i>
+            <i className="small material-icons">call_to_action </i>
             Region [1]
         </div>
             
         <div onClick={addRegionTwo} className="region-control-trigger">
-            <i className="small material-icons">add_box </i>
+            <i className="small material-icons">call_to_action </i>
             Region [2]
         </div>
             
         <div onClick={addRegionThree} className="region-control-trigger">
-            <i className="small material-icons">add_box </i>
+            <i className="small material-icons">call_to_action </i>
             Region [3]
         </div>
             
         <div onClick={addRegionFour} className="region-control-trigger">
-            <i className="small material-icons">add_box </i>
+            <i className="small material-icons">call_to_action </i>
             Region [4]
         </div>
             
         <div onClick={addRegionFive} className="region-control-trigger">
-            <i className="small material-icons">add_box </i>
+            <i className="small material-icons">call_to_action </i>
             Region [5]
         </div>
             
