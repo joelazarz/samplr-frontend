@@ -47,9 +47,6 @@ const Kit = ({ kit: { kit, loading }, getKit }) => {
 
                 </div>
 
-                
-
-
             </div>
 
 
@@ -57,10 +54,14 @@ const Kit = ({ kit: { kit, loading }, getKit }) => {
             <div className="height">
             
                 <div className="regions-specs">
-                    <h4>Region Specs</h4>
+                    <div className="specs-header">
+                        <h5>Region Specs</h5>
+                    </div>
                 </div>
                 <div className="notes-specs">
-                    <h4>Notes Specs</h4>
+                    <div className="specs-header">
+                        <h5>Notes Specs</h5>
+                    </div>
                 </div>
 
             </div>

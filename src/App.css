@@ -23,12 +23,12 @@
 /* Discovery Page */
 
 .discovery-kits-feed{
-    height: 80vh;
-    overflow: auto;
+    height: 81vh;
+    overflow: scroll;
 }
 
 .height {
-    height: 100vh;
+    height: 96vh;
 }
 
 .kit-name-container{
@@ -74,13 +74,18 @@
 
 .regions-specs{
     background: #ffffff;
-    height: 44.5vh;
+    height: 44vh;
     margin: 1vw
+}
+
+.specs-header {
+    background: rgb(223, 223, 223);
+    height: 3em;
 }
 
 .notes-specs{
     background: #ffffff;
-    height: 44.5vh;
+    height: 44vh;
     margin: 1vw;
 }
 
@@ -142,7 +147,11 @@
 
 .material-icons.false { color: rgb(121, 121, 121); }
 .material-icons.play.true { color: rgb(0, 168, 14); }
+.material-icons.pause.true { color: rgb(81, 214, 255); }
 .material-icons.stop.true { color: rgb(211, 0, 0); }
+.material-icons.rr.true { color: rgb(255, 208, 0); }
+.material-icons.ff.true { color: rgb(255, 208, 0); }
 .material-icons.speed.true { color: rgb(125, 96, 255); }
+.material-icons.mute.true { color: rgb(0, 140, 255); }
 
 
