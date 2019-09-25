@@ -185,4 +185,29 @@ const RegionControls = ({
     )
 }
 
+RegionControls.propTypes = {
+    addRegionOne: PropTypes.func.isRequired,
+    removeRegionOne: PropTypes.func.isRequired,
+    addRegionTwo: PropTypes.func.isRequired,
+    removeRegionTwo: PropTypes.func.isRequired,
+    addRegionThree: PropTypes.func.isRequired,
+    removeRegionThree: PropTypes.func.isRequired,
+    addRegionFour: PropTypes.func.isRequired,
+    removeRegionFour: PropTypes.func.isRequired,
+    addRegionFive: PropTypes.func.isRequired,
+    removeRegionFive: PropTypes.func.isRequired,
+    addMemoryRegion: PropTypes.func.isRequired,
+    removeMemoryRegion: PropTypes.func.isRequired,
+    addNoteRegion: PropTypes.func.isRequired,
+    removeNoteRegion: PropTypes.func.isRequired,
+    clearRegions: PropTypes.func.isRequired,
+    triggerOne: PropTypes.func.isRequired,
+    triggerTwo: PropTypes.func.isRequired,
+    triggerThree: PropTypes.func.isRequired,
+    triggerFour: PropTypes.func.isRequired,
+    triggerFive: PropTypes.func.isRequired,
+    triggerMemory: PropTypes.func.isRequired,
+    triggerNote: PropTypes.func.isRequired
+}
+
 export default RegionControls
