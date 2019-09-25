@@ -27,7 +27,7 @@ const RegionControls = ({
 }) => {
 
     useEffect(()=>{
-        window.addEventListener('keydown', handleKey);
+        window.addEventListener('keydown', handleRegionKey);
     })
 
     const [regionOneStatus, setRegionOneStatus] = useState(false)
@@ -120,7 +120,8 @@ const RegionControls = ({
     }
 
 
-    const handleKey = (e) => {
+    const handleRegionKey = (e) => {
+        e.stopPropagation()
         if(regionOneStatus && e.keyCode === 49){
             triggerOne()
         } else if (regionTwoStatus && e.keyCode === 50){
