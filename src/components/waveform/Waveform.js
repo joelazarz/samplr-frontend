@@ -71,16 +71,8 @@ class Waveform extends Component {
             console.log(this.wavesurfer.isPlaying())
         }
 
-        const mute = () => {
-            this.wavesurfer.toggleMute()
-        }
-
         const stop = () => {
             this.wavesurfer.stop()
-        }
-
-        const slowed = () => {
-            this.wavesurfer.setPlaybackRate((this.wavesurfer.getPlaybackRate(this.wavesurfer)) - 0.01)
         }
 
         const ogSpeed = () => {
@@ -114,29 +106,18 @@ class Waveform extends Component {
                 stop()
             } else if (e.keyCode === 65){
                 play()
-            } else if (e.keyCode === 188){
-                slowed()
             } else if (e.keyCode === 190){
                 ogSpeed()
             } else if (e.keyCode === 191){
                 fast()
-            } else if (e.keyCode === 39){
-                skipForward()
-            } else if (e.keyCode === 37){
-                skipBackward()
-            } else if (e.keyCode === 192){
-                mute()
             } 
         }
 
         this.wavesurfer.load(this.props.src);
         this.setState({ playing: this.wavesurfer.isPlaying() })
-        window.addEventListener('keydown', handleKey);
+        // window.addEventListener('keydown', handleKey);
     }
 
-    normalSpeed = () => {
-        this.wavesurfer.setPlaybackRate(1)
-    }
 
 
     // Playback Controls /////
@@ -149,11 +130,26 @@ class Waveform extends Component {
     stopBtn = () => {
         this.wavesurfer.stop()
     }
+    skipBackward = () => {
+        this.wavesurfer.skipBackward(3)
+    }
+    skipForward = () => {
+        this.wavesurfer.skipForward(3)
+    }
     slowedSpeed = () => {
         this.wavesurfer.setPlaybackRate(0.75)
     }
     normalSpeed = () => {
         this.wavesurfer.setPlaybackRate(1)
+    }
+    speedDown = () => {
+        this.wavesurfer.setPlaybackRate((this.wavesurfer.getPlaybackRate(this.wavesurfer)) - 0.001)
+    }
+    speedUp = () => {
+        this.wavesurfer.setPlaybackRate((this.wavesurfer.getPlaybackRate(this.wavesurfer)) + 0.001)
+    }
+    mute = () => {
+        this.wavesurfer.toggleMute()
     }
     ///// Playback Controls //
 
@@ -191,8 +187,13 @@ class Waveform extends Component {
             playControl={this.play}
             playPauseControl={this.playPause}
             stopControl={this.stopBtn}
+            skipBackward={this.skipBackward}
+            skipForward={this.skipForward}
             slowedSpeed={this.slowedSpeed}
             normalSpeed={this.normalSpeed}
+            speedDown={this.speedDown}
+            speedUp={this.speedUp}
+            mute={this.mute}
             />
             <div className='wave'>
             <div id="waveform"></div>
