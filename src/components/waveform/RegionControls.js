@@ -1,59 +1,185 @@
-import React from 'react'
+import React, { useState, useEffect } from 'react'
 
 const RegionControls = ({ 
     addRegionOne,
-    addRegionTwo, 
-    addRegionThree, 
+    removeRegionOne,
+    addRegionTwo,
+    removeRegionTwo, 
+    addRegionThree,
+    removeRegionThree, 
     addRegionFour, 
-    addRegionFive, 
-    clearRegions, 
-    addMemoryRegion, 
-    addNoteRegion }) => {
+    removeRegionFour,
+    addRegionFive,
+    removeRegionFive, 
+    addMemoryRegion,
+    removeMemoryRegion, 
+    addNoteRegion,
+    removeNoteRegion,
+    clearRegions,
+    triggerOne,
+    triggerTwo,
+    triggerThree,
+    triggerFour,
+    triggerFive,
+    triggerMemory,
+    triggerNote
+}) => {
+
+    useEffect(()=>{
+        window.addEventListener('keydown', handleKey);
+    })
+
+    const [regionOneStatus, setRegionOneStatus] = useState(false)
+    const [regionTwoStatus, setRegionTwoStatus] = useState(false)
+    const [regionThreeStatus, setRegionThreeStatus] = useState(false)
+    const [regionFourStatus, setRegionFourStatus] = useState(false)
+    const [regionFiveStatus, setRegionFiveStatus] = useState(false)
+    const [regionMemoryStatus, setRegionMemoryStatus] = useState(false)
+    const [regionNoteStatus, setRegionNoteStatus] = useState(false)
+
+    const regionOneEnable = () => {
+        addRegionOne()
+        setRegionOneStatus(true)
+    }
+
+    const regionOneDisable = () => {
+        removeRegionOne()
+        setRegionOneStatus(false)
+    }
+
+    const regionTwoEnable = () => {
+        addRegionTwo()
+        setRegionTwoStatus(true)
+    }
+
+    const regionTwoDisable = () => {
+        removeRegionTwo()
+        setRegionTwoStatus(false)
+    }
+
+    const regionThreeEnable = () => {
+        addRegionThree()
+        setRegionThreeStatus(true)
+    }
+
+    const regionThreeDisable = () => {
+        removeRegionThree()
+        setRegionThreeStatus(false)
+    }
+
+    const regionFourEnable = () => {
+        addRegionFour()
+        setRegionFourStatus(true)
+    }
+
+    const regionFourDisable = () => {
+        removeRegionFour()
+        setRegionFourStatus(false)
+    }
+
+    const regionFiveEnable = () => {
+        addRegionFive()
+        setRegionFiveStatus(true)
+    }
+
+    const regionFiveDisable = () => {
+        removeRegionFive()
+        setRegionFiveStatus(false)
+    }
+
+    const regionMemoryEnable = () => {
+        addMemoryRegion()
+        setRegionMemoryStatus(true)
+    }
+
+    const regionMemoryDisable = () => {
+        removeMemoryRegion()
+        setRegionMemoryStatus(false)
+    }
+
+    const regionNoteEnable = () => {
+        addNoteRegion()
+        setRegionNoteStatus(true)
+    }
+
+    const regionNoteDisable = () => {
+        removeNoteRegion()
+        setRegionNoteStatus(false)
+    }
+
+    const clearWaveRegions = () => {
+        clearRegions()
+        setRegionOneStatus(false)
+        setRegionTwoStatus(false)
+        setRegionThreeStatus(false)
+        setRegionFourStatus(false)
+        setRegionFiveStatus(false)
+        setRegionMemoryStatus(false)
+        setRegionNoteStatus(false)
+    }
+
+
+    const handleKey = (e) => {
+        if(regionOneStatus && e.keyCode === 49){
+            triggerOne()
+        } else if (regionTwoStatus && e.keyCode === 50){
+            triggerTwo()
+        } else if (regionThreeStatus && e.keyCode === 51){
+            triggerThree()
+        } else if (regionFourStatus && e.keyCode === 52){
+            triggerFour()
+        } else if (regionFiveStatus && e.keyCode === 53){
+            triggerFive()
+        } else if (regionMemoryStatus && e.keyCode === 54){
+            triggerMemory()
+        } else if (regionNoteStatus && e.keyCode === 55){
+            triggerNote()
+        } 
+    }
 
 
     return (
         <div className="region-controls">
 
-        <div onClick={addRegionOne} className="region-control-trigger">
-            <i className="small material-icons">call_to_action </i>
+        <div onClick={(regionOneStatus ? regionOneDisable : regionOneEnable)} className="region-control-trigger">
+            <i className={'small material-icons region1' + (regionOneStatus ? ' true' : ' false')}>call_to_action </i>
             Region [1]
         </div>
             
-        <div onClick={addRegionTwo} className="region-control-trigger">
-            <i className="small material-icons">call_to_action </i>
+        <div onClick={(regionTwoStatus ? regionTwoDisable : regionTwoEnable)} className="region-control-trigger">
+            <i className={'small material-icons region2' + (regionTwoStatus ? ' true' : ' false')}>call_to_action </i>
             Region [2]
         </div>
             
-        <div onClick={addRegionThree} className="region-control-trigger">
-            <i className="small material-icons">call_to_action </i>
+        <div onClick={(regionThreeStatus ? regionThreeDisable : regionThreeEnable)} className="region-control-trigger">
+            <i className={'small material-icons region3' + (regionThreeStatus ? ' true' : ' false')}>call_to_action </i>
             Region [3]
         </div>
             
-        <div onClick={addRegionFour} className="region-control-trigger">
-            <i className="small material-icons">call_to_action </i>
+        <div onClick={(regionFourStatus ? regionFourDisable : regionFourEnable)} className="region-control-trigger">
+            <i className={'small material-icons region4' + (regionFourStatus ? ' true' : ' false')}>call_to_action </i>
             Region [4]
         </div>
             
-        <div onClick={addRegionFive} className="region-control-trigger">
-            <i className="small material-icons">call_to_action </i>
+        <div onClick={(regionFiveStatus ? regionFiveDisable : regionFiveEnable)} className="region-control-trigger">
+            <i className={'small material-icons region5' + (regionFiveStatus ? ' true' : ' false')}>call_to_action </i>
             Region [5]
         </div>
             
-        <div onClick={addMemoryRegion} className="region-control-trigger">
+        <div onClick={(regionMemoryStatus ? regionMemoryDisable : regionMemoryEnable)} className="region-control-trigger">
             <i className="small material-icons">archive </i>
             Memory [6]
         </div>
         
-        <div onClick={addNoteRegion} className="region-control-trigger">
+        <div onClick={(regionNoteStatus ? regionNoteDisable : regionNoteEnable)} className="region-control-trigger">
             <i className="small material-icons">note </i>
             Note
         </div>
 
-        <div onClick={clearRegions} className="region-control-trigger">
+        <div onClick={clearWaveRegions} className="region-control-trigger">
             <i className="small material-icons">delete_forever </i>
             Clear All
         </div>
-
 
         </div>
     )

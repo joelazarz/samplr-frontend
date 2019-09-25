@@ -63,8 +63,8 @@
 
 .kit-detail-text-container {
     margin-left: 1em;
-    height: 25vh;
-    width: 40vw;
+    height: 20vh;
+    width: 38vw;
 }
 
 .kit-detail-image-container {
@@ -177,5 +177,13 @@
     background: rgb(160, 160, 182);
     height: 8vh;
 }
+
+.material-icons.false { color: rgb(121, 121, 121); }
+
+.material-icons.region1.true { color: rgb(255, 161, 161); }
+.material-icons.region2.true { color: rgb(161, 255, 177); }
+.material-icons.region3.true { color: rgb(161, 252, 255); }
+.material-icons.region4.true { color: rgb(247, 161, 255); }
+.material-icons.region5.true { color: rgb(199, 0, 0); }
 
 
