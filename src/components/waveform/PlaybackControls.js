@@ -14,7 +14,7 @@ const PlaybackControls = ({
     mute }) => {
 
     useEffect(()=>{
-        window.addEventListener('keydown', handleKey);
+        window.addEventListener('keydown', handlePlaybackKey);
     })
 
     const [playStatus, setPlayStatus] = useState(false)
@@ -94,7 +94,7 @@ const PlaybackControls = ({
         setMuteStatus(!!!muteStatus)
     }
 
-    const handleKey = (e) => {
+    const handlePlaybackKey = (e) => {
         e.stopPropagation()
         if(e.keyCode === 65){
             playEnable()
