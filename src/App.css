@@ -37,6 +37,11 @@
     margin: 1.5vw;
 }
 
+.kit-detail {
+    display: flex;
+    flex-direction: row;
+}
+
 .kit-waveform-container{
     height: 50vh;
     margin: 1.5vw;
@@ -44,11 +49,16 @@
 }
 
 .kit-detail-container{
-    display: flex;
-    flex-direction: row;
     height: 25vh;
-    margin: 1.5vw;
+    width: 40vw;
+    margin-right: 1.5vw;
+    margin-left: 1.5vw;
+    margin-bottom: 2vw;
     background: lightyellow;
+}
+
+.kit-detail-header {
+    background: rgb(253, 253, 184);
 }
 
 .kit-detail-text-container {
@@ -102,11 +112,11 @@
     display: flex;
     flex-direction: row;
     background: rgb(226, 226, 226);
-    height: 5.5em;
+    height: 4.5em;
 }
 
 .playback-controls i {
-    margin-top: 0.4em;
+    margin-top: 0.2em;
     margin-bottom: 0.2em;
     margin-left: 0.5em;
 }
@@ -117,7 +127,7 @@
 
 .playback-controls-secondary {
     background: #bdbdbd;
-    height: 4vh;
+    height: 5vh;
 }
 
 /* Playback Control Icons */
@@ -165,7 +175,7 @@
 /* Below Regions Control */
 .color-block{
     background: rgb(160, 160, 182);
-    height: 7vh;
+    height: 8vh;
 }
 
 
