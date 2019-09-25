@@ -46,7 +46,7 @@ const regionsObj = [
         start: 10,
         end: 15,
         loop: false,
-        color: 'rgb(255, 153, 153, 0.4)',
+        color: 'rgb(207, 149, 255, 0.4)',
         attributes: {
             label: '[5]'
         }
@@ -56,7 +56,7 @@ const regionsObj = [
         start: 12,
         end: 17,
         loop: false,
-        color: 'rgb(225, 350, 43, 0.4)',
+        color: 'rgb(219, 0, 0, 0.4)',
         attributes: {
             label: '[6]'
         }
@@ -66,7 +66,7 @@ const regionsObj = [
         start: 12,
         end: 17,
         loop: false,
-        color: 'rgb(325, 150, 143, 0.4)',
+        color: 'rgb(0, 110, 24, 0.4)',
         attributes: {
             label: '[7]'
         }

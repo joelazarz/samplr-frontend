@@ -1,4 +1,5 @@
 import React, { useState, useEffect } from 'react'
+import { PropTypes } from 'prop-types';
 
 const RegionControls = ({ 
     addRegionOne,
@@ -167,12 +168,12 @@ const RegionControls = ({
         </div>
             
         <div onClick={(regionMemoryStatus ? regionMemoryDisable : regionMemoryEnable)} className="region-control-trigger">
-            <i className="small material-icons">archive </i>
+            <i className={'small material-icons regionMemory' + (regionMemoryStatus ? ' true' : ' false')}>archive </i>
             Memory [6]
         </div>
         
         <div onClick={(regionNoteStatus ? regionNoteDisable : regionNoteEnable)} className="region-control-trigger">
-            <i className="small material-icons">note </i>
+            <i className={'small material-icons regionNote' + (regionNoteStatus ? ' true' : ' false')}>note </i>
             Note
         </div>
 
