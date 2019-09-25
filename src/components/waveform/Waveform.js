@@ -66,31 +66,6 @@ class Waveform extends Component {
             clip.play()
         }
 
-        const play = () => {
-            this.wavesurfer.play()
-            console.log(this.wavesurfer.isPlaying())
-        }
-
-        const stop = () => {
-            this.wavesurfer.stop()
-        }
-
-        const ogSpeed = () => {
-            this.wavesurfer.setPlaybackRate(1)
-        }
-
-        const fast = () => {
-            this.wavesurfer.setPlaybackRate((this.wavesurfer.getPlaybackRate(this.wavesurfer)) + 0.01)
-        }
-
-        const skipForward = () => {
-            this.wavesurfer.skipForward(5)
-        }
-
-        const skipBackward = () => {
-            this.wavesurfer.skipBackward(5)
-        }
-
         //////////// Key Handler
         const handleKey = (e) => {
             e.stopPropagation()
@@ -102,14 +77,6 @@ class Waveform extends Component {
                 triggerOnBtnThree()
             } else if (e.keyCode === 52){
                 triggerOnBtnFour()
-            } else if (e.keyCode === 83){
-                stop()
-            } else if (e.keyCode === 65){
-                play()
-            } else if (e.keyCode === 190){
-                ogSpeed()
-            } else if (e.keyCode === 191){
-                fast()
             } 
         }
 

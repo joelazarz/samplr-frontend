@@ -95,6 +95,45 @@
 
 
 
+
+
+/* Playback Controls Layout */
+.playback-controls {
+    display: flex;
+    flex-direction: row;
+    background: rgb(226, 226, 226);
+    height: 5.5em;
+}
+
+.playback-controls i {
+    margin-top: 0.4em;
+    margin-bottom: 0.2em;
+    margin-left: 0.5em;
+}
+
+.playback-controls i:hover {
+    background: rgb(235, 235, 235)
+}
+
+.playback-controls-secondary {
+    background: #bdbdbd;
+    height: 4vh;
+}
+
+/* Playback Control Icons */
+.material-icons.false { color: rgb(121, 121, 121); }
+.material-icons.play.true { color: rgb(0, 168, 14); }
+.material-icons.pause.true { color: rgb(81, 214, 255); }
+.material-icons.stop.true { color: rgb(211, 0, 0); }
+.material-icons.rr.true { color: rgb(255, 208, 0); }
+.material-icons.ff.true { color: rgb(255, 208, 0); }
+.material-icons.speed.true { color: rgb(125, 96, 255); }
+.material-icons.mute.true { color: rgb(0, 140, 255); }
+
+.medium.material-icons { font-size: 3em;}
+
+
+/* //////////////// */
 /* Region Controls */
 
 .region-controls {
@@ -102,11 +141,11 @@
     flex-direction: row;
     background: rgb(240, 240, 240);
     margin-top: 0em;
-    height: 15vh;
+    height: 13vh;
 }
 
 .region-controls i {
-    margin-top: 1em;
+    margin-top: 0.8em;
     margin-bottom: 0.2em;
     margin-left: 1em;
     margin-right: 1em;
@@ -123,35 +162,10 @@
     font-size: 0.7em;
 }
 
-.playback-controls {
-    display: flex;
-    flex-direction: row;
-    background: rgb(226, 226, 226);
-    height: 6em;
-}
-
-.playback-controls i {
-    margin-top: 0.2em;
-    margin-bottom: 0.2em;
-    margin-left: 0.5em;
-}
-
-.playback-controls i:hover{
-    background: rgb(235, 235, 235)
-}
-
+/* Below Regions Control */
 .color-block{
-    background: rgb(190, 193, 212);
-    height: 9vh;
+    background: rgb(160, 160, 182);
+    height: 7vh;
 }
-
-.material-icons.false { color: rgb(121, 121, 121); }
-.material-icons.play.true { color: rgb(0, 168, 14); }
-.material-icons.pause.true { color: rgb(81, 214, 255); }
-.material-icons.stop.true { color: rgb(211, 0, 0); }
-.material-icons.rr.true { color: rgb(255, 208, 0); }
-.material-icons.ff.true { color: rgb(255, 208, 0); }
-.material-icons.speed.true { color: rgb(125, 96, 255); }
-.material-icons.mute.true { color: rgb(0, 140, 255); }
 
 

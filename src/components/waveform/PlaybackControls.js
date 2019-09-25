@@ -90,7 +90,7 @@ const PlaybackControls = ({
     }
 
     const toggleMute = () => {
-        mute()
+        mute();
         setMuteStatus(!!!muteStatus)
     }
 
@@ -116,6 +116,10 @@ const PlaybackControls = ({
     }
 
     return (
+        <>
+        <div className="playback-controls-secondary">
+
+        </div>
         <div className="playback-controls">
             <i onClick={playEnable} className={'medium material-icons play' + (playStatus ? ' true' : ' false')}>play_arrow </i>
             <i onClick={(pauseStatus ? PauseDisable : PauseEnable)} className={'medium material-icons pause' + (pauseStatus ? ' true' : ' false')}>pause </i>
@@ -125,6 +129,7 @@ const PlaybackControls = ({
             <i onClick={(slowedStatus ? slowedDisable : slowedEnable)} className={'medium material-icons speed' + (slowedStatus ? ' true' : ' false')}>slow_motion_video </i>
             <i onClick={toggleMute} className={'medium material-icons mute' + (muteStatus ? ' true' : ' false')}>volume_off </i>
         </div>
+        </>
     )
 
 }
