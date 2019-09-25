@@ -39,50 +39,9 @@ class Waveform extends Component {
                 })
             ]
         })
-        
-
-        ///////// Key Commands
-        const triggerOnBtnOne = () => {
-            this.wavesurfer.stop()
-            let clip = this.wavesurfer.regions.list.pad1;
-            clip.play()
-        }
-
-        const triggerOnBtnTwo = () => {
-            this.wavesurfer.stop()
-            let clip = this.wavesurfer.regions.list.pad2;
-            clip.play()
-        }
-        
-        const triggerOnBtnThree = () => {
-            this.wavesurfer.stop()
-            let clip = this.wavesurfer.regions.list.pad3;
-            clip.play()
-        }
-
-        const triggerOnBtnFour = () => {
-            this.wavesurfer.stop()
-            let clip = this.wavesurfer.regions.list.pad4;
-            clip.play()
-        }
-
-        //////////// Key Handler
-        const handleKey = (e) => {
-            e.stopPropagation()
-            if(e.keyCode === 49){
-                triggerOnBtnOne()
-            } else if (e.keyCode === 50){
-                triggerOnBtnTwo()
-            } else if (e.keyCode === 51){
-                triggerOnBtnThree()
-            } else if (e.keyCode === 52){
-                triggerOnBtnFour()
-            } 
-        }
 
         this.wavesurfer.load(this.props.src);
         this.setState({ playing: this.wavesurfer.isPlaying() })
-        // window.addEventListener('keydown', handleKey);
     }
 
 
@@ -120,30 +79,109 @@ class Waveform extends Component {
     }
     ///// Playback Controls //
 
+    //////////////////////////
+
     // Region Controls /////
     onAddRegionOne = () => {
         this.wavesurfer.addRegion(regionsObj[0])
     }
+    onRemoveRegionOne = () => {
+        let region = this.wavesurfer.regions.list.pad1
+        region.remove()
+    }
+
     onAddRegionTwo = () => {
         this.wavesurfer.addRegion(regionsObj[1])
     }
+    onRemoveRegionTwo = () => {
+        let region = this.wavesurfer.regions.list.pad2
+        region.remove()
+    }
+
     onAddRegionThree = () => {
         this.wavesurfer.addRegion(regionsObj[2])
     }
+    onRemoveRegionThree = () => {
+        let region = this.wavesurfer.regions.list.pad3
+        region.remove()
+    }
+
     onAddRegionFour = () => {
         this.wavesurfer.addRegion(regionsObj[3])
     }
+    onRemoveRegionFour = () => {
+        let region = this.wavesurfer.regions.list.pad4
+        region.remove()
+    }
+
     onAddRegionFive = () => {
         this.wavesurfer.addRegion(regionsObj[4])
     }
+    onRemoveRegionFive = () => {
+        let region = this.wavesurfer.regions.list.pad5
+        region.remove()
+    }
+
     onAddMemoryRegion = () => {
         this.wavesurfer.addRegion(regionsObj[5])
     }
+    onRemoveMemoryRegion = () => {
+        let region = this.wavesurfer.regions.list.pad6
+        region.remove()
+    }
+
     onAddNoteRegion = () => {
         this.wavesurfer.addRegion(regionsObj[6])
     }
+    onRemoveNoteRegion = () => {
+        let region = this.wavesurfer.regions.list.pad7
+        region.remove()
+    }
+
     clearRegions = () => {
         this.wavesurfer.clearRegions()
+    }
+
+    triggerOne = () => {
+        this.wavesurfer.stop()
+        let clip = this.wavesurfer.regions.list.pad1;
+        clip.play()
+    }
+
+    triggerTwo = () => {
+        this.wavesurfer.stop()
+        let clip = this.wavesurfer.regions.list.pad2;
+        clip.play()
+    }
+    
+    triggerThree = () => {
+        this.wavesurfer.stop()
+        let clip = this.wavesurfer.regions.list.pad3;
+        clip.play()
+    }
+
+    triggerFour = () => {
+        this.wavesurfer.stop()
+        let clip = this.wavesurfer.regions.list.pad4;
+        clip.play()
+    }
+
+    triggerFive = () => {
+        this.wavesurfer.stop()
+        let clip = this.wavesurfer.regions.list.pad5;
+        clip.play()
+    }
+
+    triggerMemory = () => {
+        this.wavesurfer.stop()
+        let clip = this.wavesurfer.regions.list.pad6;
+        clip.play()
+    }
+
+    triggerNote = () => {
+        this.wavesurfer.stop()
+        let clip = this.wavesurfer.regions.list.pad7;
+        clip.play()
     }
     ///// Region Controls //
 
@@ -168,13 +206,27 @@ class Waveform extends Component {
             </div>
             <RegionControls 
             addRegionOne={this.onAddRegionOne} 
+            removeRegionOne={this.onRemoveRegionOne} 
             addRegionTwo={this.onAddRegionTwo} 
+            removeRegionTwo={this.onRemoveRegionTwo}
             addRegionThree={this.onAddRegionThree} 
-            addRegionFour={this.onAddRegionFour} 
+            removeRegionThree={this.onRemoveRegionThree}
+            addRegionFour={this.onAddRegionFour}
+            removeRegionFour={this.onRemoveRegionFour} 
             addRegionFive={this.onAddRegionFive} 
+            removeRegionFive={this.onRemoveRegionFive}
             addMemoryRegion={this.onAddMemoryRegion} 
+            removeMemoryRegion={this.onRemoveMemoryRegion}
             addNoteRegion={this.onAddNoteRegion} 
-            clearRegions={this.clearRegions} 
+            removeNoteRegion={this.onRemoveNoteRegion}
+            clearRegions={this.clearRegions}
+            triggerOne={this.triggerOne} 
+            triggerTwo={this.triggerTwo} 
+            triggerThree={this.triggerThree} 
+            triggerFour={this.triggerFour} 
+            triggerFive={this.triggerFive} 
+            triggerMemory={this.triggerMemory} 
+            triggerNote={this.triggerNote} 
             />
             <div className="color-block">
             </div>

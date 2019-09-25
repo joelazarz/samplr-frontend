@@ -31,24 +31,24 @@ const Kit = ({ kit: { kit, loading }, getKit }) => {
                     <Waveform key={kit.id} src={kit.sample} />
                 </div>
 
-                
                 <div className="kit-name-container">
                     <h3>[ Kit Name ] : {kit.name}</h3>
                 </div>
-            <div className= "kit-detail">
-                <div className="kit-detail-container">
-                    <div className="kit-detail-header">
-                        [ Kit Detail ]
-                    </div>
-                    <div className="kit-detail-text-container">
-                        <h6>{kit.detail}</h6>
-                    </div>
-                </div>
 
-                <div className="kit-detail-image-container">
-                    <img src={kit.image} />
+                <div className= "kit-detail">
+                    <div className="kit-detail-container">
+                        <div className="kit-detail-header">
+                            [ Kit Detail ]
+                        </div>
+                        <div className="kit-detail-text-container">
+                            <h6>{kit.detail}</h6>
+                        </div>
+                    </div>
+
+                    <div className="kit-detail-image-container">
+                        <img src={kit.image} />
+                    </div>
                 </div>
-            </div>
 
             </div>
 
