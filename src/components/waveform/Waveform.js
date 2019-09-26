@@ -14,6 +14,7 @@ class Waveform extends Component {
 
         this.state = {  
             playing: false,
+            notes: [],
             regions: []
         }
 
@@ -41,6 +42,7 @@ class Waveform extends Component {
         })
 
         this.wavesurfer.load(this.props.src);
+        console.log('Waveform Props:', this.props)
         this.setState({ playing: this.wavesurfer.isPlaying() })
     }
 
@@ -183,11 +185,29 @@ class Waveform extends Component {
         let clip = this.wavesurfer.regions.list.pad7;
         clip.play()
     }
+
+    notesMode = (val1, val2) => {
+        let waveNotes = this.props.notes
+        console.log(waveNotes)
+        this.wavesurfer.addRegion({
+            id: 'testPad',
+            start: `${val1}`,
+            end: `${val2}`,
+            loop: false,
+            drag: false,
+            resize: false,
+            color: 'rgb(255, 176, 176, 0.4)',
+            attributes: {
+                label: "[1]"
+            }
+        })
+    }
+
     ///// Region Controls //
 
     render() {
         return (
-            <div className='waveform' onClick={this.handleSKey}>
+            <div className='waveform'>
             <PlaybackControls 
             playControl={this.play}
             playPauseControl={this.playPause}
@@ -227,6 +247,7 @@ class Waveform extends Component {
             triggerFive={this.triggerFive} 
             triggerMemory={this.triggerMemory} 
             triggerNote={this.triggerNote} 
+            notesMode={this.notesMode}
             />
             <div className="color-block">
             </div>
