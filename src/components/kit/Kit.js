@@ -28,7 +28,7 @@ const Kit = ({ kit: { kit, loading }, getKit }) => {
             <div className="col s8 grey lighten-4">
 
                 <div className="kit-waveform-container">
-                    <Waveform key={kit.id} src={kit.sample} />
+                    <Waveform key={kit.id} src={kit.sample} notes={kit.notes} digs={kit.digs} />
                 </div>
 
                 <div className="kit-name-container">
