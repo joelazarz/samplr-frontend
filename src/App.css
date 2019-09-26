@@ -151,7 +151,7 @@
     flex-direction: row;
     background: rgb(240, 240, 240);
     margin-top: 0em;
-    height: 15vh;
+    height: 11vh;
 }
 
 .region-controls i {
@@ -178,6 +178,8 @@
     flex-direction: column;
     text-align: center;
     font-size: 0.7em;
+    max-width: 8.5em;
+    min-width: 8em;
 }
 
 .region-control-presets:hover{
@@ -185,19 +187,36 @@
 }
 
 .region-control-small-save {
-    margin-top: 0.5em;
+    margin-top: 0.4em;
     margin-right: 0.3em;
-    margin-left: 0.3em;
+    margin-left: 1em;
 }
 .region-control-small-save-btn {
+    text-align: center;
     color: white;
     background: rgb(0, 45, 128);
+    font-size: 0.7em;
+    width: 6em;
     padding: 0.3em;
     border-radius: 4px;
 }
 
 .region-control-small-save-btn:hover {
     background: rgb(74, 122, 211);
+}
+
+.region-status-bar {
+    display: flex;
+    flex-direction: row;
+    height: 4vh;
+    background: rgb(218, 218, 218);
+}
+
+.region-status-space {
+    background: lightgray;
+    height: 4vh;
+    max-width: 8em;
+    min-width: 6em;
 }
 
 /* Below Regions Control */

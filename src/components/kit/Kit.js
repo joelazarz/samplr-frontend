@@ -12,7 +12,7 @@ const Kit = ({ kit: { kit, loading }, getKit }) => {
         getKit(window.location.pathname)
     }, [])
     
-    // console.log('kit.js [kit]', kit)
+    console.log('kit.js [kit]', kit)
     // using the window.location.pathname to direct the action to the endpoint in the api :/
     // console.log('Kit.js [window.location.pathname]', window.location.pathname)
     
