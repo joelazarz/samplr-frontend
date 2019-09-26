@@ -46,7 +46,7 @@ const Kit = ({ kit: { kit, loading }, getKit }) => {
                     </div>
 
                     <div className="kit-detail-image-container">
-                        <img src={kit.image} />
+                        <img src={kit.image} alt={kit.name} />
                     </div>
                 </div>
 

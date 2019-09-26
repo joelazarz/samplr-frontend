@@ -1,5 +1,6 @@
 import React, { Component } from 'react'
 import ReactDOM from 'react-dom'
+
 import WaveSurfer from 'wavesurfer.js'
 import RegionsPlugin from 'wavesurfer.js/src/plugin/regions.js'
 import regionsObj from './Regions';
@@ -9,15 +10,10 @@ import RegionControls from '../waveform/RegionControls';
 
 class Waveform extends Component {
 
-    constructor(props) {
-        super(props)
-
-        this.state = {  
-            playing: false,
-            notes: [],
-            regions: []
-        }
-
+    state = {  
+        // playing: false,
+        // notes: [],
+        // regions: []
     }
 
     componentDidMount() {
@@ -42,8 +38,6 @@ class Waveform extends Component {
         })
 
         this.wavesurfer.load(this.props.src);
-        console.log('Waveform Props:', this.props)
-        this.setState({ playing: this.wavesurfer.isPlaying() })
     }
 
 
@@ -251,15 +245,11 @@ class Waveform extends Component {
             />
             <div className="color-block">
             </div>
-
         </div>
         )
     }
 
 }
 
-Waveform.defaultProps = {
-    src: ""
-}
 
 export default Waveform

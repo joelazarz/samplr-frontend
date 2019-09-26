@@ -19,7 +19,6 @@ export default (state = initialState, action) => {
                 loading: true
             }
         case KIT_ERROR:
-            console.error(action.payload)
             return {
                 ...state,
                 error: action.payload
