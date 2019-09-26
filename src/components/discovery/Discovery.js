@@ -15,8 +15,6 @@ const Discovery = ({ kits: { kits, loading }, getKits }) => {
         getKits()
     }, [])
 
-    console.log('DISCOVERY.JS /KITS:', kits)
-
     if (loading || kits === null) {
         return <Spinner />
     }

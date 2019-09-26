@@ -1,4 +1,5 @@
 import React, { useState, useEffect } from 'react'
+import AddMemoryBtn from './AddMemoryBtn'
 import { PropTypes } from 'prop-types';
 
 const RegionControls = ({ 
@@ -194,8 +195,10 @@ const RegionControls = ({
                 archive </i>
             Memory [6]
             <div className="region-control-small-save">
-            { regionMemoryStatus ? 
-            <div className="region-control-small-save-btn">Save</div> 
+            { regionMemoryStatus ?
+            <> 
+            <AddMemoryBtn />
+            </>
             : <></> }
             </div> 
         </div>
@@ -227,7 +230,7 @@ const RegionControls = ({
                 archive </i>
             Notes Mode
         </div>
-
+        
         </div>
     )
 }

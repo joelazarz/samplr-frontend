@@ -5,7 +5,6 @@ import { GET_KIT, SET_LOADING, KIT_ERROR} from './types'
 export const getKit = (pathname) => async dispatch => {
     try {
     setLoading();
-    console.log('kitActions HREF', pathname)
     const res = await fetch(`${pathname}`)
     const data = await res.json()
     dispatch({

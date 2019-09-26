@@ -11,7 +11,7 @@ const DiscoveryCard = ({ kit }) => {
         <div className="col s4">
         <div className="card small">
         <div className="card-image waves-effect waves-block waves-light">
-            <img className="activator" src={kit.image} />
+            <img className="activator" src={kit.image} alt={kit.name}/>
         </div>
         <div className="card-content">
             <span className="card-title activator grey-text text-darken-4">{kit.name}<i className="material-icons right">more_vert</i></span>

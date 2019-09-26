@@ -16,14 +16,12 @@ const AddKitModal = ({ addKit }) => {
         if(name === '' || detail === ''){
             M.toast({ html: 'Please enter Name and Detail' })
         } else {
-            console.log(name, detail, image, sample)
             const newKit = {
                 name,
                 detail,
                 image,
                 sample
             }
-            console.log('onSubmit newKit', newKit)
             addKit(newKit)
             M.toast({ html: 'Kit Added'})
         }
