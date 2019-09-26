@@ -10,11 +10,12 @@ import RegionControls from '../waveform/RegionControls';
 class Waveform extends Component {
 
     state = {  
-        memoryRegion: null,
-        noteRegion: null
+        memoryStart: null,
+        memoryEnd: null,
+        noteStart: null,
+        noteEnd: null
     }
 
-    
     componentDidMount() {
         this.wavesurfer = WaveSurfer.create({
             container: '.wave',
@@ -120,21 +121,21 @@ class Waveform extends Component {
     onRemoveMemoryRegion = () => {
         let region = this.wavesurfer.regions.list.pad6
         region.remove()
+        this.setState({ memoryStart: null, memoryEnd: null })
     }
 
     onAddNoteRegion = () => {
         this.wavesurfer.addRegion(regionsObj[6])
-        this.setState({ noteRegion: regionsObj[6] })
     }
     onRemoveNoteRegion = () => {
         let region = this.wavesurfer.regions.list.pad7
         region.remove()
-        this.setState({ noteRegion: null })
+        this.setState({ noteStart: null, noteEnd: null })
     }
 
     clearRegions = () => {
         this.wavesurfer.clearRegions()
-        this.setState({ noteRegion: null, memoryRegion: null })
+        this.setState({ memoryStart: null, memoryEnd: null, noteStart: null, noteEnd: null })
     }
 
     triggerOne = () => {
@@ -195,6 +196,18 @@ class Waveform extends Component {
         }))
     }
 
+    onMemorySaveClick = () => {
+        let start = this.wavesurfer.regions.list.pad6.start
+        let end = this.wavesurfer.regions.list.pad6.start
+        this.setState({ memoryStart: start, memoryEnd: end })
+    }
+
+    onNoteSaveClick = () => {
+        let start = this.wavesurfer.regions.list.pad7.start
+        let end = this.wavesurfer.regions.list.pad7.start
+        this.setState({ noteStart: start, noteEnd: end })
+    }
+
     ///// Region Controls //
 
     render() {
@@ -240,6 +253,8 @@ class Waveform extends Component {
             triggerMemory={this.triggerMemory} 
             triggerNote={this.triggerNote} 
             notesMode={this.notesMode}
+            memorySaveClick={this.onMemorySaveClick}
+            noteSaveClick={this.onNoteSaveClick}
             />
             <div className="color-block">
             </div>

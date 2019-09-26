@@ -1,5 +1,4 @@
 import React, { useState, useEffect } from 'react'
-import AddMemoryBtn from './AddMemoryBtn'
 import { PropTypes } from 'prop-types';
 
 const RegionControls = ({ 
@@ -25,7 +24,9 @@ const RegionControls = ({
     triggerFive,
     triggerMemory,
     triggerNote,
-    notesMode
+    notesMode,
+    memorySaveClick,
+    noteSaveClick
 }) => {
 
     useEffect(()=>{
@@ -155,6 +156,7 @@ const RegionControls = ({
     }
 
     return (
+        <>
         <div className="region-controls">
 
         <div 
@@ -203,13 +205,6 @@ const RegionControls = ({
             <i className={'small material-icons regionMemory' + (regionMemoryStatus ? ' true' : ' false')}>
                 archive </i>
             Memory [6]
-            <div className="region-control-small-save">
-            { regionMemoryStatus ?
-            <> 
-            <AddMemoryBtn />
-            </>
-            : <></> }
-            </div> 
         </div>
 
         <div 
@@ -218,11 +213,6 @@ const RegionControls = ({
             <i className={'small material-icons regionNote' + (regionNoteStatus ? ' true' : ' false')}>
                 note </i>
             Note
-            <div className="region-control-small-save">
-            { regionNoteStatus ? 
-            <div className="region-control-small-save-btn">Save</div>
-            : <></> }
-            </div> 
         </div>
 
         <div 
@@ -241,6 +231,31 @@ const RegionControls = ({
         </div>
         
         </div>
+        
+        <div className="region-status-bar">
+            <div className="region-status-space"></div>
+            <div className="region-status-space"></div>
+            <div className="region-status-space"></div>
+            <div className="region-status-space"></div>
+            <div className="region-status-space"></div>
+            <div className="region-status-space">
+            <div className="region-control-small-save">
+            { regionMemoryStatus ?
+            <div onClick={memorySaveClick} className="region-control-small-save-btn">Save</div>
+            : <></> }
+            </div> 
+            </div>
+            <div className="region-status-space">
+            <div className="region-control-small-save">
+            { regionNoteStatus ? 
+            <div onClick={noteSaveClick} className="region-control-small-save-btn">Save</div>
+            : <></> }
+            </div> 
+            </div>
+            <div className="region-status-space"></div>
+            <div className="region-status-space"></div>
+        </div>
+        </>
     )
 }
 
@@ -267,7 +282,9 @@ RegionControls.propTypes = {
     triggerFive: PropTypes.func.isRequired,
     triggerMemory: PropTypes.func.isRequired,
     triggerNote: PropTypes.func.isRequired,
-    notesMode: PropTypes.func.isRequired
+    notesMode: PropTypes.func.isRequired,
+    memorySaveClick: PropTypes.func.isRequired,
+    noteSaveClick: PropTypes.func.isRequired
 }
 
 export default RegionControls

@@ -58,7 +58,7 @@ const regionsObj = [
         loop: false,
         color: 'rgb(219, 0, 0, 0.4)',
         attributes: {
-            label: '[6]'
+            label: '[Memory]'
         }
     },
     {
