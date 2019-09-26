@@ -40,6 +40,8 @@ const RegionControls = ({
     const [regionMemoryStatus, setRegionMemoryStatus] = useState(false)
     const [regionNoteStatus, setRegionNoteStatus] = useState(false)
 
+    const [notesModeStatus, setNotesModeStatus] = useState(false)
+
     const regionOneEnable = () => {
         addRegionOne()
         setRegionOneStatus(true)
@@ -121,6 +123,17 @@ const RegionControls = ({
         setRegionNoteStatus(false)
     }
 
+    const enableNotesMode = () => {
+        clearWaveRegions();
+        notesMode();
+        setNotesModeStatus(true)
+    }
+
+    const disableNotesMode = () => {
+        clearWaveRegions();
+        setNotesModeStatus(false)
+    }
+
 
     const handleRegionKey = (e) => {
         e.stopPropagation()
@@ -141,12 +154,8 @@ const RegionControls = ({
         } 
     }
 
-    const val1 = 2
-    const val2 = 10
-
     return (
         <div className="region-controls">
-        <div className={`${val1}`}></div>
 
         <div 
         onClick={(regionOneStatus ? regionOneDisable : regionOneEnable)} 
@@ -224,10 +233,10 @@ const RegionControls = ({
         </div>
 
         <div 
-        onClick={() => {notesMode(val1,val2)}} 
+        onClick={(notesModeStatus ? disableNotesMode : enableNotesMode)} 
         className="region-control-presets">
             <i className="small material-icons">
-                archive </i>
+            speaker_notes </i>
             Notes Mode
         </div>
         

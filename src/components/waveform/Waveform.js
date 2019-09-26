@@ -1,5 +1,4 @@
 import React, { Component } from 'react'
-import ReactDOM from 'react-dom'
 
 import WaveSurfer from 'wavesurfer.js'
 import RegionsPlugin from 'wavesurfer.js/src/plugin/regions.js'
@@ -11,17 +10,14 @@ import RegionControls from '../waveform/RegionControls';
 class Waveform extends Component {
 
     state = {  
-        // playing: false,
-        // notes: [],
-        // regions: []
+        memoryRegion: null,
+        noteRegion: null
     }
 
+    
     componentDidMount() {
-
-        this.el = ReactDOM.findDOMNode(this)
-        this.waveform = this.el.querySelector('.wave')
         this.wavesurfer = WaveSurfer.create({
-            container: this.waveform,
+            container: '.wave',
             waveColor: 'rgb(193, 193, 193)',
             progressColor: 'rgb(140, 140, 140)',
             cursorColor: 'orange',
@@ -32,11 +28,10 @@ class Waveform extends Component {
             plugins: [
                 RegionsPlugin.create({
                     slop: 8,
-                    regions: this.state.regions
+                    regions: []
                 })
             ]
         })
-
         this.wavesurfer.load(this.props.src);
     }
 
@@ -50,6 +45,7 @@ class Waveform extends Component {
         this.wavesurfer.playPause()
     }
     stopBtn = () => {
+        console.log(this.state)
         this.wavesurfer.stop()
     }
     skipBackward = () => {
@@ -128,14 +124,17 @@ class Waveform extends Component {
 
     onAddNoteRegion = () => {
         this.wavesurfer.addRegion(regionsObj[6])
+        this.setState({ noteRegion: regionsObj[6] })
     }
     onRemoveNoteRegion = () => {
         let region = this.wavesurfer.regions.list.pad7
         region.remove()
+        this.setState({ noteRegion: null })
     }
 
     clearRegions = () => {
         this.wavesurfer.clearRegions()
+        this.setState({ noteRegion: null, memoryRegion: null })
     }
 
     triggerOne = () => {
@@ -180,21 +179,20 @@ class Waveform extends Component {
         clip.play()
     }
 
-    notesMode = (val1, val2) => {
+    notesMode = () => {
         let waveNotes = this.props.notes
-        console.log(waveNotes)
-        this.wavesurfer.addRegion({
-            id: 'testPad',
-            start: `${val1}`,
-            end: `${val2}`,
+        waveNotes.map(note => this.wavesurfer.addRegion({
+            id: `note-${note.id}`,
+            start: `${note.note_pad_start}`,
+            end: `${note.note_pad_end}`,
             loop: false,
             drag: false,
             resize: false,
-            color: 'rgb(255, 176, 176, 0.4)',
+            color: 'rgb(182, 255, 163, 0.4)',
             attributes: {
-                label: "[1]"
+                label: `${note.id}`
             }
-        })
+        }))
     }
 
     ///// Region Controls //
