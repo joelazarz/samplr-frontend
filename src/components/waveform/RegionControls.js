@@ -238,6 +238,7 @@ const RegionControls = ({
             <div className="region-status-space"></div>
             <div className="region-status-space"></div>
             <div className="region-status-space"></div>
+
             <div className="region-status-space">
             <div className="region-control-small-save">
             { regionMemoryStatus ?
@@ -245,6 +246,7 @@ const RegionControls = ({
             : <></> }
             </div> 
             </div>
+
             <div className="region-status-space">
             <div className="region-control-small-save">
             { regionNoteStatus ? 
@@ -252,6 +254,7 @@ const RegionControls = ({
             : <></> }
             </div> 
             </div>
+
             <div className="region-status-space"></div>
             <div className="region-status-space"></div>
         </div>
