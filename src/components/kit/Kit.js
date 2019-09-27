@@ -58,12 +58,12 @@ const Kit = ({ kit: { kit, loading }, getKit }) => {
             
                 <div className="regions-specs">
                     <div className="specs-header">
-                        <h5>Region Specs</h5>
+                        <h5>User Stuff / crates / form rendering?</h5>
                     </div>
                 </div>
                 <div className="notes-specs">
                     <div className="specs-header">
-                        <h5>Notes Specs</h5>
+                        <h5>Notes / digs / Help</h5>
                     </div>
                 </div>
 

@@ -62,10 +62,10 @@ class Waveform extends Component {
         this.wavesurfer.setPlaybackRate(1)
     }
     speedDown = () => {
-        this.wavesurfer.setPlaybackRate((this.wavesurfer.getPlaybackRate(this.wavesurfer)) - 0.001)
+        this.wavesurfer.setPlaybackRate((this.wavesurfer.getPlaybackRate(this.wavesurfer)) - 0.01)
     }
     speedUp = () => {
-        this.wavesurfer.setPlaybackRate((this.wavesurfer.getPlaybackRate(this.wavesurfer)) + 0.001)
+        this.wavesurfer.setPlaybackRate((this.wavesurfer.getPlaybackRate(this.wavesurfer)) + 0.01)
     }
     mute = () => {
         this.wavesurfer.toggleMute()
@@ -76,6 +76,7 @@ class Waveform extends Component {
 
     // Region Controls /////
     onAddRegionOne = () => {
+        console.log()
         this.wavesurfer.addRegion(regionsObj[0])
     }
     onRemoveRegionOne = () => {
