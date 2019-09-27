@@ -68,7 +68,7 @@ class Waveform extends Component {
         this.wavesurfer.setPlaybackRate((this.wavesurfer.getPlaybackRate(this.wavesurfer)) + 0.01)
     }
     mute = () => {
-        this.wavesurfer.toggleMute()
+        this.wavesurfer.toggleMute((this.wavesurfer.getMute ? false : true))
     }
     ///// Playback Controls //
 

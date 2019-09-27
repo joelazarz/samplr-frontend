@@ -90,8 +90,8 @@ const PlaybackControls = ({
     }
 
     const toggleMute = () => {
+        setMuteStatus((muteStatus ? false : true))
         mute();
-        setMuteStatus(!!!muteStatus)
     }
 
     const handlePlaybackKey = (e) => {
@@ -108,6 +108,11 @@ const PlaybackControls = ({
             pitchUp()
         } else if (e.keyCode === 192){
             toggleMute()
+            try {
+                toggleMute()
+            } catch (error) {
+                toggleMute()
+            }
         } else if (e.keyCode === 37){
             skipBack()
         } else if (e.keyCode === 39){
