@@ -107,7 +107,6 @@ const PlaybackControls = ({
         } else if (e.keyCode === 191){
             pitchUp()
         } else if (e.keyCode === 192){
-            toggleMute()
             try {
                 toggleMute()
             } catch (error) {

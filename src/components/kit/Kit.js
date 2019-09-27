@@ -26,13 +26,13 @@ const Kit = ({ kit: { kit, loading }, getKit }) => {
         <div className="row">
             
             <div className="col s8 grey lighten-4">
-
+            <div className="kit-main-container">
                 <div className="kit-waveform-container">
                     <Waveform key={kit.id} src={kit.sample} notes={kit.notes} digs={kit.digs} />
                 </div>
 
                 <div className="kit-name-container">
-                    <h3>[ Kit Name ] : {kit.name}</h3>
+                    <span>[ Kit Name ] : {kit.name}</span>
                 </div>
 
                 <div className= "kit-detail">
@@ -49,7 +49,7 @@ const Kit = ({ kit: { kit, loading }, getKit }) => {
                         <img src={kit.image} alt={kit.name} />
                     </div>
                 </div>
-
+                </div>
             </div>
 
 
