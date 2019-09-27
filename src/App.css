@@ -1,6 +1,5 @@
 
 /* scroll bar styling  */
-
 ::-webkit-scrollbar {
     width: 10px;
 }
@@ -18,11 +17,10 @@
 ::-webkit-scrollbar-thumb:hover {
     background: #555;
 }
-
 /* scroll bar styling  */
 
-/* Discovery Page */
 
+/* Discovery Page */
 .discovery-kits-feed{
     height: 85vh;
     overflow: scroll;
@@ -58,7 +56,6 @@
 }
 
 .kit-detail-container{
-    /* min-height: 10%; */
     max-height: 10%;
     width: 50%;
     margin: 1em;
@@ -85,10 +82,11 @@
     margin: 3em;
     max-height: 20em;
 }
+/* Discovery Page */
+
 
 
 /* Kit Sidebar */
-
 .regions-specs{
     background: #ffffff;
     height: 46vh;
@@ -115,6 +113,7 @@
     margin-left: 5%;
     margin-top: 3%;
 }
+/* Kit Sidebar */
 
 
 
@@ -154,11 +153,12 @@
 .material-icons.mute.true { color: rgb(0, 140, 255); }
 
 .medium.material-icons { font-size: 3em;}
+/* Playback Controls Layout */
+
 
 
 /* //////////////// */
 /* Region Controls */
-
 .region-controls {
     display: flex;
     flex-direction: row;
@@ -248,7 +248,7 @@
     /* display: flex; */
     background: rgb(230, 230, 230);
     min-height: 5em;
-
+    justify-content: space-around;
 }
 
 .color-block .input {
@@ -256,9 +256,11 @@
     overflow: scroll;
     text-overflow: ellipsis;
 }
+/* Region Controls */
+
+
 
 /* Dig Note Form */
-
 #dig-note-submit-btn {
     margin-top: 2.3em;
     margin-left: 1.5em;

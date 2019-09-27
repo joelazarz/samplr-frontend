@@ -14,7 +14,7 @@ const DigForm = ({ kitId, digPadStart, digPadEnd, memorySubmit, addDig }) => {
 
     const onSubmit = () => {
         if(name === '' ){
-            M.toast({ html: 'slfllds' })
+            M.toast({ html: 'Please write something about this region' })
         } else {
             const newDig = {
                 kit_id,
