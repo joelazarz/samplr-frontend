@@ -12,6 +12,7 @@ import DigForm from './DigForm';
 class Waveform extends Component {
 
     state = {
+        id: this.props.id,
         memoryForm: false,
         noteForm: false,  
         memoryStart: null,
@@ -214,7 +215,13 @@ class Waveform extends Component {
         let end = this.wavesurfer.regions.list.pad7.start
         this.setState({ noteStart: start, noteEnd: end })
         this.setState({ noteForm: true, memoryForm: false })
+    }
 
+    onMemorySubmit = () => {
+        this.setState({ memoryForm: false })
+    }
+    onNoteSubmit = () => {
+        this.setState({ noteForm: false })
     }
 
     ///// Region Controls //
@@ -267,8 +274,8 @@ class Waveform extends Component {
             />
             
             <div className="color-block">
-            {this.state.noteForm ? <NoteForm noteStart={this.state.noteStart} noteEnd={this.state.noteEnd}/> : <></>}
-            {this.state.memoryForm ? <DigForm memoryStart={this.state.memoryStart} memoryEnd={this.state.memoryEnd}/> : <></>}
+            {this.state.noteForm ? <NoteForm kitId={this.state.id} noteStart={this.state.noteStart} noteEnd={this.state.noteEnd} noteSubmit={this.onNoteSubmit}/> : <></>}
+            {this.state.memoryForm ? <DigForm kitId={this.state.id} memoryStart={this.state.memoryStart} memoryEnd={this.state.memoryEnd} memorySubmit={this.onMemorySubmit}/> : <></>}
             </div>
 
 
