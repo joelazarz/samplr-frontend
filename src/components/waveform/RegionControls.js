@@ -44,77 +44,76 @@ const RegionControls = ({
     const [notesModeStatus, setNotesModeStatus] = useState(false)
 
     const regionOneEnable = () => {
-        addRegionOne()
         setRegionOneStatus(true)
+        addRegionOne()
     }
 
     const regionOneDisable = () => {
-        removeRegionOne()
         setRegionOneStatus(false)
+        removeRegionOne()
     }
 
     const regionTwoEnable = () => {
-        addRegionTwo()
         setRegionTwoStatus(true)
+        addRegionTwo()
     }
 
     const regionTwoDisable = () => {
-        removeRegionTwo()
         setRegionTwoStatus(false)
+        removeRegionTwo()
     }
 
     const regionThreeEnable = () => {
-        addRegionThree()
         setRegionThreeStatus(true)
+        addRegionThree()
     }
 
     const regionThreeDisable = () => {
-        removeRegionThree()
         setRegionThreeStatus(false)
+        removeRegionThree()
     }
 
     const regionFourEnable = () => {
-        addRegionFour()
         setRegionFourStatus(true)
+        addRegionFour()
     }
 
     const regionFourDisable = () => {
-        removeRegionFour()
         setRegionFourStatus(false)
+        removeRegionFour()
     }
 
     const regionFiveEnable = () => {
-        addRegionFive()
         setRegionFiveStatus(true)
+        addRegionFive()
     }
 
     const regionFiveDisable = () => {
-        removeRegionFive()
         setRegionFiveStatus(false)
+        removeRegionFive()
     }
 
     const regionMemoryEnable = () => {
-        addMemoryRegion()
         setRegionMemoryStatus(true)
+        addMemoryRegion()
     }
 
     const regionMemoryDisable = () => {
-        removeMemoryRegion()
         setRegionMemoryStatus(false)
+        removeMemoryRegion()
     }
 
     const regionNoteEnable = () => {
-        addNoteRegion()
         setRegionNoteStatus(true)
+        addNoteRegion()
     }
 
     const regionNoteDisable = () => {
-        removeNoteRegion()
         setRegionNoteStatus(false)
+        removeNoteRegion()
     }
 
     const clearWaveRegions = () => {
-        clearRegions()
         setRegionOneStatus(false)
         setRegionTwoStatus(false)
         setRegionThreeStatus(false)
@@ -122,6 +121,7 @@ const RegionControls = ({
         setRegionFiveStatus(false)
         setRegionMemoryStatus(false)
         setRegionNoteStatus(false)
+        clearRegions()
     }
 
     const enableNotesMode = () => {
@@ -139,19 +139,47 @@ const RegionControls = ({
     const handleRegionKey = (e) => {
         e.stopPropagation()
         if(regionOneStatus && e.keyCode === 49){
-            triggerOne()
+            try {
+                triggerOne()
+            } catch (error) {
+                regionOneEnable()
+            }
         } else if (regionTwoStatus && e.keyCode === 50){
-            triggerTwo()
+            try {
+                triggerTwo()
+            } catch (error) {
+                regionTwoEnable()
+            }
         } else if (regionThreeStatus && e.keyCode === 51){
-            triggerThree()
+            try {
+                triggerThree()
+            } catch (error) {
+                regionThreeEnable()
+            }
         } else if (regionFourStatus && e.keyCode === 52){
-            triggerFour()
+            try {
+                triggerFour()
+            } catch (error) {
+                regionFourEnable()
+            }
         } else if (regionFiveStatus && e.keyCode === 53){
-            triggerFive()
+            try {
+                triggerFive()
+            } catch (error) {
+                regionFiveEnable()
+            }
         } else if (regionMemoryStatus && e.keyCode === 54){
-            triggerMemory()
+            try {
+                triggerMemory()
+            } catch (error) {
+                regionMemoryEnable()
+            }
         } else if (regionNoteStatus && e.keyCode === 55){
-            triggerNote()
+            try {
+                triggerNote()
+            } catch (error) {
+                regionNoteEnable()
+            }
         } 
     }
 
