@@ -106,13 +106,14 @@ const PlaybackControls = ({
             slowedDisable()
         } else if (e.keyCode === 191){
             pitchUp()
-        } else if (e.keyCode === 192){
-            try {
-                toggleMute()
-            } catch (error) {
-                toggleMute()
-            }
-        } else if (e.keyCode === 37){
+        } 
+        // else if (e.keyCode === 192){
+        //     try {
+        //         toggleMute()
+        //     } catch (error) {
+        //         toggleMute()
+        //     }
+        else if (e.keyCode === 37){
             skipBack()
         } else if (e.keyCode === 39){
             skipAhead()

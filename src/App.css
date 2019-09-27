@@ -29,7 +29,7 @@
 }
 
 .height {
-    height: 96vh;
+    height: 99.5vh;
 }
 
 .kit-main-container {
@@ -40,7 +40,7 @@
     background: rgb(181, 190, 202);
     font-size: 1em;
     height: 2em;
-    margin: 1em;
+    margin: 1.2em;
 }
 
 .kit-detail {
@@ -88,7 +88,7 @@
 
 .regions-specs{
     background: #ffffff;
-    height: 45vh;
+    height: 46vh;
     margin: 1vw
 }
 
@@ -99,7 +99,7 @@
 
 .notes-specs{
     background: #ffffff;
-    height: 45vh;
+    height: 46vh;
     margin: 1vw;
 }
 
@@ -214,11 +214,11 @@
     display: flex;
     flex-direction: row;
     min-height: 2em;
-    background: rgb(218, 218, 218);
+    background: rgb(207, 223, 255);
 }
 
 .region-status-space {
-    background: rgb(226, 226, 226);
+    background: rgb(207, 223, 255);
     height: 2.5em;
     max-width: 8em;
     min-width: 6em;
@@ -226,8 +226,15 @@
 
 /* Below Regions Control */
 .color-block{
-    background: rgb(160, 160, 182);
+    background: rgb(230, 230, 230);
     min-height: 5em;
+
+}
+
+.color-block .input {
+    max-height: 100%;
+    overflow: scroll;
+    text-overflow: ellipsis;
 }
 
 .material-icons.false { color: rgb(121, 121, 121); }

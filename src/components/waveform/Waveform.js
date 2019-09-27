@@ -6,10 +6,14 @@ import regionsObj from './Regions';
 
 import PlaybackControls from '../waveform/PlaybackControls';
 import RegionControls from '../waveform/RegionControls';
+import NoteForm from './NoteForm';
+import DigForm from './DigForm';
 
 class Waveform extends Component {
 
-    state = {  
+    state = {
+        memoryForm: false,
+        noteForm: false,  
         memoryStart: null,
         memoryEnd: null,
         noteStart: null,
@@ -137,6 +141,7 @@ class Waveform extends Component {
     clearRegions = () => {
         this.wavesurfer.clearRegions()
         this.setState({ memoryStart: null, memoryEnd: null, noteStart: null, noteEnd: null })
+        this.setState({ memoryForm: false, noteForm: false })
     }
 
     triggerOne = () => {
@@ -201,12 +206,15 @@ class Waveform extends Component {
         let start = this.wavesurfer.regions.list.pad6.start
         let end = this.wavesurfer.regions.list.pad6.start
         this.setState({ memoryStart: start, memoryEnd: end })
+        this.setState({ memoryForm: true, noteForm: false })
     }
 
     onNoteSaveClick = () => {
         let start = this.wavesurfer.regions.list.pad7.start
         let end = this.wavesurfer.regions.list.pad7.start
         this.setState({ noteStart: start, noteEnd: end })
+        this.setState({ noteForm: true, memoryForm: false })
+
     }
 
     ///// Region Controls //
@@ -257,8 +265,13 @@ class Waveform extends Component {
             memorySaveClick={this.onMemorySaveClick}
             noteSaveClick={this.onNoteSaveClick}
             />
+            
             <div className="color-block">
+            {this.state.noteForm ? <NoteForm noteStart={this.state.noteStart} noteEnd={this.state.noteEnd}/> : <></>}
+            {this.state.memoryForm ? <DigForm memoryStart={this.state.memoryStart} memoryEnd={this.state.memoryEnd}/> : <></>}
             </div>
+
+
         </div>
         )
     }
