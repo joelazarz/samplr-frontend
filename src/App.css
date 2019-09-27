@@ -1,3 +1,4 @@
+
 /* scroll bar styling  */
 
 ::-webkit-scrollbar {
@@ -31,29 +32,33 @@
     height: 96vh;
 }
 
+.kit-main-container {
+    height: 100vh;
+}
+
 .kit-name-container{
-    background: lightcyan;
-    height: 5em;
-    margin: 1.5em;
+    background: rgb(181, 190, 202);
+    font-size: 1em;
+    height: 2em;
+    margin: 1em;
 }
 
 .kit-detail {
     display: flex;
     flex-direction: row;
+    min-height: 30em;
 }
 
 .kit-waveform-container{
     height: 28em;
-    margin: 1.5vw;
+    margin: 1em;
     background: white;
 }
 
 .kit-detail-container{
-    height: 15em;
-    width: 50em;
-    margin-right: 1.5vw;
-    margin-left: 1.5vw;
-    margin-bottom: 2vw;
+    min-height: 20em;
+    width: 50%;
+    margin: 1em;
     background: lightyellow;
 }
 
@@ -62,21 +67,20 @@
 }
 
 .kit-detail-text-container {
-    margin-left: 1em;
-    height: 11em;
-    width: 45em;
+    height: 22em;
 }
 
 .kit-detail-image-container {
-    margin-right: 0em;
+    margin: 1em;
     background: whitesmoke;
-    height: 18em;
-    width: 22vw;
+    width: 50%;
     text-align: center;
+    background: rgb(226, 226, 226);
 }
 
 .kit-detail-image-container img {
-    height: 25vh;
+    margin: 3em;
+    max-height: 20em;
 }
 
 
