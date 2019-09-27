@@ -2,7 +2,6 @@ import { ADD_DIG, DIG_ERROR } from './types'
 
 // ADD NEW DIG
 export const addDig = (newDig) => async dispatch => {
-    console.log('DIG', newDig)
     try {
         const res = await fetch('http://localhost:3000/digs', {
             method: 'POST',
@@ -12,7 +11,6 @@ export const addDig = (newDig) => async dispatch => {
             }
         })
         const data = await res.json()
-        console.log('[digActions.js] DATA:', data)
         dispatch({
             type: ADD_DIG,
             payload: data

@@ -23,7 +23,6 @@ const DigForm = ({ kitId, digPadStart, digPadEnd, memorySubmit, addDig }) => {
                 dig_pad_start,
                 dig_pad_end,
             }
-            console.log(newDig)
             addDig(newDig)
             M.toast({ html: 'Region Saved'})
         }
