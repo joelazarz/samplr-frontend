@@ -33,8 +33,8 @@
 
 .kit-name-container{
     background: lightcyan;
-    height: 10vh;
-    margin: 1.5vw;
+    height: 5em;
+    margin: 1.5em;
 }
 
 .kit-detail {
@@ -43,14 +43,14 @@
 }
 
 .kit-waveform-container{
-    height: 50vh;
+    height: 28em;
     margin: 1.5vw;
     background: white;
 }
 
 .kit-detail-container{
-    height: 25vh;
-    width: 40vw;
+    height: 15em;
+    width: 50em;
     margin-right: 1.5vw;
     margin-left: 1.5vw;
     margin-bottom: 2vw;
@@ -63,14 +63,14 @@
 
 .kit-detail-text-container {
     margin-left: 1em;
-    height: 20vh;
-    width: 38vw;
+    height: 11em;
+    width: 45em;
 }
 
 .kit-detail-image-container {
     margin-right: 0em;
     background: whitesmoke;
-    height: 25vh;
+    height: 18em;
     width: 22vw;
     text-align: center;
 }
@@ -127,7 +127,7 @@
 
 .playback-controls-secondary {
     background: #bdbdbd;
-    height: 5vh;
+    height: 2em;
 }
 
 /* Playback Control Icons */
@@ -151,7 +151,8 @@
     flex-direction: row;
     background: rgb(240, 240, 240);
     margin-top: 0em;
-    height: 11vh;
+    min-height: 6em;
+
 }
 
 .region-controls i {
@@ -187,7 +188,7 @@
 }
 
 .region-control-small-save {
-    margin-top: 0.4em;
+    margin-top: 0.5em;
     margin-right: 0.3em;
     margin-left: 1em;
 }
@@ -208,13 +209,13 @@
 .region-status-bar {
     display: flex;
     flex-direction: row;
-    height: 4vh;
+    min-height: 2em;
     background: rgb(218, 218, 218);
 }
 
 .region-status-space {
-    background: lightgray;
-    height: 4vh;
+    background: rgb(226, 226, 226);
+    height: 2.5em;
     max-width: 8em;
     min-width: 6em;
 }
@@ -222,7 +223,7 @@
 /* Below Regions Control */
 .color-block{
     background: rgb(160, 160, 182);
-    height: 8vh;
+    min-height: 5em;
 }
 
 .material-icons.false { color: rgb(121, 121, 121); }
