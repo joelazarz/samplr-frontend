@@ -1,4 +1,5 @@
 import React, { useEffect } from 'react'
+import NotesCard from './NotesCard';
 import Waveform from '../waveform/Waveform';
 import Spinner from '../layout/Spinner';
 import { connect } from 'react-redux'
@@ -65,6 +66,7 @@ const Kit = ({ kit: { kit, loading }, getKit }) => {
                     <div className="specs-header">
                         <h5>Notes / digs / Help</h5>
                     </div>
+                    {kit.notes.map(note => <NotesCard key={kit.id} note={note} />)}
                 </div>
 
             </div>
