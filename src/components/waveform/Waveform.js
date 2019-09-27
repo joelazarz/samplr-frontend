@@ -81,7 +81,6 @@ class Waveform extends Component {
 
     // Region Controls /////
     onAddRegionOne = () => {
-        console.log()
         this.wavesurfer.addRegion(regionsObj[0])
     }
     onRemoveRegionOne = () => {

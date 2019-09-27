@@ -12,7 +12,6 @@ export default (state = initialState, action) => {
                 digs: [...state.digs, action.payload],
             }
             case DIG_ERROR:
-                    console.error(action.payload)
                     return {
                         ...state,
                         error: action.payload

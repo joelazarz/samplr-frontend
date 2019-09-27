@@ -24,7 +24,6 @@ export const getKits = () => async dispatch => {
 export const addKit = (newKit) => async dispatch => {
     try {
     setLoading();
-    console.log('ACTION', newKit)
     const res = await fetch('/kits', {
         method: 'POST',
         body: JSON.stringify(newKit),
@@ -33,7 +32,6 @@ export const addKit = (newKit) => async dispatch => {
         }
     })
     const data = await res.json()
-    console.log('[discoveryActions.js] DATA:', data)
     dispatch({
         type: ADD_KIT,
         payload: data
