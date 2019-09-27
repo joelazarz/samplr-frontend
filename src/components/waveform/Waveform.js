@@ -204,14 +204,14 @@ class Waveform extends Component {
 
     onMemorySaveClick = () => {
         let start = this.wavesurfer.regions.list.pad6.start
-        let end = this.wavesurfer.regions.list.pad6.start
+        let end = this.wavesurfer.regions.list.pad6.end
         this.setState({ memoryStart: start, memoryEnd: end })
         this.setState({ memoryForm: true, noteForm: false })
     }
 
     onNoteSaveClick = () => {
         let start = this.wavesurfer.regions.list.pad7.start
-        let end = this.wavesurfer.regions.list.pad7.start
+        let end = this.wavesurfer.regions.list.pad7.end
         this.setState({ noteStart: start, noteEnd: end })
         this.setState({ noteForm: true, memoryForm: false })
     }
