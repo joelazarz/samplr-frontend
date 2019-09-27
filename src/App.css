@@ -24,7 +24,7 @@
 /* Discovery Page */
 
 .discovery-kits-feed{
-    height: 81vh;
+    height: 85vh;
     overflow: scroll;
 }
 
@@ -38,9 +38,11 @@
 
 .kit-name-container{
     background: rgb(181, 190, 202);
-    font-size: 1em;
-    height: 2em;
-    margin: 1.2em;
+    height: 4em;
+    margin-top: 1.2em;
+    margin-left: 1em;
+    margin-right: 1em;
+    margin-bottom: 0em;
 }
 
 .kit-detail {
@@ -68,7 +70,7 @@
 }
 
 .kit-detail-text-container {
-    /* height: 22em; */
+    height: 85%;
 }
 
 .kit-detail-image-container {

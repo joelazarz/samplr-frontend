@@ -11,7 +11,11 @@ export const ADD_KIT = 'ADD_KIT'
 // User
 
 // Region
+export const ADD_DIG = 'ADD_DIG'
+export const DIG_ERROR = 'DIG_ERROR'
 
 // Note
+export const ADD_NOTE = 'ADD_NOTE'
+export const NOTE_ERROR = 'NOTE_ERROR'
 
 // Genre

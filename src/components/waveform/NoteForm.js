@@ -37,7 +37,7 @@ const NoteForm = ({ kitId, noteStart, noteEnd, noteSubmit }) => {
                 <a href='#!'
                 onClick={onSubmit}
                 id='dig-note-submit-btn'
-                className='waves-effect black waves-light btn-small'>Submit</a>
+                className='waves-effect black waves-light btn-small'>Leave Note</a>
             </div>
         </>
     )

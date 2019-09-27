@@ -20,7 +20,7 @@ export const getKits = () => async dispatch => {
 }
 
 
-// Add new Kit
+// ADD NEW KIT
 export const addKit = (newKit) => async dispatch => {
     try {
     setLoading();
@@ -41,7 +41,7 @@ export const addKit = (newKit) => async dispatch => {
     } catch (error) {
     dispatch({
         type: KITS_ERROR,
-        payload:error.respose.data
+        payload:error.response.data
     })
     }
 }

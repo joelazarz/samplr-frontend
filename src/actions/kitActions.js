@@ -14,7 +14,7 @@ export const getKit = (pathname) => async dispatch => {
     } catch (error) {
     dispatch({
         type: KIT_ERROR,
-        payload:error.respose.data
+        payload:error.response.data
     })
     }
 }

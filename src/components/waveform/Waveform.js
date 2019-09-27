@@ -275,7 +275,7 @@ class Waveform extends Component {
             
             <div className="color-block">
             {this.state.noteForm ? <NoteForm kitId={this.state.id} noteStart={this.state.noteStart} noteEnd={this.state.noteEnd} noteSubmit={this.onNoteSubmit}/> : <></>}
-            {this.state.memoryForm ? <DigForm kitId={this.state.id} memoryStart={this.state.memoryStart} memoryEnd={this.state.memoryEnd} memorySubmit={this.onMemorySubmit}/> : <></>}
+            {this.state.memoryForm ? <DigForm kitId={this.state.id} digPadStart={this.state.memoryStart} digPadEnd={this.state.memoryEnd} memorySubmit={this.onMemorySubmit}/> : <></>}
             </div>
 
 
