@@ -25,10 +25,10 @@ const Kit = ({ kit: { kit, loading }, getKit }) => {
         <>
         <div className="row">
             
-            <div className="col s8 grey lighten-4">
+            <div className="col s8 grey lighten-5">
             <div className="kit-main-container">
                 <div className="kit-waveform-container">
-                    <Waveform key={kit.id} src={kit.sample} notes={kit.notes} digs={kit.digs} />
+                    <Waveform key={kit.id} id={kit.id} src={kit.sample} notes={kit.notes} digs={kit.digs} />
                 </div>
 
                 <div className="kit-name-container">

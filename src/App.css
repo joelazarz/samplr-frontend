@@ -33,7 +33,7 @@
 }
 
 .kit-main-container {
-    height: 100vh;
+    height: 200vh;
 }
 
 .kit-name-container{
@@ -56,7 +56,8 @@
 }
 
 .kit-detail-container{
-    min-height: 20em;
+    /* min-height: 10%; */
+    max-height: 10%;
     width: 50%;
     margin: 1em;
     background: lightyellow;
@@ -67,7 +68,7 @@
 }
 
 .kit-detail-text-container {
-    height: 22em;
+    /* height: 22em; */
 }
 
 .kit-detail-image-container {
@@ -224,8 +225,19 @@
     min-width: 6em;
 }
 
+.material-icons.false { color: rgb(121, 121, 121); }
+
+.material-icons.region1.true { color: rgb(255, 176, 176); }
+.material-icons.region2.true { color: rgb(187, 255, 198); }
+.material-icons.region3.true { color: rgb(191, 253, 255); }
+.material-icons.region4.true { color: rgb(247, 161, 255); }
+.material-icons.region5.true { color: rgb(207, 149, 255); }
+.material-icons.regionMemory.true { color: rgb(219, 0, 0); }
+.material-icons.regionNote.true { color: rgb(0, 110, 24); }
+
 /* Below Regions Control */
 .color-block{
+    /* display: flex; */
     background: rgb(230, 230, 230);
     min-height: 5em;
 
@@ -237,14 +249,14 @@
     text-overflow: ellipsis;
 }
 
-.material-icons.false { color: rgb(121, 121, 121); }
+/* Dig Note Form */
 
-.material-icons.region1.true { color: rgb(255, 176, 176); }
-.material-icons.region2.true { color: rgb(187, 255, 198); }
-.material-icons.region3.true { color: rgb(191, 253, 255); }
-.material-icons.region4.true { color: rgb(247, 161, 255); }
-.material-icons.region5.true { color: rgb(207, 149, 255); }
-.material-icons.regionMemory.true { color: rgb(219, 0, 0); }
-.material-icons.regionNote.true { color: rgb(0, 110, 24); }
+#dig-note-submit-btn {
+    margin-top: 2.3em;
+    margin-left: 1.5em;
+}
+
+
+
 
 
