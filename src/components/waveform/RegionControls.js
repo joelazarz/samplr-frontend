@@ -1,5 +1,6 @@
 import React, { useState, useEffect } from 'react'
 import { PropTypes } from 'prop-types';
+import Fade from 'react-reveal/Fade';
 
 const RegionControls = ({ 
     addRegionOne,
@@ -270,19 +271,21 @@ const RegionControls = ({
             <div className="region-status-space">
             <div className="region-control-small-save">
             { regionMemoryStatus ?
+            <Fade >
             <div onClick={memorySaveClick} className="region-control-small-save-btn">Save</div>
+            </Fade>
             : <></> }
             </div> 
             </div>
-
             <div className="region-status-space">
             <div className="region-control-small-save">
             { regionNoteStatus ? 
+            <Fade >
             <div onClick={noteSaveClick} className="region-control-small-save-btn">Save</div>
+            </Fade>
             : <></> }
             </div> 
             </div>
-
             <div className="region-status-space"></div>
             <div className="region-status-space"></div>
         </div>
