@@ -43,6 +43,21 @@ const Kit = ({ kit: { kit, loading }, getKit }) => {
     const cueMemoryButton = (dig) => {
         !digCue.includes(dig) ? setDigCue([...digCue, dig]) : setDigCue([...digCue])
     }
+    const removeFromCue = (dig) => {
+        let digArray = digCue.filter(digObj => digObj !== dig);
+        setDigCue(digArray)
+    }
+    const shiftDig = () => {
+        console.log('ONE',digCue)
+        digCue.shift()
+        console.log('TWO', digCue)
+        setDigCue([...digCue])
+    }
+
+    // sellStock = (stockObj) => {
+    //     let portfolioArray = this.state.portfolio.filter(stock => stock !== stockObj);
+    //     this.setState({ portfolio: portfolioArray });
+    //   }
 
 
     
@@ -58,7 +73,7 @@ const Kit = ({ kit: { kit, loading }, getKit }) => {
             <div className="col s8 grey lighten-5">
             <div className="kit-main-container">
                 <div className="kit-waveform-container">
-                    <Waveform key={kit.id} id={kit.id} src={kit.sample} notes={kit.notes} digs={kit.digs} />
+                    <Waveform key={kit.id} id={kit.id} src={kit.sample} notes={kit.notes} digs={kit.digs} digCue={digCue} shiftDig={shiftDig} />
                 </div>
 
                 <div className="kit-name-container">
@@ -100,7 +115,7 @@ const Kit = ({ kit: { kit, loading }, getKit }) => {
 
                     { notesButton ? kit.notes.map(note => <NotesCard key={note.id} note={note} />) : <></> }
 
-                    { cueViewButton ? digCue.map(dig => dig.kit_id === kit.id ? <CueCard key={dig.id} dig={dig}/> : <></>) : <></> }
+                    { cueViewButton ? digCue.map(dig => dig.kit_id === kit.id ? <CueCard key={dig.id} removeHandler={removeFromCue} dig={dig}/> : <></>) : <></> }
 
                     { memoryButton ? kit.digs.map(dig => <MemoryCard clickHandler={cueMemoryButton} key={dig.id} dig={dig} />) : <></> }
 

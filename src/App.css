@@ -117,9 +117,12 @@
 
 .notecard { 
     width: 90%;
+    height: 10%;
     margin-left: 5%;
     margin-top: 3%;
 }
+
+.cueremove { float:right; }
 /* Kit Sidebar */
 
 
@@ -229,13 +232,13 @@
 .region-status-bar {
     display: flex;
     flex-direction: row;
-    min-height: 2em;
+    min-height: 2.6em;
     background: rgb(207, 223, 255);
 }
 
 .region-status-space {
     background: rgb(207, 223, 255);
-    height: 2.5em;
+    /* height: 2.5em; */
     max-width: 8em;
     min-width: 6em;
 }

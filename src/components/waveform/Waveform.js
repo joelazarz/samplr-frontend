@@ -53,7 +53,6 @@ class Waveform extends Component {
         this.wavesurfer.playPause()
     }
     stopBtn = () => {
-        console.log(this.state)
         this.wavesurfer.stop()
     }
     skipBackward = () => {
@@ -204,6 +203,21 @@ class Waveform extends Component {
         }))
     }
 
+    loadRegion = () => {
+        let firstDig = [this.props.digCue[0]];
+        firstDig.map(dig => this.wavesurfer.addRegion({
+            id: 'pad1',
+            start: `${dig.dig_pad_start}`,
+            end: `${dig.dig_pad_end}`,
+            loop: false,
+            color: 'rgb(255, 176, 176, 0.4)',
+            attributes: {
+                label: '[1]'
+            }
+        }))
+        this.props.shiftDig()
+    }
+
     onMemorySaveClick = () => {
         let start = this.wavesurfer.regions.list.pad6.start
         let end = this.wavesurfer.regions.list.pad6.end
@@ -282,6 +296,7 @@ class Waveform extends Component {
             notesMode={this.notesMode}
             memorySaveClick={this.onMemorySaveClick}
             noteSaveClick={this.onNoteSaveClick}
+            loadRegion={this.loadRegion}
             />
             
             <div className="color-block">
