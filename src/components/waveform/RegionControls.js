@@ -27,7 +27,8 @@ const RegionControls = ({
     triggerNote,
     notesMode,
     memorySaveClick,
-    noteSaveClick
+    noteSaveClick,
+    loadRegion
 }) => {
 
     useEffect(()=>{
@@ -262,11 +263,39 @@ const RegionControls = ({
         </div>
         
         <div className="region-status-bar">
-            <div className="region-status-space"></div>
-            <div className="region-status-space"></div>
-            <div className="region-status-space"></div>
-            <div className="region-status-space"></div>
-            <div className="region-status-space"></div>
+            <div className="region-status-space">
+            <div className="region-control-small-save">
+            <div onClick={loadRegion} className="region-control-small-save-btn">Load</div>
+            </div>
+            </div>
+            <div className="region-status-space">
+            <div className="region-status-space">
+            <div className="region-control-small-save">
+            <div onClick={loadRegion} className="region-control-small-save-btn">Load</div>
+            </div>
+            </div>
+            </div>
+            <div className="region-status-space">
+            <div className="region-status-space">
+            <div className="region-control-small-save">
+            <div onClick={loadRegion} className="region-control-small-save-btn">Load</div>
+            </div>
+            </div>
+            </div>
+            <div className="region-status-space">
+            <div className="region-status-space">
+            <div className="region-control-small-save">
+            <div onClick={loadRegion} className="region-control-small-save-btn">Load</div>
+            </div>
+            </div>
+            </div>
+            <div className="region-status-space">
+            <div className="region-status-space">
+            <div className="region-control-small-save">
+            <div onClick={loadRegion} className="region-control-small-save-btn">Load</div>
+            </div>
+            </div>
+            </div>
 
             <div className="region-status-space">
             <div className="region-control-small-save">
