@@ -96,6 +96,13 @@
 .specs-header {
     background: rgb(223, 223, 223);
     height: 3em;
+    display: flex;  
+    flex-direction: row;
+    justify-content: space-around;
+}
+
+.specs-button {
+    margin: .4em;
 }
 
 .notes-specs{

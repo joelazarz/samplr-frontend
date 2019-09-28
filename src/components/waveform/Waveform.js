@@ -18,7 +18,9 @@ class Waveform extends Component {
         memoryStart: null,
         memoryEnd: null,
         noteStart: null,
-        noteEnd: null
+        noteEnd: null,
+        digs: this.props.digs,
+        notes: this.props.notes
     }
 
     componentDidMount() {
@@ -222,6 +224,16 @@ class Waveform extends Component {
     onNoteSubmit = () => {
         this.setState({ noteForm: false })
     }
+
+    //
+    // function that will find exact dig and give user ability to load that into the waveform
+    //
+
+    //
+    // function that will find exact note on waveform event and render it to a component
+    //
+
+
 
     ///// Region Controls //
 

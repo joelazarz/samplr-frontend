@@ -1,6 +1,8 @@
-import React, { useEffect } from 'react'
+import React, { useState, useEffect } from 'react'
 import NotesCard from './NotesCard';
 import Waveform from '../waveform/Waveform';
+import MemoryCard from './MemoryCard';
+import CueCard from './CueCard';
 import Spinner from '../layout/Spinner';
 import { connect } from 'react-redux'
 
@@ -9,6 +11,11 @@ import { getKit } from '../../actions/kitActions';
 
 const Kit = ({ kit: { kit, loading }, getKit }) => {
 
+    const [notesButton, setNotesButton] = useState(false)
+    const [memoryButton, setMemoryButton] = useState(false)
+    const [cueViewButton, setCueViewButton] = useState(false)
+    const [digCue, setDigCue] = useState([])
+
     useEffect(() => {
         getKit(window.location.pathname)
     }, [])
@@ -16,6 +23,28 @@ const Kit = ({ kit: { kit, loading }, getKit }) => {
     console.log('kit.js [kit]', kit)
     // using the window.location.pathname to direct the action to the endpoint in the api :/
     // console.log('Kit.js [window.location.pathname]', window.location.pathname)
+
+    // kit state functions
+    const viewNotesButton = () => {
+        setNotesButton(true)
+        setMemoryButton(false)
+        setCueViewButton(false)
+    }
+    const viewMemoryButton = () => {
+        setMemoryButton(true)
+        setNotesButton(false)
+        setCueViewButton(false)
+    }
+    const viewCueButton = () => {
+        setCueViewButton(true)
+        setNotesButton(false)
+        setMemoryButton(false)
+    }
+    const cueMemoryButton = (dig) => {
+        !digCue.includes(dig) ? setDigCue([...digCue, dig]) : setDigCue([...digCue])
+    }
+
+
     
 
     if (loading || kit === null) {
@@ -64,9 +93,17 @@ const Kit = ({ kit: { kit, loading }, getKit }) => {
                 </div>
                 <div className="notes-specs">
                     <div className="specs-header">
-                        <h5>Notes / digs / Help</h5>
+                    <div className='specs-button'><a onClick={viewNotesButton} className="waves-effect waves-light grey lighten-1 btn-small">Notes</a></div>
+                    <div className='specs-button'><a onClick={viewMemoryButton} className="waves-effect waves-light grey lighten-1 btn-small">Memory</a></div>
+                    <div className='specs-button'><a  onClick={viewCueButton} className="waves-effect waves-light grey lighten-1 btn-small">Cue</a></div>
                     </div>
-                    {kit.notes.map(note => <NotesCard key={kit.id} note={note} />)}
+
+                    { notesButton ? kit.notes.map(note => <NotesCard key={note.id} note={note} />) : <></> }
+
+                    { cueViewButton ? digCue.map(dig => dig.kit_id === kit.id ? <CueCard key={dig.id} dig={dig}/> : <></>) : <></> }
+
+                    { memoryButton ? kit.digs.map(dig => <MemoryCard clickHandler={cueMemoryButton} key={dig.id} dig={dig} />) : <></> }
+
                 </div>
 
             </div>
