@@ -48,19 +48,9 @@ const Kit = ({ kit: { kit, loading }, getKit }) => {
         setDigCue(digArray)
     }
     const shiftDig = () => {
-        console.log('ONE',digCue)
         digCue.shift()
-        console.log('TWO', digCue)
         setDigCue([...digCue])
     }
-
-    // sellStock = (stockObj) => {
-    //     let portfolioArray = this.state.portfolio.filter(stock => stock !== stockObj);
-    //     this.setState({ portfolio: portfolioArray });
-    //   }
-
-
-    
 
     if (loading || kit === null) {
         return <Spinner />

@@ -24,12 +24,10 @@ const NoteForm = ({ kitId, noteStart, noteEnd, noteSubmit, addNote }) => {
                 note_pad_start,
                 note_pad_end
             }
-            console.log('NEWNOTE FROM FORM:', newNote)
             addNote(newNote)
             M.toast({ html: 'Note Added'})
         }
         setNote('')
-
     }
 
 

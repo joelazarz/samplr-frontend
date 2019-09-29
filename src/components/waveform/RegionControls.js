@@ -394,7 +394,12 @@ RegionControls.propTypes = {
     triggerNote: PropTypes.func.isRequired,
     notesMode: PropTypes.func.isRequired,
     memorySaveClick: PropTypes.func.isRequired,
-    noteSaveClick: PropTypes.func.isRequired
+    noteSaveClick: PropTypes.func.isRequired,
+    loadRegionOne: PropTypes.func.isRequired,
+    loadRegionTwo: PropTypes.func.isRequired,
+    loadRegionThree: PropTypes.func.isRequired,
+    loadRegionFour: PropTypes.func.isRequired,
+    loadRegionFive: PropTypes.func.isRequired
 }
 
 export default RegionControls
