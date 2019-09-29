@@ -295,14 +295,6 @@ class Waveform extends Component {
         this.setState({ noteForm: false })
     }
 
-    //
-    // function that will find exact dig and give user ability to load that into the waveform
-    //
-
-    //
-    // function that will find exact note on waveform event and render it to a component
-    //
-
 
 
     ///// Region Controls //
