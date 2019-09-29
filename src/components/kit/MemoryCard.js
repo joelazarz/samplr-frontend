@@ -5,8 +5,9 @@ const MemoryCard = ({ dig, clickHandler }) => {
     
     return (
         <>
-        <div onClick={() => clickHandler(dig)} className="notecard grey lighten-1">
+        <div className="notecard grey lighten-1">
             <span className="black-text">{dig.name}</span>
+            <i onClick={() => clickHandler(dig)} className="cueremove material-icons">add_circle_outline</i>
         </div>
         </>
     )

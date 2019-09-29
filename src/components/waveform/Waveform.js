@@ -203,10 +203,66 @@ class Waveform extends Component {
         }))
     }
 
-    loadRegion = () => {
-        let firstDig = [this.props.digCue[0]];
-        firstDig.map(dig => this.wavesurfer.addRegion({
+    loadRegionOne = () => {
+        let digToLoad = [this.props.digCue[0]];
+        digToLoad.map(dig => this.wavesurfer.addRegion({
             id: 'pad1',
+            start: `${dig.dig_pad_start}`,
+            end: `${dig.dig_pad_end}`,
+            loop: false,
+            color: 'rgb(255, 176, 176, 0.4)',
+            attributes: {
+                label: '[1]'
+            }
+        }))
+        this.props.shiftDig()
+    }
+    loadRegionTwo = () => {
+        let digToLoad = [this.props.digCue[0]];
+        digToLoad.map(dig => this.wavesurfer.addRegion({
+            id: 'pad2',
+            start: `${dig.dig_pad_start}`,
+            end: `${dig.dig_pad_end}`,
+            loop: false,
+            color: 'rgb(255, 176, 176, 0.4)',
+            attributes: {
+                label: '[1]'
+            }
+        }))
+        this.props.shiftDig()
+    }
+    loadRegionThree = () => {
+        let digToLoad = [this.props.digCue[0]];
+        digToLoad.map(dig => this.wavesurfer.addRegion({
+            id: 'pad3',
+            start: `${dig.dig_pad_start}`,
+            end: `${dig.dig_pad_end}`,
+            loop: false,
+            color: 'rgb(255, 176, 176, 0.4)',
+            attributes: {
+                label: '[1]'
+            }
+        }))
+        this.props.shiftDig()
+    }
+    loadRegionFour = () => {
+        let digToLoad = [this.props.digCue[0]];
+        digToLoad.map(dig => this.wavesurfer.addRegion({
+            id: 'pad4',
+            start: `${dig.dig_pad_start}`,
+            end: `${dig.dig_pad_end}`,
+            loop: false,
+            color: 'rgb(255, 176, 176, 0.4)',
+            attributes: {
+                label: '[1]'
+            }
+        }))
+        this.props.shiftDig()
+    }
+    loadRegionFive = () => {
+        let digToLoad = [this.props.digCue[0]];
+        digToLoad.map(dig => this.wavesurfer.addRegion({
+            id: 'pad5',
             start: `${dig.dig_pad_start}`,
             end: `${dig.dig_pad_end}`,
             loop: false,
@@ -296,7 +352,11 @@ class Waveform extends Component {
             notesMode={this.notesMode}
             memorySaveClick={this.onMemorySaveClick}
             noteSaveClick={this.onNoteSaveClick}
-            loadRegion={this.loadRegion}
+            loadRegionOne={this.loadRegionOne}
+            loadRegionTwo={this.loadRegionTwo}
+            loadRegionThree={this.loadRegionThree}
+            loadRegionFour={this.loadRegionFour}
+            loadRegionFive={this.loadRegionFive}
             />
             
             <div className="color-block">
