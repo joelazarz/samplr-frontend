@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from 'react'
 import { PropTypes } from 'prop-types';
 import Fade from 'react-reveal/Fade';
+import M from 'materialize-css/dist/js/materialize.min.js'
 
 const RegionControls = ({ 
     addRegionOne,
@@ -28,7 +29,12 @@ const RegionControls = ({
     notesMode,
     memorySaveClick,
     noteSaveClick,
-    loadRegion
+    loadRegionOne,
+    loadRegionTwo,
+    loadRegionThree,
+    loadRegionFour,
+    loadRegionFive,
+    
 }) => {
 
     useEffect(()=>{
@@ -103,6 +109,47 @@ const RegionControls = ({
     const regionMemoryDisable = () => {
         setRegionMemoryStatus(false)
         removeMemoryRegion()
+    }
+
+    const loadMemoryRegionOne = () => {
+        try {
+            loadRegionOne()
+            setRegionOneStatus(true)
+        } catch (error) {
+            M.toast({html: 'Cue is empty'})
+        }
+    }
+    const loadMemoryRegionTwo = () => {
+        try {
+            loadRegionTwo()
+            setRegionTwoStatus(true)
+        } catch (error) {
+            M.toast({html: 'Cue is empty'})
+        }
+    }
+    const loadMemoryRegionThree = () => {
+        try {
+            loadRegionThree()
+            setRegionThreeStatus(true)
+        } catch (error) {
+            M.toast({html: 'Cue is empty'})
+        }
+    }
+    const loadMemoryRegionFour = () => {
+        try {
+            loadRegionFour()
+            setRegionFourStatus(true)
+        } catch (error) {
+            M.toast({html: 'Cue is empty'})
+        }
+    }
+    const loadMemoryRegionFive = () => {
+        try {
+            loadRegionFive()
+            setRegionFiveStatus(true)
+        } catch (error) {
+            M.toast({html: 'Cue is empty'})
+        }
     }
 
     const regionNoteEnable = () => {
@@ -265,34 +312,34 @@ const RegionControls = ({
         <div className="region-status-bar">
             <div className="region-status-space">
             <div className="region-control-small-save">
-            <div onClick={loadRegion} className="region-control-small-save-btn">Load</div>
+            <div onClick={loadMemoryRegionOne} className="region-control-small-save-btn">Load</div>
             </div>
             </div>
             <div className="region-status-space">
             <div className="region-status-space">
             <div className="region-control-small-save">
-            <div onClick={loadRegion} className="region-control-small-save-btn">Load</div>
-            </div>
-            </div>
-            </div>
-            <div className="region-status-space">
-            <div className="region-status-space">
-            <div className="region-control-small-save">
-            <div onClick={loadRegion} className="region-control-small-save-btn">Load</div>
+            <div onClick={loadMemoryRegionTwo} className="region-control-small-save-btn">Load</div>
             </div>
             </div>
             </div>
             <div className="region-status-space">
             <div className="region-status-space">
             <div className="region-control-small-save">
-            <div onClick={loadRegion} className="region-control-small-save-btn">Load</div>
+            <div onClick={loadMemoryRegionThree} className="region-control-small-save-btn">Load</div>
             </div>
             </div>
             </div>
             <div className="region-status-space">
             <div className="region-status-space">
             <div className="region-control-small-save">
-            <div onClick={loadRegion} className="region-control-small-save-btn">Load</div>
+            <div onClick={loadMemoryRegionFour} className="region-control-small-save-btn">Load</div>
+            </div>
+            </div>
+            </div>
+            <div className="region-status-space">
+            <div className="region-status-space">
+            <div className="region-control-small-save">
+            <div onClick={loadMemoryRegionFive} className="region-control-small-save-btn">Load</div>
             </div>
             </div>
             </div>
