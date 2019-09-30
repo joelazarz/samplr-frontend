@@ -187,43 +187,43 @@ const RegionControls = ({
 
     const handleRegionKey = (e) => {
         e.stopPropagation()
-        if(regionOneStatus && e.keyCode === 49){
+        if(regionOneStatus && e.shiftKey && e.keyCode === 49){
             try {
                 triggerOne()
             } catch (error) {
                 regionOneEnable()
             }
-        } else if (regionTwoStatus && e.keyCode === 50){
+        } else if (regionTwoStatus && e.shiftKey  && e.keyCode === 50){
             try {
                 triggerTwo()
             } catch (error) {
                 regionTwoEnable()
             }
-        } else if (regionThreeStatus && e.keyCode === 51){
+        } else if (regionThreeStatus && e.shiftKey  && e.keyCode === 51){
             try {
                 triggerThree()
             } catch (error) {
                 regionThreeEnable()
             }
-        } else if (regionFourStatus && e.keyCode === 52){
+        } else if (regionFourStatus && e.shiftKey  && e.keyCode === 52){
             try {
                 triggerFour()
             } catch (error) {
                 regionFourEnable()
             }
-        } else if (regionFiveStatus && e.keyCode === 53){
+        } else if (regionFiveStatus && e.shiftKey  && e.keyCode === 53){
             try {
                 triggerFive()
             } catch (error) {
                 regionFiveEnable()
             }
-        } else if (regionMemoryStatus && e.keyCode === 54){
+        } else if (regionMemoryStatus && e.shiftKey  && e.keyCode === 54){
             try {
                 triggerMemory()
             } catch (error) {
                 regionMemoryEnable()
             }
-        } else if (regionNoteStatus && e.keyCode === 55){
+        } else if (regionNoteStatus && e.shiftKey  && e.keyCode === 55){
             try {
                 triggerNote()
             } catch (error) {

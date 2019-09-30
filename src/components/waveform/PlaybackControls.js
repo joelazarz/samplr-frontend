@@ -96,15 +96,15 @@ const PlaybackControls = ({
 
     const handlePlaybackKey = (e) => {
         e.stopPropagation()
-        if(e.keyCode === 65){
+        if(e.ctrlKey && e.keyCode === 65){
             playEnable()
-        } else if (e.keyCode === 83){
+        } else if (e.ctrlKey && e.keyCode === 83){
             stopEnable()
-        } else if (e.keyCode === 188){
+        } else if (e.ctrlKey && e.keyCode === 188){
             pitchDown()
-        } else if (e.keyCode === 190){
+        } else if (e.ctrlKey && e.keyCode === 190){
             slowedDisable()
-        } else if (e.keyCode === 191){
+        } else if (e.ctrlKey && e.keyCode === 191){
             pitchUp()
         } 
         // else if (e.keyCode === 192){
