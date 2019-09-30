@@ -9,7 +9,7 @@ const Signup = ({ setSessionUser, history }) => {
 
     const onSubmit = () => {
         if(username === '' || password === ''){
-            M.toast({ html: 'Please enter Username' })
+            M.toast({ html: 'Please enter Username and Password' })
         } else {
             const newUser = {
                 username,
