@@ -141,6 +141,7 @@ class Waveform extends Component {
 
     clearRegions = () => {
         this.wavesurfer.clearRegions()
+        this.wavesurfer.zoom(20)
         this.setState({ memoryStart: null, memoryEnd: null, noteStart: null, noteEnd: null })
         this.setState({ memoryForm: false, noteForm: false })
     }
@@ -188,6 +189,7 @@ class Waveform extends Component {
     }
 
     notesMode = () => {
+        this.wavesurfer.zoom(1)
         let waveNotes = this.props.notes
         waveNotes.map(note => this.wavesurfer.addRegion({
             id: `note-${note.id}`,

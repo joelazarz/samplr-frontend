@@ -19,6 +19,11 @@
 }
 /* scroll bar styling  */
 
+.nav-bar{
+    height: 3em;
+    background: lightgray;
+}
+
 
 /* Discovery Page */
 .discovery-kits-feed{
@@ -282,6 +287,13 @@
 #dig-note-submit-btn {
     margin-top: 2.3em;
     margin-left: 1.5em;
+}
+
+
+/* User */
+.new-crate-form {
+    margin: 1em;
+    height: 45%;
 }
 
 

@@ -1,4 +1,5 @@
 import React, { useState, useEffect } from 'react'
+import Navbar from '../layout/Navbar';
 import NotesCard from './NotesCard';
 import Waveform from '../waveform/Waveform';
 import MemoryCard from './MemoryCard';
@@ -57,7 +58,7 @@ const Kit = ({ kit: { kit, loading }, user, getKit }) => {
     return (
         <>
         <div className="row">
-            
+            <Navbar />
             <div className="col s8 grey lighten-5">
             <div className="kit-main-container">
                 <div className="kit-waveform-container">

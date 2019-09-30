@@ -1,4 +1,5 @@
 import React, { useEffect } from 'react'
+import Navbar from '../layout/Navbar';
 import DiscoveryCard from './DiscoveryCard';
 import Spinner from '../layout/Spinner';
 
@@ -22,7 +23,7 @@ const Discovery = ({ kits: { kits, loading }, getKits }) => {
     return (
         <>
         <div className="row">
-            
+            <Navbar />
             <div className="col s8 grey lighten-4">
             <div className="height">
                 <h3>8-columns</h3>
