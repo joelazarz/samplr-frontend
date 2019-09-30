@@ -22,11 +22,14 @@ const App = () => {
   }
   
   useEffect(() => {
-    //auto login
-    autoLogin();
     //Init Materialize JS
     M.AutoInit();
   })
+
+  useEffect(() => {
+    //auto login
+    autoLogin();
+  }, [])
 
   const autoLogin = () => {
     const token = localStorage.getItem('token')
