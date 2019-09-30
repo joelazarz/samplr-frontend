@@ -1,5 +1,4 @@
 import React, { useState, useEffect } from 'react'
-import Navbar from '../layout/Navbar';
 import NotesCard from './NotesCard';
 import Waveform from '../waveform/Waveform';
 import MemoryCard from './MemoryCard';
@@ -58,7 +57,6 @@ const Kit = ({ kit: { kit, loading }, user, getKit }) => {
     return (
         <>
         <div className="row">
-            <Navbar />
             <div className="col s8 grey lighten-5">
             <div className="kit-main-container">
                 <div className="kit-waveform-container">
@@ -89,13 +87,8 @@ const Kit = ({ kit: { kit, loading }, user, getKit }) => {
 
             <div className="col s4 grey lighten-3">
             <div className="height">
-            
-                <div className="regions-specs">
-                    <div className="specs-header">
-                        <h5>{user.username}</h5>
-                    </div>
-                </div>
-                <div className="notes-specs">
+
+            <div className="notes-specs">
                     <div className="specs-header">
                     <div className='specs-button'><button onClick={viewNotesButton} className="waves-effect waves-light grey lighten-1 btn-small">Notes</button></div>
                     <div className='specs-button'><button onClick={viewMemoryButton} className="waves-effect waves-light grey lighten-1 btn-small">Memory</button></div>
@@ -104,11 +97,19 @@ const Kit = ({ kit: { kit, loading }, user, getKit }) => {
 
                     { notesButton ? kit.notes.map(note => <NotesCard key={note.id} note={note} />) : <></> }
 
-                    { cueViewButton ? digCue.map(dig => dig.kit_id === kit.id ? <CueCard key={dig.id} removeHandler={removeFromCue} dig={dig}/> : <></>) : <></> }
 
                     { memoryButton ? kit.digs.map(dig => <MemoryCard clickHandler={cueMemoryButton} key={dig.id} dig={dig} />) : <></> }
 
                 </div>
+            
+                <div className="regions-specs">
+                    <div className="specs-header">
+                        <h5>{user.username}</h5>
+                    </div>
+                        {/* { cueViewButton ? digCue.map(dig => dig.kit_id === kit.id ? <CueCard key={dig.id} removeHandler={removeFromCue} dig={dig}/> : <></>) : <></> } */}
+                        { digCue.map(dig => dig.kit_id === kit.id ? <CueCard key={dig.id} removeHandler={removeFromCue} dig={dig}/> : <></>) }
+                </div>
+
 
             </div>
             </div>

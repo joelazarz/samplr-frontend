@@ -43,6 +43,12 @@ class Waveform extends Component {
         this.wavesurfer.load(this.props.src);
     }
 
+    componentWillUnmount(){
+        this.wavesurfer.empty()
+        this.wavesurfer.destroy()
+        this.wavesurfer.cancelAjax()
+    }
+
 
 
     // Playback Controls /////

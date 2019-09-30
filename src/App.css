@@ -20,14 +20,14 @@
 /* scroll bar styling  */
 
 .nav-bar{
-    height: 3em;
+    /* height: 3em; */
     background: lightgray;
 }
 
 
 /* Discovery Page */
 .discovery-kits-feed{
-    height: 85vh;
+    height: 95vh;
     overflow: scroll;
 }
 
@@ -135,7 +135,7 @@
     margin-top: 3%;
 }
 
-.cueremove { float:right; }
+.cueremove { float:right; margin-top: 0.3em; margin-right: 0.5em; }
 /* Kit Sidebar */
 
 

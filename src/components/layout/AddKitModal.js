@@ -79,7 +79,8 @@ const AddKitModal = ({ addKit }) => {
                 componentDisplayMode={{
                     type: 'button',
                     customText: 'Upload Sample',
-                    customClass: 'waves-effect blue-grey lighten-1 waves-light btn'
+                    customClass: 'waves-effect blue-grey lighten-1 waves-light btn',
+                    facebook: false
                 }}
                 onSuccess={(res) => setSample(res.filesUploaded[0].url)}
                 />
