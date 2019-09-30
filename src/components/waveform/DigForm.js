@@ -3,9 +3,8 @@ import { connect } from 'react-redux';
 import { addDig } from '../../actions/digActions';
 import M from 'materialize-css/dist/js/materialize.min.js'
 
-const DigForm = ({ kitId, digPadStart, digPadEnd, memorySubmit, addDig }) => {
+const DigForm = ({ kitId, digPadStart, digPadEnd, memorySubmit, addDig, userId }) => {
     const [name, setName] = useState('')
-    const [userId, setUserId] = useState(1)
 
     let kit_id = kitId
     let user_id = userId
@@ -27,7 +26,6 @@ const DigForm = ({ kitId, digPadStart, digPadEnd, memorySubmit, addDig }) => {
             M.toast({ html: 'Region Saved'})
         }
         setName('')
-        setUserId(1)
         memorySubmit()
     }
 

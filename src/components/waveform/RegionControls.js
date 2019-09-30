@@ -34,7 +34,6 @@ const RegionControls = ({
     loadRegionThree,
     loadRegionFour,
     loadRegionFive,
-    
 }) => {
 
     useEffect(()=>{
