@@ -1,8 +1,10 @@
 import React from 'react'
 import { Link } from 'react-router-dom'
+import Login from './Login';
+import Signup from './Signup';
 
 
-const LandingPage = () => {
+const LandingPage = ({ setSessionUser }) => {
     return (
         <div className="row">
 
@@ -12,7 +14,10 @@ const LandingPage = () => {
                 <h4>Login</h4>
 
                 <div className="container">
-                    Toggle Container with Signup / Login Form
+                    SIGNUP
+                    <Signup setSessionUser={setSessionUser} />
+                    LOGIN
+                    <Login setSessionUser={setSessionUser} />
                 </div>
 
                 </div>

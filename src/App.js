@@ -1,4 +1,4 @@
-import React, { Fragment, useEffect } from 'react'
+import React, { Fragment, useEffect, useState } from 'react'
 import { BrowserRouter as Router, Switch, Route } from 'react-router-dom'
 import { Provider } from 'react-redux'
 import store from './store'
@@ -15,6 +15,11 @@ import M from 'materialize-css/dist/js/materialize.min.js'
 import './App.css';
 
 const App = () => {
+  const [user, setUser] = useState(null)
+
+  const setSessionUser = (sessionUser) => {
+    setUser(sessionUser)
+  }
   
   useEffect(() => {
     //Init Materialize JS
@@ -28,7 +33,7 @@ const App = () => {
 
         <Route exact path='/' render={props => (
           <Fragment>
-          <LandingPage />
+          <LandingPage setSessionUser={setSessionUser} />
           </Fragment>
         )} />
 
