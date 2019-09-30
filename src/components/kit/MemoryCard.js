@@ -2,7 +2,6 @@ import React from 'react'
 
 const MemoryCard = ({ dig, clickHandler }) => {
 
-    
     return (
         <>
         <div className="notecard grey lighten-1">

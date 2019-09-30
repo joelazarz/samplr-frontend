@@ -9,7 +9,7 @@ import { connect } from 'react-redux'
 import { getKit } from '../../actions/kitActions';
 
 
-const Kit = ({ kit: { kit, loading }, getKit }) => {
+const Kit = ({ kit: { kit, loading }, user, getKit }) => {
 
     const [notesButton, setNotesButton] = useState(false)
     const [memoryButton, setMemoryButton] = useState(false)
@@ -19,8 +19,6 @@ const Kit = ({ kit: { kit, loading }, getKit }) => {
     useEffect(() => {
         getKit(window.location.pathname)
     }, [])
-    
-    console.log('kit.js [kit]', kit)
     // using the window.location.pathname to direct the action to the endpoint in the api :/
     // console.log('Kit.js [window.location.pathname]', window.location.pathname)
 
@@ -52,7 +50,7 @@ const Kit = ({ kit: { kit, loading }, getKit }) => {
         setDigCue([...digCue])
     }
 
-    if (loading || kit === null) {
+    if (loading || user === null || kit === null) {
         return <Spinner />
     }
 
@@ -63,7 +61,7 @@ const Kit = ({ kit: { kit, loading }, getKit }) => {
             <div className="col s8 grey lighten-5">
             <div className="kit-main-container">
                 <div className="kit-waveform-container">
-                    <Waveform key={kit.id} id={kit.id} src={kit.sample} notes={kit.notes} digs={kit.digs} digCue={digCue} shiftDig={shiftDig} />
+                    <Waveform key={kit.id} userId={user.id} id={kit.id} src={kit.sample} notes={kit.notes} digs={kit.digs} digCue={digCue} shiftDig={shiftDig} />
                 </div>
 
                 <div className="kit-name-container">
@@ -93,7 +91,7 @@ const Kit = ({ kit: { kit, loading }, getKit }) => {
             
                 <div className="regions-specs">
                     <div className="specs-header">
-                        <h5>User Stuff / crates / form rendering?</h5>
+                        <h5>{user.username}</h5>
                     </div>
                 </div>
                 <div className="notes-specs">

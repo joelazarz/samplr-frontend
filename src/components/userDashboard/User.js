@@ -1,8 +1,12 @@
 import React from 'react'
+import { PropTypes } from 'prop-types';
+import Spinner from '../layout/Spinner';
 
-const User = () => {
-
-    // useEffect fetch individual User
+const User = ({ user }) => {
+    
+    if (user === null) {
+        return <Spinner />
+    }
 
     return (
         <>
@@ -10,7 +14,7 @@ const User = () => {
             
             <div className="col s8 orange lighten-4">
             <div className="height">
-                <h3>8-columns</h3>
+                <h3>{user.username}</h3>
                 <h4>Search / User Crates</h4>
             </div>
             </div>
@@ -25,6 +29,10 @@ const User = () => {
         </div>   
         </>
     )
+}
+
+User.propTypes = {
+    user: PropTypes.object.isRequired
 }
 
 export default User

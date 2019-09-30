@@ -3,13 +3,13 @@ import { connect } from 'react-redux';
 import { addNote } from '../../actions/noteActions';
 import M from 'materialize-css/dist/js/materialize.min.js'
 
-const NoteForm = ({ kitId, noteStart, noteEnd, noteSubmit, addNote }) => {
+const NoteForm = ({ kitId, noteStart, noteEnd, noteSubmit, addNote, userId }) => {
     const [note, setNote] = useState('')
 
     let kit_id = kitId
     let note_pad_start = noteStart
     let note_pad_end = noteEnd
-    let user_id = 1
+    let user_id = userId
 
 
     const onSubmit = () => {

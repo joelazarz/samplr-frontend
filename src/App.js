@@ -17,19 +17,16 @@ import './App.css';
 const App = () => {
   const [user, setUser] = useState(null)
 
-  const setSessionUser = (sessionUser) => {
-    setUser(sessionUser)
-  }
-  
   useEffect(() => {
     //Init Materialize JS
     M.AutoInit();
-  })
-
-  useEffect(() => {
-    //auto login
     autoLogin();
   }, [])
+
+
+  const setSessionUser = (sessionUser) => {
+    setUser(sessionUser)
+  }
 
   const autoLogin = () => {
     const token = localStorage.getItem('token')
@@ -50,7 +47,7 @@ const App = () => {
   return (
     <Router>
       <Switch>
-      <Provider store={store}>
+      <Provider user={user} store={store}>
 
         <Route exact path='/' render={props => (
           <Fragment>
@@ -68,13 +65,13 @@ const App = () => {
 
         <Route exact path='/kits/:id' render={props => (
           <Fragment>
-          <Kit component={Kit}/>
+          <Kit user={user} />
           </Fragment>
         )} />
 
         <Route exact path='/user' render={props => (
           <Fragment>
-          <User />
+          <User user={user}/>
           <AddKitBtn />
           <AddKitModal />
           </Fragment>
