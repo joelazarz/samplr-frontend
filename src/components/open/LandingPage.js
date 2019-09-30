@@ -1,10 +1,12 @@
-import React from 'react'
+import React, { useState } from 'react'
 import { Link } from 'react-router-dom'
 import Login from './Login';
 import Signup from './Signup';
 
 
 const LandingPage = ({ setSessionUser, user }) => {
+
+    const [login, setLogin] = useState(false)
 
     return (
         <div className="row">
@@ -16,8 +18,9 @@ const LandingPage = ({ setSessionUser, user }) => {
                     {user ? <h3>Welcome {user.username}</h3> 
                     : 
                     <>
-                    <Signup setSessionUser={setSessionUser} />
-                    <Login setSessionUser={setSessionUser} />
+                    {login ? <Signup setSessionUser={setSessionUser} />
+                    : <Login setSessionUser={setSessionUser} />}
+                    <button onClick={()=> setLogin(!login)} className="waves-effect waves-teal btn-flat">{login ? <>Already a User? Login</> : <>Not a User? Signup</> }</button>
                     </>
                 }
                 </div>
