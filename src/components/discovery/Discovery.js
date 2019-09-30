@@ -20,6 +20,8 @@ const Discovery = ({ kits: { kits, loading }, getKits }) => {
         return <Spinner />
     }
 
+    const activeKits = kits.filter(kit => kit.digs.length > 1)
+
     return (
         <>
         <div className="row">
@@ -38,6 +40,11 @@ const Discovery = ({ kits: { kits, loading }, getKits }) => {
             <div className="height">
                 <h3>4-columns</h3>
                 <h4>New Kits / Featured Kits</h4>
+
+                <div className="active-kits">
+                    {console.log('Active Kits - Discovery.js',activeKits)}
+                </div>
+
             </div>
             </div>
         
