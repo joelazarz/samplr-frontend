@@ -13,6 +13,7 @@ import AddKitModal from './components/layout/AddKitModal';
 import 'materialize-css/dist/css/materialize.min.css'
 import M from 'materialize-css/dist/js/materialize.min.js'
 import './App.css';
+import Navbar from './components/layout/Navbar';
 
 const App = () => {
   const [user, setUser] = useState(null)
@@ -57,6 +58,7 @@ const App = () => {
 
         <Route exact path='/discovery' render={props => (
           <Fragment>
+          <Navbar />
           <Discovery />
           <AddKitBtn />
           <AddKitModal />
@@ -65,6 +67,7 @@ const App = () => {
 
         <Route exact path='/kits/:id' render={props => (
           <Fragment>
+          <Navbar />
           <Kit user={user} />
           </Fragment>
         )} />

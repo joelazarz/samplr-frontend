@@ -1,5 +1,4 @@
 import React, { useEffect } from 'react'
-import Navbar from '../layout/Navbar';
 import DiscoveryCard from './DiscoveryCard';
 import Spinner from '../layout/Spinner';
 
@@ -20,16 +19,13 @@ const Discovery = ({ kits: { kits, loading }, getKits }) => {
         return <Spinner />
     }
 
-    const activeKits = kits.filter(kit => kit.digs.length > 1)
+    const activeKits = kits[Math.floor(Math.random()*kits.length)]
 
     return (
         <>
         <div className="row">
-            <Navbar />
             <div className="col s8 grey lighten-4">
             <div className="height">
-                <h3>8-columns</h3>
-                <h4>Search / All Kits</h4>
                 <div className="discovery-kits-feed">
                     {[...kits].reverse().map(kit => <DiscoveryCard key={kit.id} kit={kit} />)}
                 </div>

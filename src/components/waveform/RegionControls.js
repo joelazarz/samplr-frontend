@@ -38,6 +38,9 @@ const RegionControls = ({
 
     useEffect(()=>{
         window.addEventListener('keydown', handleRegionKey);
+        return () => {
+            window.removeEventListener('keydown', handleRegionKey);
+        }
     })
 
     const [regionOneStatus, setRegionOneStatus] = useState(false)
