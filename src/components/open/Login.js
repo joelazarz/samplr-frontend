@@ -25,7 +25,7 @@ const Login = ({ setSessionUser, history }) => {
             })
             .then(resp => resp.json())
             .then(data => {
-                localStorage.setItem('userId', data.id)
+                localStorage.setItem('token', data.token)
                 setSessionUser(data)
                 history.push('/discovery')
             })
@@ -58,7 +58,7 @@ const Login = ({ setSessionUser, history }) => {
         <button 
         className="waves-effect black waves-light btn"
         onClick={onSubmit}
-        >signup</button>
+        >login</button>
         </div>
         </>
     )

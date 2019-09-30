@@ -98,9 +98,9 @@ const Kit = ({ kit: { kit, loading }, getKit }) => {
                 </div>
                 <div className="notes-specs">
                     <div className="specs-header">
-                    <div className='specs-button'><a onClick={viewNotesButton} className="waves-effect waves-light grey lighten-1 btn-small">Notes</a></div>
-                    <div className='specs-button'><a onClick={viewMemoryButton} className="waves-effect waves-light grey lighten-1 btn-small">Memory</a></div>
-                    <div className='specs-button'><a  onClick={viewCueButton} className="waves-effect waves-light grey lighten-1 btn-small">Cue</a></div>
+                    <div className='specs-button'><button onClick={viewNotesButton} className="waves-effect waves-light grey lighten-1 btn-small">Notes</button></div>
+                    <div className='specs-button'><button onClick={viewMemoryButton} className="waves-effect waves-light grey lighten-1 btn-small">Memory</button></div>
+                    <div className='specs-button'><button  onClick={viewCueButton} className="waves-effect waves-light grey lighten-1 btn-small">Cue</button></div>
                     </div>
 
                     { notesButton ? kit.notes.map(note => <NotesCard key={note.id} note={note} />) : <></> }
