@@ -34,8 +34,8 @@ const AddKitModal = ({ addKit }) => {
 
     return (
         <div id="add-kit-modal" className='modal' style={modalStyle}>
-            <div className='modal-content'>
-                <h4>Add Kit</h4>
+            <div className='modal-content' style={{background: '#0D282A'}}>
+                <h4 className="grey-text">Add Kit</h4>
 
                 <div className='row'>
                     <div className='input-field'>

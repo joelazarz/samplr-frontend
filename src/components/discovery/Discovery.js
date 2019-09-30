@@ -23,21 +23,21 @@ const Discovery = ({ kits: { kits, loading }, getKits }) => {
 
     return (
         <>
-        <div className="row">
-            <div className="col s8 grey lighten-4">
-            <div className="height">
-                <div className="discovery-kits-feed">
+        <div className="row" style={{background: '#282D38'}}>
+            <div className="col s8" style={{background: '#282D38'}}>
+            <div className="height" style={{background: '#282D38'}}>
+                <div className="discovery-kits-feed" style={{background: '#282D38'}}>
                     {[...kits].reverse().map(kit => <DiscoveryCard key={kit.id} kit={kit} />)}
                 </div>
             </div>
             </div>
 
-            <div className="col s4 grey lighten-3">
-            <div className="height">
-                <h3>4-columns</h3>
-                <h4>New Kits / Featured Kits</h4>
+            <div className="col s4" style={{background: '#262633'}}>
+            <div className="height" style={{background: '#262633'}}>
+                <h3 className='grey-text'>4-columns</h3>
+                <h4 className='grey-text'>New Kits / Featured Kits</h4>
 
-                <div className="active-kits">
+                <div className="active-kits" style={{background: '#262633'}}>
                     {console.log('Active Kits - Discovery.js',activeKits)}
                 </div>
 

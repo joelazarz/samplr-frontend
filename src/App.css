@@ -27,8 +27,8 @@
 
 /* Discovery Page */
 .discovery-kits-feed{
-    height: 95vh;
-    overflow: scroll;
+    height: 100vh;
+    overflow: hidden;
 }
 
 .height {

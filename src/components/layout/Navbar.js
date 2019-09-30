@@ -5,8 +5,8 @@ const Navbar = () => {
 
 
     return (
-        <div className="nav-bar">
-            <Link to ='/discovery'><button  className="waves-effect waves-teal btn-flat">Discovery</button></Link>
+        <div className="nav-bar" style={{background: '#202124'}}>
+            <Link to ='/discovery'><button  className="waves-effect waves-black grey-text btn-flat">Discovery</button></Link>
         </div>
     )
 }

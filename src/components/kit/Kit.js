@@ -6,6 +6,7 @@ import CueCard from './CueCard';
 import Spinner from '../layout/Spinner';
 import { connect } from 'react-redux'
 
+
 import { getKit } from '../../actions/kitActions';
 
 
@@ -103,9 +104,7 @@ const Kit = ({ kit: { kit, loading }, user, getKit }) => {
                 </div>
             
                 <div className="regions-specs">
-                    <div className="specs-header">
-                        <h5>{user.username}</h5>
-                    </div>
+                    <div className="specs-header"></div>
                         {/* { cueViewButton ? digCue.map(dig => dig.kit_id === kit.id ? <CueCard key={dig.id} removeHandler={removeFromCue} dig={dig}/> : <></>) : <></> } */}
                         { digCue.map(dig => dig.kit_id === kit.id ? <CueCard key={dig.id} removeHandler={removeFromCue} dig={dig}/> : <></>) }
                 </div>
