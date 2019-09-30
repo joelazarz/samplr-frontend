@@ -51,7 +51,7 @@ const App = () => {
 
         <Route exact path='/' render={props => (
           <Fragment>
-          <LandingPage setSessionUser={setSessionUser} />
+          <LandingPage user={user} setSessionUser={setSessionUser} />
           </Fragment>
         )} />
 

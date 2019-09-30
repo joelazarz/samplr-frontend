@@ -4,20 +4,22 @@ import Login from './Login';
 import Signup from './Signup';
 
 
-const LandingPage = ({ setSessionUser }) => {
+const LandingPage = ({ setSessionUser, user }) => {
+
     return (
         <div className="row">
 
             <div className="col s4 yellow lighten-4">
                 <div className="height">
-                <h3>4-columns</h3>
-                <h4>Login</h4>
 
                 <div className="container">
-                    SIGNUP
+                    {user ? <h3>Welcome {user.username}</h3> 
+                    : 
+                    <>
                     <Signup setSessionUser={setSessionUser} />
-                    LOGIN
                     <Login setSessionUser={setSessionUser} />
+                    </>
+                }
                 </div>
 
                 </div>
