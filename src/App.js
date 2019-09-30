@@ -22,9 +22,27 @@ const App = () => {
   }
   
   useEffect(() => {
+    //auto login
+    autoLogin();
     //Init Materialize JS
     M.AutoInit();
   })
+
+  const autoLogin = () => {
+    const token = localStorage.getItem('token')
+    if (token) {
+      fetch('/autologin', {
+        headers: {
+          'accept': 'application/json',
+          Authorization: token
+        }
+      })
+      .then(resp => resp.json())
+      .then(data => {
+        setUser(data)
+      })
+    }
+  }
 
   return (
     <Router>
