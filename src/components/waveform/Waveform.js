@@ -212,6 +212,8 @@ class Waveform extends Component {
     }
 
     loadRegionOne = () => {
+        let region = this.wavesurfer.regions.list.pad1
+        region.remove()
         let digToLoad = [this.props.digCue[0]];
         digToLoad.map(dig => this.wavesurfer.addRegion({
             id: 'pad1',
@@ -226,6 +228,8 @@ class Waveform extends Component {
         this.props.shiftDig()
     }
     loadRegionTwo = () => {
+        let region = this.wavesurfer.regions.list.pad2
+        region.remove()
         let digToLoad = [this.props.digCue[0]];
         digToLoad.map(dig => this.wavesurfer.addRegion({
             id: 'pad2',
@@ -240,6 +244,8 @@ class Waveform extends Component {
         this.props.shiftDig()
     }
     loadRegionThree = () => {
+        let region = this.wavesurfer.regions.list.pad3
+        region.remove()
         let digToLoad = [this.props.digCue[0]];
         digToLoad.map(dig => this.wavesurfer.addRegion({
             id: 'pad3',
@@ -254,6 +260,8 @@ class Waveform extends Component {
         this.props.shiftDig()
     }
     loadRegionFour = () => {
+        let region = this.wavesurfer.regions.list.pad4
+        region.remove()
         let digToLoad = [this.props.digCue[0]];
         digToLoad.map(dig => this.wavesurfer.addRegion({
             id: 'pad4',
@@ -268,6 +276,8 @@ class Waveform extends Component {
         this.props.shiftDig()
     }
     loadRegionFive = () => {
+        let region = this.wavesurfer.regions.list.pad5
+        region.remove()
         let digToLoad = [this.props.digCue[0]];
         digToLoad.map(dig => this.wavesurfer.addRegion({
             id: 'pad5',
@@ -323,7 +333,7 @@ class Waveform extends Component {
             mute={this.mute}
             />
             <div className='wave'>
-            <div id="waveform"></div>
+            <div id="waveform" ></div>
             <div id="wave-timeline"></div>
             </div>
             <RegionControls 

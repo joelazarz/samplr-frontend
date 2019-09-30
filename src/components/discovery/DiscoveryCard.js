@@ -9,17 +9,17 @@ const DiscoveryCard = ({ kit }) => {
     return (
         
         <div className="col s4">
-        <div className="card small">
+        <div className="card small black">
         <div className="card-image waves-effect waves-block waves-light">
             <img className="activator" src={kit.image} alt={kit.name}/>
         </div>
         <div className="card-content">
-            <span className="card-title activator grey-text text-darken-4">{kit.name}<i className="material-icons right">more_vert</i></span>
-            <Link to ={`/kits/${kit.id}`} className="btn black btn-sm">Load</Link>
+            <span className="card-title activator grey-text ">{kit.name}<i className="material-icons right">more_vert</i></span>
+            <Link to ={`/kits/${kit.id}`} className="btn btn-sm" style={{background: '#091F22'}}>Load</Link>
         </div>
-        <div className="card-reveal">
-            <span className="card-title grey-text text-darken-4">{kit.name}<i className="material-icons right">close</i></span>
-            <p>{kit.detail}</p>
+        <div className="card-reveal black">
+            <span className="card-title grey-text ">{kit.name}<i className="material-icons right">close</i></span>
+            <p className='grey-text'>{kit.detail}</p>
         </div>
         </div>
         </div>
