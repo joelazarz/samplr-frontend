@@ -6,7 +6,7 @@ const regionsObj = [
         start: 0,
         end: 5,
         loop: false,
-        color: 'rgb(255, 176, 176, 0.4)',
+        color: 'rgb(252, 206, 195, 0.4)',
         attributes: {
             label: "[1]"
         }

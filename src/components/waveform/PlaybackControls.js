@@ -117,7 +117,7 @@ const PlaybackControls = ({
 
     return (
         <>
-        <div className="playback-controls-secondary" style={nightMode ? theme.dmBlack : theme.lmLightBlue}>
+        <div className="playback-controls-secondary" style={nightMode ? theme.dmUtility : theme.lmBtnSidebar}>
 
         </div>
         <div className="playback-controls" style={nightMode ? theme.dmAccent : theme.lmAccentTwo}>
