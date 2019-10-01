@@ -64,13 +64,13 @@ const Kit = ({ kit: { kit, loading }, user, getKit, nightMode }) => {
                     <Waveform nightMode={nightMode} key={kit.id} userId={user.id} id={kit.id} src={kit.sample} notes={kit.notes} digs={kit.digs} digCue={digCue} shiftDig={shiftDig} />
                 </div>
 
-                <div className="kit-name-container">
+                <div className="kit-name-container" style={nightMode ? theme.dmSecondary : theme.lmLightBlue}>
                     <span>[ Kit Name ] : {kit.name}</span>
                 </div>
 
                 <div className= "kit-detail">
-                    <div className="kit-detail-container">
-                        <div className="kit-detail-header">
+                    <div className="kit-detail-container" style={nightMode ? theme.dmSecondary : theme.lmAccentTwo}>
+                        <div className="kit-detail-header" style={nightMode ? theme.dmSecondary : theme.lmAccentTwo}>
                             [ Kit Detail ]
                         </div>
                         <div className="kit-detail-text-container" style={nightMode ? theme.dmAccent : theme.lmWhite}>
@@ -89,8 +89,8 @@ const Kit = ({ kit: { kit, loading }, user, getKit, nightMode }) => {
             <div className="col s4" style={nightMode ? theme.dmSecondary : theme.lmWhite}>
             <div className="height">
 
-            <div className="notes-specs">
-                    <div className="specs-header">
+            <div className="notes-specs" style={nightMode ? theme.dmAccent : theme.lmWhite}>
+                    <div className="specs-header" style={nightMode ? theme.dmSecondary : theme.lmGrey}>
                     <div className='specs-button'><button onClick={viewNotesButton} className="waves-effect waves-light grey lighten-1 btn-small">Notes</button></div>
                     <div className='specs-button'><button onClick={viewMemoryButton} className="waves-effect waves-light grey lighten-1 btn-small">Memory</button></div>
                     <div className='specs-button'><button  onClick={viewCueButton} className="waves-effect waves-light grey lighten-1 btn-small">Cue</button></div>
@@ -103,8 +103,8 @@ const Kit = ({ kit: { kit, loading }, user, getKit, nightMode }) => {
 
                 </div>
             
-                <div className="regions-specs">
-                    <div className="specs-header"></div>
+                <div className="regions-specs" style={nightMode ? theme.dmAccent : theme.lmWhite}>
+                    <div className="specs-header" style={nightMode ? theme.dmSecondary : theme.lmGrey}></div>
                         {/* { cueViewButton ? digCue.map(dig => dig.kit_id === kit.id ? <CueCard key={dig.id} removeHandler={removeFromCue} dig={dig}/> : <></>) : <></> } */}
                         { digCue.map(dig => dig.kit_id === kit.id ? <CueCard key={dig.id} removeHandler={removeFromCue} dig={dig}/> : <></>) }
                 </div>

@@ -167,7 +167,7 @@
 }
 
 .playback-controls i:hover {
-    background: rgb(235, 235, 235)
+    background: rgba(255, 255, 255, 0.2)
 }
 
 .playback-controls-secondary {
@@ -260,7 +260,7 @@
 }
 
 .region-status-space {
-    background: rgb(207, 223, 255);
+    /* background: rgb(207, 223, 255); */
     /* height: 2.5em; */
     max-width: 8em;
     min-width: 6em;

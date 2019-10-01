@@ -10,7 +10,7 @@ const DiscoveryCard = ({ kit, nightMode }) => {
     return (
         
         <div className="col s4">
-        <div className="card small" style={nightMode ? theme.dmSecondary : theme.lmWhite}>
+        <div className="card small" style={nightMode ? theme.dmBlack : theme.lmWhite}>
         <div className="card-image waves-effect waves-block waves-light">
             <img className="activator" src={kit.image} alt={kit.name}/>
         </div>
