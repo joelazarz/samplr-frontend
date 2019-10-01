@@ -376,9 +376,9 @@ class Waveform extends Component {
             nightMode={this.props.nightMode}
             />
             
-            <div className="color-block" style={this.props.nightMode ? theme.dmSecondary : theme.lmAccentTwo}>
-            {this.state.noteForm ? <NoteForm kitId={this.state.id} userId={this.props.userId} noteStart={this.state.noteStart} noteEnd={this.state.noteEnd} noteSubmit={this.onNoteSubmit}/> : <></>}
-            {this.state.memoryForm ? <DigForm kitId={this.state.id} userId={this.props.userId} digPadStart={this.state.memoryStart} digPadEnd={this.state.memoryEnd} memorySubmit={this.onMemorySubmit}/> : <></>}
+            <div className="color-block" style={this.props.nightMode ? theme.dmUtility : theme.lmAccentTwo}>
+            {this.state.noteForm ? <NoteForm kitId={this.state.id} userId={this.props.userId} noteStart={this.state.noteStart} noteEnd={this.state.noteEnd} noteSubmit={this.onNoteSubmit} nightMode={this.props.nightMode}/> : <></>}
+            {this.state.memoryForm ? <DigForm kitId={this.state.id} userId={this.props.userId} digPadStart={this.state.memoryStart} digPadEnd={this.state.memoryEnd} memorySubmit={this.onMemorySubmit} nightMode={this.props.nightMode}/> : <></>}
             </div>
 
 

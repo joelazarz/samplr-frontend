@@ -42,6 +42,24 @@
     overflow: hidden;
 }
 
+.graphic-container{
+    height: 30%;
+}
+
+.active-kits{
+    text-align: center;
+}
+.random-kit-header{
+    margin-left: 2em;
+    margin-right: 2em;
+    margin-bottom: 0.5em;
+    font-size: 1.5em;
+}
+.active-kits img{
+    max-height: 85%;
+    max-width: 85%;
+}
+
 .height {
     height: 99.5vh;
 }
@@ -63,11 +81,11 @@
 .kit-detail {
     display: flex;
     flex-direction: row;
-    min-height: 7%;
+    min-height:10%;
 }
 
 .kit-waveform-container{
-    height: 28em;
+    height: 26.5em;
     margin: 1em;
     background: white;
 }
@@ -83,7 +101,7 @@
 }
 
 .kit-detail-text-container {
-    height: 75%;
+    height: 92%;
 }
 
 .kit-detail-image-container {
@@ -179,7 +197,7 @@
 
 .playback-controls-secondary {
     background: #bdbdbd;
-    height: 2em;
+    height: 0.5em;
 }
 
 /* Playback Control Icons */
@@ -285,7 +303,7 @@
 /* Below Regions Control */
 .color-block{
     /* display: flex; */
-    background: rgb(230, 230, 230);
+    /* background: rgb(230, 230, 230); */
     min-height: 5em;
     justify-content: space-around;
 }
@@ -311,8 +329,3 @@
     margin: 1em;
     height: 45%;
 }
-
-
-
-
-

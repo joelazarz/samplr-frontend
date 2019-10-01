@@ -2,8 +2,9 @@ import React, { useState } from 'react'
 import { connect } from 'react-redux';
 import { addNote } from '../../actions/noteActions';
 import M from 'materialize-css/dist/js/materialize.min.js'
+import theme from '../layout/Theme';
 
-const NoteForm = ({ kitId, noteStart, noteEnd, noteSubmit, addNote, userId }) => {
+const NoteForm = ({ kitId, noteStart, noteEnd, noteSubmit, addNote, userId, nightMode }) => {
     const [note, setNote] = useState('')
 
     let kit_id = kitId
@@ -38,6 +39,7 @@ const NoteForm = ({ kitId, noteStart, noteEnd, noteSubmit, addNote, userId }) =>
             <input 
             id="icon_prefix2" 
             className="materialize-input" 
+            style={nightMode ? theme.dmUtility : theme.lmAccentTwo}
             onChange={e => setNote(e.target.value)}
             placeholder="Leave note..."></input>
             <label htmlFor="icon_prefix2"></label>
