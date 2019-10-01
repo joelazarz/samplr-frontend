@@ -212,6 +212,7 @@ class Waveform extends Component {
     }
 
     loadRegionOne = () => {
+        // can't load region immedietely on load
         let region = this.wavesurfer.regions.list.pad1
         region.remove()
         let digToLoad = [this.props.digCue[0]];
@@ -224,7 +225,7 @@ class Waveform extends Component {
             attributes: {
                 label: '[1]'
             }
-        }))
+        }));
         this.props.shiftDig()
     }
     loadRegionTwo = () => {
