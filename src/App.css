@@ -22,6 +22,17 @@
 .nav-bar{
     /* height: 3em; */
     background: lightgray;
+    display: flex;
+    flex-direction: row;
+}
+
+.switch{
+    margin-top: 0.4em;
+    margin-left: 2em;
+}
+
+.switch label input[type=checkbox]:checked+.lever:after {
+    background-color: rgb(54, 54, 54);
 }
 
 
@@ -65,7 +76,6 @@
     max-height: 10%;
     width: 50%;
     margin: 1em;
-    background: lightyellow;
 }
 
 .kit-detail-header {
@@ -73,7 +83,7 @@
 }
 
 .kit-detail-text-container {
-    height: 85%;
+    height: 75%;
 }
 
 .kit-detail-image-container {

@@ -1,5 +1,6 @@
 import React, { useState, useEffect } from 'react'
 import { PropTypes } from 'prop-types';
+import theme from '../layout/Theme';
 
 const PlaybackControls = ({ 
     playControl, 
@@ -11,7 +12,8 @@ const PlaybackControls = ({
     normalSpeed,
     speedDown,
     speedUp,
-    mute }) => {
+    mute,
+    nightMode }) => {
 
     useEffect(()=>{
         window.addEventListener('keydown', handlePlaybackKey);
@@ -125,7 +127,7 @@ const PlaybackControls = ({
         <div className="playback-controls-secondary">
 
         </div>
-        <div className="playback-controls">
+        <div className="playback-controls" style={nightMode ? theme.dmPrimary : theme.lmWhite}>
             <i onClick={playEnable} className={'medium material-icons play' + (playStatus ? ' true' : ' false')}>play_arrow </i>
             <i onClick={(pauseStatus ? PauseDisable : PauseEnable)} className={'medium material-icons pause' + (pauseStatus ? ' true' : ' false')}>pause </i>
             <i onClick={stopEnable} className={'medium material-icons stop' + (stopStatus ? ' true' : ' false')}>stop </i>

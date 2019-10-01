@@ -5,8 +5,9 @@ import { addKit } from '../../actions/discoveryActions';
 
 import ReactFilestack from 'filestack-react'
 import M from 'materialize-css/dist/js/materialize.min.js'
+import theme from './Theme';
 
-const AddKitModal = ({ addKit }) => {
+const AddKitModal = ({ addKit, nightMode }) => {
     const [name, setName] = useState('')
     const [detail, setDetail] = useState('')
     const [image, setImage] = useState('')
@@ -33,8 +34,8 @@ const AddKitModal = ({ addKit }) => {
 
 
     return (
-        <div id="add-kit-modal" className='modal' style={modalStyle}>
-            <div className='modal-content' style={{background: '#0D282A'}}>
+        <div id="add-kit-modal" className='modal' style={nightMode ? theme.dmSecondary : theme.lmWhite}>
+            <div className='modal-content' style={nightMode ? theme.dmSecondary : theme.lmWhite}>
                 <h4 className="grey-text">Add Kit</h4>
 
                 <div className='row'>

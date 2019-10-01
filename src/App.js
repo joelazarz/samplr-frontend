@@ -17,6 +17,7 @@ import Navbar from './components/layout/Navbar';
 
 const App = () => {
   const [user, setUser] = useState(null)
+  const [nightMode, setNightMode] = useState(null)
 
   useEffect(() => {
     //Init Materialize JS
@@ -45,6 +46,11 @@ const App = () => {
     }
   }
 
+  const nightModeSwitch = () => {
+    setNightMode(nightMode === null ? true : false)
+    setNightMode(nightMode ? false : true)
+  }
+
   return (
     <Router>
       <Switch>
@@ -58,17 +64,17 @@ const App = () => {
 
         <Route exact path='/discovery' render={props => (
           <Fragment>
-          <Navbar />
-          <Discovery />
+          <Navbar nightModeSwitch={nightModeSwitch} nightMode={nightMode}/>
+          <Discovery nightMode={nightMode} />
           <AddKitBtn />
-          <AddKitModal />
+          <AddKitModal nightMode={nightMode}/>
           </Fragment>
         )} />
 
         <Route exact path='/kits/:id' render={props => (
           <Fragment>
-          <Navbar />
-          <Kit user={user} />
+          <Navbar nightModeSwitch={nightModeSwitch} nightMode={nightMode}/>
+          <Kit user={user} nightMode={nightMode} />
           </Fragment>
         )} />
 
