@@ -42,6 +42,7 @@ class Waveform extends Component {
             ]
         })
         this.wavesurfer.load(this.props.src);
+        // this.wavesurfer.regions.addEventListener('keydown', handlePlaybackKey);
     }
 
     componentWillUnmount(){
@@ -62,12 +63,6 @@ class Waveform extends Component {
     stopBtn = () => {
         this.wavesurfer.stop()
     }
-    // skipBackward = () => {
-    //     this.wavesurfer.skipBackward(3)
-    // }
-    // skipForward = () => {
-    //     this.wavesurfer.skipForward(3)
-    // }
     slowedSpeed = () => {
         this.wavesurfer.setPlaybackRate(0.75)
     }
@@ -329,8 +324,6 @@ class Waveform extends Component {
             playControl={this.play}
             playPauseControl={this.playPause}
             stopControl={this.stopBtn}
-            skipBackward={this.skipBackward}
-            skipForward={this.skipForward}
             slowedSpeed={this.slowedSpeed}
             normalSpeed={this.normalSpeed}
             speedDown={this.speedDown}

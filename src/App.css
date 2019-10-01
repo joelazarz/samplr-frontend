@@ -144,7 +144,8 @@
 .regions-specs{
     background: #ffffff;
     height: 46vh;
-    margin: 1vw
+    margin: 1vw;
+    /* overflow: scroll; */
 }
 
 .specs-header {
@@ -153,6 +154,8 @@
     display: flex;  
     flex-direction: row;
     justify-content: space-around;
+    /* position: inherit; */
+    /* width: 30%; */
 }
 
 .specs-button {
@@ -163,6 +166,7 @@
     /* background: #ffffff; */
     height: 43vh;
     margin: 1vw;
+    overflow: auto;
 }
 
 .card-image img {
