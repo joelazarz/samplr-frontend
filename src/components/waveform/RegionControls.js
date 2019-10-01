@@ -313,43 +313,43 @@ const RegionControls = ({
         
         </div>
         
-        <div className="region-status-bar" style={nightMode ? theme.dmSecondary : theme.lmLightBlue}>
+        <div className="region-status-bar" style={nightMode ? theme.dmRegionSaveLoad : theme.lmLightBlue}>
             <div className="region-status-space" >
             <div className="region-control-small-save" >
             <div onClick={loadMemoryRegionOne} className="region-control-small-save-btn" style={nightMode ? theme.dmBlack : theme.lmGrey}>Load</div>
             </div>
             </div>
-            <div className="region-status-space"style={nightMode ? theme.dmSecondary : theme.lmLightBlue}>
+            <div className="region-status-space"style={nightMode ? theme.dmRegionSaveLoad : theme.lmLightBlue}>
             <div className="region-status-space" >
             <div className="region-control-small-save" >
             <div onClick={loadMemoryRegionTwo} className="region-control-small-save-btn" style={nightMode ? theme.dmBlack : theme.lmGrey}>Load</div>
             </div>
             </div>
             </div>
-            <div className="region-status-space"style={nightMode ? theme.dmSecondary : theme.lmLightBlue}>
+            <div className="region-status-space"style={nightMode ? theme.dmRegionSaveLoad : theme.lmLightBlue}>
             <div className="region-status-space" >
             <div className="region-control-small-save" >
             <div onClick={loadMemoryRegionThree} className="region-control-small-save-btn" style={nightMode ? theme.dmBlack : theme.lmGrey}>Load</div>
             </div>
             </div>
             </div>
-            <div className="region-status-space"style={nightMode ? theme.dmSecondary : theme.lmLightBlue}>
+            <div className="region-status-space"style={nightMode ? theme.dmRegionSaveLoad : theme.lmLightBlue}>
             <div className="region-status-space" >
-            <div className="region-control-small-save" style={nightMode ? theme.dmSecondary : theme.lmLightBlue}>
+            <div className="region-control-small-save" style={nightMode ? theme.dmRegionSaveLoad : theme.lmLightBlue}>
             <div onClick={loadMemoryRegionFour} className="region-control-small-save-btn" style={nightMode ? theme.dmBlack : theme.lmGrey}>Load</div>
             </div>
             </div>
             </div>
-            <div className="region-status-space"style={nightMode ? theme.dmSecondary : theme.lmLightBlue}>
+            <div className="region-status-space"style={nightMode ? theme.dmRegionSaveLoad : theme.lmLightBlue}>
             <div className="region-status-space">
-            <div className="region-control-small-save" style={nightMode ? theme.dmSecondary : theme.lmLightBlue}>
+            <div className="region-control-small-save" style={nightMode ? theme.dmRegionSaveLoad : theme.lmLightBlue}>
             <div onClick={loadMemoryRegionFive} className="region-control-small-save-btn" style={nightMode ? theme.dmBlack : theme.lmGrey}>Load</div>
             </div>
             </div>
             </div>
 
-            <div className="region-status-space" style={nightMode ? theme.dmSecondary : theme.lmLightBlue}>
-            <div className="region-control-small-save" style={nightMode ? theme.dmSecondary : theme.lmLightBlue}>
+            <div className="region-status-space" style={nightMode ? theme.dmRegionSaveLoad : theme.lmLightBlue}>
+            <div className="region-control-small-save" style={nightMode ? theme.dmRegionSaveLoad : theme.lmLightBlue}>
             { regionMemoryStatus ?
             <Fade >
             <div onClick={memorySaveClick} className="region-control-small-save-btn" style={nightMode ? theme.dmBlack : theme.lmGrey}>Save</div>
@@ -357,8 +357,8 @@ const RegionControls = ({
             : <></> }
             </div> 
             </div>
-            <div className="region-status-space" style={nightMode ? theme.dmSecondary : theme.lmLightBlue}>
-            <div className="region-control-small-save" style={nightMode ? theme.dmSecondary : theme.lmLightBlue}>
+            <div className="region-status-space" style={nightMode ? theme.dmRegionSaveLoad : theme.lmLightBlue}>
+            <div className="region-control-small-save" style={nightMode ? theme.dmRegionSaveLoad : theme.lmLightBlue}>
             { regionNoteStatus ? 
             <Fade >
             <div onClick={noteSaveClick} className="region-control-small-save-btn" style={nightMode ? theme.dmBlack : theme.lmGrey}>Save</div>
@@ -366,8 +366,8 @@ const RegionControls = ({
             : <></> }
             </div> 
             </div>
-            <div className="region-status-space" style={nightMode ? theme.dmSecondary : theme.lmLightBlue}></div>
-            <div className="region-status-space" style={nightMode ? theme.dmSecondary : theme.lmLightBlue}></div>
+            <div className="region-status-space" style={nightMode ? theme.dmRegionSaveLoad : theme.lmLightBlue}></div>
+            <div className="region-status-space" style={nightMode ? theme.dmRegionSaveLoad : theme.lmLightBlue}></div>
         </div>
         </>
     )

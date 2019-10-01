@@ -61,17 +61,17 @@
 }
 
 .height {
-    height: 99.5vh;
+    height: 105vh;
 }
 
 .kit-main-container {
-    height: 100vh;
+    height: 105vh;
 }
 
 .kit-name-container{
     background: rgb(181, 190, 202);
-    height: 4em;
-    width: 44%;
+    height: 3em;
+    width: 42.7%;
     margin-top: 1.2em;
     margin-left: 1em;
     margin-right: 1em;
@@ -96,19 +96,15 @@
     margin: 1em;
 }
 
-.kit-detail-header {
-    background: rgb(253, 253, 184);
-}
-
 .kit-detail-text-container {
-    height: 92%;
+    height: 100%;
 }
 
 .kit-detail-image-container {
     margin-bottom: 1em;
     margin-left: 1em;
     margin-right: 1em;
-    margin-top: -4em;
+    margin-top: -3em;
     background: whitesmoke;
     height: 10%;
     width: 60%;
@@ -121,7 +117,7 @@
     margin: 3em;
     margin-top: 1em;
     margin-bottom: 1em;
-    max-height: 20em;
+    max-height: 18em;
 }
 /* Discovery Page */
 
@@ -147,8 +143,8 @@
 }
 
 .notes-specs{
-    background: #ffffff;
-    height: 46vh;
+    /* background: #ffffff; */
+    height: 43vh;
     margin: 1vw;
 }
 
@@ -157,16 +153,26 @@
 }
 
 .notecard { 
-    width: 90%;
-    height: 10%;
-    margin-left: 5%;
-    margin-top: 3%;
+    margin: 0.5em;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    border-radius: 5px;
 }
-
-.cueremove { 
-    float:right; 
-    margin-top: 0.3em; 
-    margin-right: 0.5em; 
+.notecard-name{
+    margin-left: 1em;
+    margin-top: 0.5em;
+    margin-bottom: 0.5em;
+}
+.cueremove {  
+    margin-right: 1em;
+    margin-top: 0.5em;
+    margin-bottom: 0.5em;
+    padding: 0.2em;
+}
+.cueremove:hover {
+    background-color: rgb(223, 223, 223, 0.5);
+    border-radius: 10px;
 }
 .cueremove:active {
     color: white;

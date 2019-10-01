@@ -64,21 +64,18 @@ const Kit = ({ kit: { kit, loading }, user, getKit, nightMode }) => {
                     <Waveform nightMode={nightMode} key={kit.id} userId={user.id} id={kit.id} src={kit.sample} notes={kit.notes} digs={kit.digs} digCue={digCue} shiftDig={shiftDig} />
                 </div>
 
-                <div className="kit-name-container" style={nightMode ? theme.dmSecondary : theme.lmLightBlue}>
+                <div className="kit-name-container" style={nightMode ? theme.dmAccent : theme.lmLightBlue}>
                     <span>[ Kit Name ] : {kit.name}</span>
                 </div>
 
                 <div className= "kit-detail">
                     <div className="kit-detail-container" style={nightMode ? theme.dmSecondary : theme.lmAccentTwo}>
-                        <div className="kit-detail-header" style={nightMode ? theme.dmSecondary : theme.lmAccentTwo}>
-                            [ Kit Detail ]
-                        </div>
-                        <div className="kit-detail-text-container" style={nightMode ? theme.dmAccent : theme.lmWhite}>
+                        <div className="kit-detail-text-container" style={nightMode ? theme.dmKitDetail : theme.lmAccent}>
                         {kit.detail}
                         </div>
                     </div>
 
-                    <div className="kit-detail-image-container" style={nightMode ? theme.dmAccent : theme.lmGrey}>
+                    <div className="kit-detail-image-container" style={nightMode ? theme.dmImgContainer : theme.lmGrey}>
                         <img src={kit.image} alt={kit.name} />
                     </div>
                 </div>
@@ -86,14 +83,13 @@ const Kit = ({ kit: { kit, loading }, user, getKit, nightMode }) => {
             </div>
 
 
-            <div className="col s4" style={nightMode ? theme.dmSecondary : theme.lmWhite}>
+            <div className="col s4" style={nightMode ? theme.dmSecondary : theme.lmAccentTwo}>
             <div className="height">
 
             <div className="notes-specs" style={nightMode ? theme.dmAccent : theme.lmWhite}>
                     <div className="specs-header" style={nightMode ? theme.dmSecondary : theme.lmGrey}>
-                    <div className='specs-button'><button style={nightMode ? theme.dmAccent : theme.lmLightBlue} onClick={viewNotesButton} className="waves-effect waves-light btn-small">Notes</button></div>
-                    <div className='specs-button'><button style={nightMode ? theme.dmAccent : theme.lmLightBlue} onClick={viewMemoryButton} className="waves-effect waves-light btn-small">Memory</button></div>
-                    <div className='specs-button'><button style={nightMode ? theme.dmAccent : theme.lmLightBlue} onClick={viewCueButton} className="waves-effect waves-light btn-small">Cue</button></div>
+                    <div className='specs-button'><button style={nightMode ? theme.dmBtnSidebar : theme.lmBtnSidebar} onClick={viewNotesButton} className="waves-effect waves-light btn-small">Notes</button></div>
+                    <div className='specs-button'><button style={nightMode ? theme.dmBtnSidebar : theme.lmBtnSidebar} onClick={viewMemoryButton} className="waves-effect waves-light btn-small">Memory</button></div>
                     </div>
 
                     { notesButton ? kit.notes.map(note => <NotesCard nightMode={nightMode} key={note.id} note={note} />) : <></> }
