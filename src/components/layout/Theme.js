@@ -6,6 +6,7 @@ const theme = {
     dmAccent: { background: '#0A151D', color: 'lightgrey' },
     dmPrimary: { background: '#090A0C' },
     dmSecondary: { background: '#090E12', color: 'lightgrey' },
+    dmUtility: { background: '#0F121C', color: 'lightgrey' },
 
 // Light Mode
     lmWhite: { background: '#FAFAFA' },

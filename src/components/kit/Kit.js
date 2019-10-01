@@ -91,9 +91,9 @@ const Kit = ({ kit: { kit, loading }, user, getKit, nightMode }) => {
 
             <div className="notes-specs" style={nightMode ? theme.dmAccent : theme.lmWhite}>
                     <div className="specs-header" style={nightMode ? theme.dmSecondary : theme.lmGrey}>
-                    <div className='specs-button'><button onClick={viewNotesButton} className="waves-effect waves-light grey lighten-1 btn-small">Notes</button></div>
-                    <div className='specs-button'><button onClick={viewMemoryButton} className="waves-effect waves-light grey lighten-1 btn-small">Memory</button></div>
-                    <div className='specs-button'><button  onClick={viewCueButton} className="waves-effect waves-light grey lighten-1 btn-small">Cue</button></div>
+                    <div className='specs-button'><button style={nightMode ? theme.dmAccent : theme.lmLightBlue} onClick={viewNotesButton} className="waves-effect waves-light btn-small">Notes</button></div>
+                    <div className='specs-button'><button style={nightMode ? theme.dmAccent : theme.lmLightBlue} onClick={viewMemoryButton} className="waves-effect waves-light btn-small">Memory</button></div>
+                    <div className='specs-button'><button style={nightMode ? theme.dmAccent : theme.lmLightBlue} onClick={viewCueButton} className="waves-effect waves-light btn-small">Cue</button></div>
                     </div>
 
                     { notesButton ? kit.notes.map(note => <NotesCard nightMode={nightMode} key={note.id} note={note} />) : <></> }

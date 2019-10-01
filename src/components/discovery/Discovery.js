@@ -20,7 +20,7 @@ const Discovery = ({ kits: { kits, loading }, getKits, nightMode }) => {
         return <Spinner />
     }
 
-    const activeKits = kits[Math.floor(Math.random()*kits.length)]
+    const randomKit = kits[Math.floor(Math.random()*kits.length)]
 
     return (
         <>
@@ -33,13 +33,16 @@ const Discovery = ({ kits: { kits, loading }, getKits, nightMode }) => {
             </div>
             </div>
 
-            <div className="col s4" style={nightMode ? theme.dmSecondary : theme.lmWhite}>
-            <div className="height" style={nightMode ? theme.dmSecondary : theme.lmWhite}>
-                <h3 className='grey-text'>4-columns</h3>
-                <h4 className='grey-text'>New Kits / Featured Kits</h4>
+            <div className="col s4" style={nightMode ? theme.dmPrimary : theme.lmAccentTwo}>
+            <div className="height" style={nightMode ? theme.dmPrimary : theme.lmAccentTwo}>
 
-                <div className="active-kits" style={nightMode ? theme.dmSecondary : theme.lmWhite}>
-                    {console.log('Active Kits - Discovery.js',activeKits)}
+                <div className="graphic-container">
+
+                </div>
+
+                <div className="active-kits" style={nightMode ? theme.dmPrimary : theme.lmAccentTwo}>
+                    <div className='random-kit-header' style={nightMode ? theme.dmSecondary : theme.lmLightBlue}>{randomKit.name}</div>
+                    <img src={randomKit.image} alt={randomKit.name}></img>
                 </div>
 
             </div>

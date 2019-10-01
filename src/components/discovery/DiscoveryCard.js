@@ -18,7 +18,7 @@ const DiscoveryCard = ({ kit, nightMode }) => {
             <span className="card-title activator grey-text ">{kit.name}<i className="material-icons right">more_vert</i></span>
             <Link to ={`/kits/${kit.id}`} className="btn btn-sm" style={nightMode ? theme.dmAccent : theme.lmAccent}>Load</Link>
         </div>
-        <div className="card-reveal black">
+        <div className="card-reveal" style={nightMode ? theme.dmBlack : theme.lmWhite}>
             <span className="card-title grey-text ">{kit.name}<i className="material-icons right">close</i></span>
             <p className='grey-text'>{kit.detail}</p>
         </div>

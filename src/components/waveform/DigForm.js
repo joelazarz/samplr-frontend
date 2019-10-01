@@ -2,8 +2,9 @@ import React, { useState } from 'react'
 import { connect } from 'react-redux';
 import { addDig } from '../../actions/digActions';
 import M from 'materialize-css/dist/js/materialize.min.js'
+import theme from '../layout/Theme';
 
-const DigForm = ({ kitId, digPadStart, digPadEnd, memorySubmit, addDig, userId }) => {
+const DigForm = ({ kitId, digPadStart, digPadEnd, memorySubmit, addDig, userId, nightMode }) => {
     const [name, setName] = useState('')
 
     let kit_id = kitId
@@ -36,6 +37,7 @@ const DigForm = ({ kitId, digPadStart, digPadEnd, memorySubmit, addDig, userId }
             <input 
             id="icon_prefix2" 
             className="materialize-input"
+            style={nightMode ? theme.dmUtility : theme.lmAccentTwo}
             onChange={e => setName(e.target.value)} 
             placeholder="Set Region Memory..."></input>
             <label htmlFor="icon_prefix2"></label>
