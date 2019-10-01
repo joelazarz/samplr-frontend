@@ -91,12 +91,12 @@ const Kit = ({ kit: { kit, loading }, user, getKit, nightMode }) => {
                     <div className='specs-button'><button style={nightMode ? theme.dmBtnSidebar : theme.lmBtnSidebar} onClick={viewNotesButton} className="waves-effect waves-light btn-small">Notes</button></div>
                     <div className='specs-button'><button style={nightMode ? theme.dmBtnSidebar : theme.lmBtnSidebar} onClick={viewMemoryButton} className="waves-effect waves-light btn-small">Memory</button></div>
                     </div>
-
+                    <>
                     { notesButton ? kit.notes.map(note => <NotesCard nightMode={nightMode} key={note.id} note={note} />) : <></> }
 
 
                     { memoryButton ? kit.digs.map(dig => <MemoryCard nightMode={nightMode} clickHandler={cueMemoryButton} key={dig.id} dig={dig} />) : <></> }
-
+                    </>
                 </div>
             
                 <div className="regions-specs" style={nightMode ? theme.dmAccent : theme.lmWhite}>

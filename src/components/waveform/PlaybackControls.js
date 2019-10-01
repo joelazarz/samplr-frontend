@@ -108,10 +108,6 @@ const PlaybackControls = ({
             slowedDisable()
         } else if (e.ctrlKey && e.keyCode === 191){
             pitchUp()
-        } else if (e.keyCode === 37){
-            skipBack()
-        } else if (e.keyCode === 39){
-            skipAhead()
         } 
     }
 
@@ -138,8 +134,6 @@ PlaybackControls.propTypes = {
     playControl: PropTypes.func.isRequired,
     playPauseControl: PropTypes.func.isRequired,
     stopControl: PropTypes.func.isRequired,
-    skipBackward: PropTypes.func.isRequired,
-    skipForward: PropTypes.func.isRequired,
     slowedSpeed: PropTypes.func.isRequired,
     normalSpeed: PropTypes.func.isRequired,
     speedDown: PropTypes.func.isRequired,
