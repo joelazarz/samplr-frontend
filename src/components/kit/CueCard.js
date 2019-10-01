@@ -1,11 +1,12 @@
 import React from 'react'
+import theme from '../layout/Theme';
 
-const CueCard = ({ dig, removeHandler }) => {
+const CueCard = ({ dig, removeHandler, nightMode }) => {
 
     return (
         <>
-        <div  className="notecard yellow lighten-4">
-            <span className="black-text">{dig.name}</span>
+        <div className="notecard" style={nightMode ? theme.dmSecondary : theme.lmGrey}>
+            <span>{dig.name}</span>
             <i onClick={() => removeHandler(dig)} className="cueremove material-icons">remove_circle_outline</i>
         </div>
         </>

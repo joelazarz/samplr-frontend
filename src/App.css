@@ -145,7 +145,14 @@
     margin-top: 3%;
 }
 
-.cueremove { float:right; margin-top: 0.3em; margin-right: 0.5em; }
+.cueremove { 
+    float:right; 
+    margin-top: 0.3em; 
+    margin-right: 0.5em; 
+}
+.cueremove:active {
+    color: white;
+}
 /* Kit Sidebar */
 
 
@@ -241,7 +248,6 @@
 .region-control-small-save-btn {
     text-align: center;
     color: white;
-    background: rgb(0, 45, 128);
     font-size: 0.7em;
     width: 6em;
     padding: 0.3em;
@@ -249,7 +255,7 @@
 }
 
 .region-control-small-save-btn:hover {
-    background: rgb(74, 122, 211);
+    background-color: rgb(255, 255, 255);
 }
 
 .region-status-bar {

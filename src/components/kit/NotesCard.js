@@ -1,9 +1,10 @@
 import React from 'react'
+import theme from '../layout/Theme';
 
-const NotesCard = ({ note }) => {
+const NotesCard = ({ note, nightMode }) => {
     return (
         <>
-        <div className="notecard grey lighten-2">
+        <div className="notecard" style={nightMode ? theme.dmAccent : theme.lmWhite}>
             <span className="black-text">{note.note}</span>
         </div>
         </>
