@@ -8,6 +8,7 @@ import PlaybackControls from '../waveform/PlaybackControls';
 import RegionControls from '../waveform/RegionControls';
 import NoteForm from './NoteForm';
 import DigForm from './DigForm';
+import theme from '../layout/Theme';
 
 class Waveform extends Component {
 
@@ -319,6 +320,9 @@ class Waveform extends Component {
     ///// Region Controls //
 
     render() {
+
+        // const [ nightMode ] = this.props
+
         return (
             <div className='waveform'>
             <PlaybackControls 
@@ -334,7 +338,7 @@ class Waveform extends Component {
             mute={this.mute}
             nightMode={this.props.nightMode}
             />
-            <div className='wave'>
+            <div className='wave' style={this.props.nightMode ? theme.dmSecondary : theme.lmWhite}>
             <div id="waveform" ></div>
             <div id="wave-timeline"></div>
             </div>
@@ -372,7 +376,7 @@ class Waveform extends Component {
             nightMode={this.props.nightMode}
             />
             
-            <div className="color-block">
+            <div className="color-block" style={this.props.nightMode ? theme.dmSecondary : theme.lmAccentTwo}>
             {this.state.noteForm ? <NoteForm kitId={this.state.id} userId={this.props.userId} noteStart={this.state.noteStart} noteEnd={this.state.noteEnd} noteSubmit={this.onNoteSubmit}/> : <></>}
             {this.state.memoryForm ? <DigForm kitId={this.state.id} userId={this.props.userId} digPadStart={this.state.memoryStart} digPadEnd={this.state.memoryEnd} memorySubmit={this.onMemorySubmit}/> : <></>}
             </div>

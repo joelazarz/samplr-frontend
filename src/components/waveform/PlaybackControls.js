@@ -124,10 +124,10 @@ const PlaybackControls = ({
 
     return (
         <>
-        <div className="playback-controls-secondary">
+        <div className="playback-controls-secondary" style={nightMode ? theme.dmBlack : theme.lmLightBlue}>
 
         </div>
-        <div className="playback-controls" style={nightMode ? theme.dmPrimary : theme.lmWhite}>
+        <div className="playback-controls" style={nightMode ? theme.dmAccent : theme.lmAccentTwo}>
             <i onClick={playEnable} className={'medium material-icons play' + (playStatus ? ' true' : ' false')}>play_arrow </i>
             <i onClick={(pauseStatus ? PauseDisable : PauseEnable)} className={'medium material-icons pause' + (pauseStatus ? ' true' : ' false')}>pause </i>
             <i onClick={stopEnable} className={'medium material-icons stop' + (stopStatus ? ' true' : ' false')}>stop </i>

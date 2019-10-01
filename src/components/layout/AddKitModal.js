@@ -88,7 +88,7 @@ const AddKitModal = ({ addKit, nightMode }) => {
                 </div>
 
             </div>
-            <div className='modal-footer'>
+            <div className='modal-footer' style={nightMode ? theme.dmSecondary : theme.lmWhite}>
                 <a href='#!'
                 onClick={onSubmit}
                 className='modal-close waves-effect black waves-light btn'>Enter</a>
