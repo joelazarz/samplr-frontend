@@ -17,14 +17,13 @@ import Navbar from './components/layout/Navbar';
 
 const App = () => {
   const [user, setUser] = useState(null)
-  const [nightMode, setNightMode] = useState(null)
+  const [nightMode, setNightMode] = useState(false)
 
   useEffect(() => {
     //Init Materialize JS
     M.AutoInit();
     autoLogin();
   }, [])
-
 
   const setSessionUser = (sessionUser) => {
     setUser(sessionUser)
@@ -42,13 +41,25 @@ const App = () => {
       .then(resp => resp.json())
       .then(data => {
         setUser(data)
+        {data.darkmode ? setNightMode(true) : setNightMode(false)}
       })
     }
   }
 
   const nightModeSwitch = () => {
-    setNightMode(nightMode === null ? true : false)
     setNightMode(nightMode ? false : true)
+    patchNightMode()
+  }
+
+  const patchNightMode = () => {
+    let darkmode = { darkmode: !nightMode }
+    fetch('http://localhost:3000/users', {
+      method: 'PATCH',
+        body: JSON.stringify(darkmode),
+        headers: {
+          'Content-Type': 'application/json'
+        }
+    })
   }
 
   return (
