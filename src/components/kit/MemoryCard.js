@@ -1,11 +1,12 @@
 import React from 'react'
+import theme from '../layout/Theme';
 
-const MemoryCard = ({ dig, clickHandler }) => {
+const MemoryCard = ({ dig, clickHandler, nightMode }) => {
 
     return (
         <>
-        <div className="notecard grey lighten-1">
-            <span className="black-text">{dig.name}</span>
+        <div className="notecard" style={nightMode ? theme.dmSecondary : theme.lmGrey}>
+            <span>{dig.name}</span>
             <i onClick={() => clickHandler(dig)} className="cueremove material-icons">add_circle_outline</i>
         </div>
         </>
