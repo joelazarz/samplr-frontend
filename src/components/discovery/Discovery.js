@@ -5,6 +5,7 @@ import Spinner from '../layout/Spinner';
 import { PropTypes } from 'prop-types';
 import { connect } from 'react-redux'
 import { getKits } from '../../actions/discoveryActions';
+import { Link } from 'react-router-dom'
 import M from 'materialize-css/dist/js/materialize.min.js'
 import theme from '../layout/Theme';
 
@@ -42,7 +43,7 @@ const Discovery = ({ kits: { kits, loading }, getKits, nightMode }) => {
 
                 <div className="active-kits" style={nightMode ? theme.dmPrimary : theme.lmAccentTwo}>
                     <div className='random-kit-header' style={nightMode ? theme.dmSecondary : theme.lmLightBlue}>{randomKit.name}</div>
-                    <img src={randomKit.image} alt={randomKit.name}></img>
+                    <Link to ={`/kits/${randomKit.id}`} ><img src={randomKit.image} alt={randomKit.name}></img></Link>
                 </div>
 
             </div>

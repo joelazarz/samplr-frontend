@@ -26,13 +26,23 @@
     flex-direction: row;
 }
 
+.nav-bar i {
+    margin-top: 0.2em;
+    font-size: 1.7em;
+}
+
 .switch{
     margin-top: 0.4em;
     margin-left: 2em;
+    margin-right: 1em;
 }
 
 .switch label input[type=checkbox]:checked+.lever:after {
     background-color: rgb(54, 54, 54);
+}
+
+.sunny {
+    color: lightgoldenrodyellow;
 }
 
 
@@ -50,9 +60,9 @@
     text-align: center;
 }
 .random-kit-header{
-    margin-left: 2em;
-    margin-right: 2em;
-    margin-bottom: 0.5em;
+    text-align: center;
+    margin-left: 1.5em;
+    margin-right: 1.5em;
     font-size: 1.5em;
 }
 .active-kits img{
