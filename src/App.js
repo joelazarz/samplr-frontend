@@ -26,7 +26,9 @@ const App = () => {
   }, [])
 
   const setSessionUser = (sessionUser) => {
-    setUser(sessionUser)
+    console.log(sessionUser)
+    sessionUser.user.darkmode ? setNightMode(true) : setNightMode(false)
+    setUser(sessionUser.user)
   }
 
   const autoLogin = () => {
