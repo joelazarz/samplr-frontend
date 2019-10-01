@@ -6,11 +6,11 @@ import CueCard from './CueCard';
 import Spinner from '../layout/Spinner';
 import { connect } from 'react-redux'
 
-
 import { getKit } from '../../actions/kitActions';
+import theme from '../layout/Theme';
 
 
-const Kit = ({ kit: { kit, loading }, user, getKit }) => {
+const Kit = ({ kit: { kit, loading }, user, getKit, nightMode }) => {
 
     const [notesButton, setNotesButton] = useState(false)
     const [memoryButton, setMemoryButton] = useState(false)
@@ -58,10 +58,10 @@ const Kit = ({ kit: { kit, loading }, user, getKit }) => {
     return (
         <>
         <div className="row">
-            <div className="col s8 grey lighten-5">
+            <div className="col s8" style={nightMode ? theme.dmPrimary : theme.lmWhite}> 
             <div className="kit-main-container">
                 <div className="kit-waveform-container">
-                    <Waveform key={kit.id} userId={user.id} id={kit.id} src={kit.sample} notes={kit.notes} digs={kit.digs} digCue={digCue} shiftDig={shiftDig} />
+                    <Waveform nightMode={nightMode} key={kit.id} userId={user.id} id={kit.id} src={kit.sample} notes={kit.notes} digs={kit.digs} digCue={digCue} shiftDig={shiftDig} />
                 </div>
 
                 <div className="kit-name-container">
@@ -73,12 +73,12 @@ const Kit = ({ kit: { kit, loading }, user, getKit }) => {
                         <div className="kit-detail-header">
                             [ Kit Detail ]
                         </div>
-                        <div className="kit-detail-text-container">
-                            <h6>{kit.detail}</h6>
+                        <div className="kit-detail-text-container" style={nightMode ? theme.dmAccent : theme.lmWhite}>
+                        {kit.detail}
                         </div>
                     </div>
 
-                    <div className="kit-detail-image-container">
+                    <div className="kit-detail-image-container" style={nightMode ? theme.dmAccent : theme.lmGrey}>
                         <img src={kit.image} alt={kit.name} />
                     </div>
                 </div>
@@ -86,7 +86,7 @@ const Kit = ({ kit: { kit, loading }, user, getKit }) => {
             </div>
 
 
-            <div className="col s4 grey lighten-3">
+            <div className="col s4" style={nightMode ? theme.dmSecondary : theme.lmWhite}>
             <div className="height">
 
             <div className="notes-specs">

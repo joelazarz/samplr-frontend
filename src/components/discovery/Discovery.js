@@ -6,9 +6,10 @@ import { PropTypes } from 'prop-types';
 import { connect } from 'react-redux'
 import { getKits } from '../../actions/discoveryActions';
 import M from 'materialize-css/dist/js/materialize.min.js'
+import theme from '../layout/Theme';
 
 
-const Discovery = ({ kits: { kits, loading }, getKits }) => {
+const Discovery = ({ kits: { kits, loading }, getKits, nightMode }) => {
 
     useEffect(() => {
         M.AutoInit();
@@ -23,21 +24,21 @@ const Discovery = ({ kits: { kits, loading }, getKits }) => {
 
     return (
         <>
-        <div className="row" style={{background: '#282D38'}}>
-            <div className="col s8" style={{background: '#282D38'}}>
-            <div className="height" style={{background: '#282D38'}}>
-                <div className="discovery-kits-feed" style={{background: '#282D38'}}>
-                    {[...kits].reverse().map(kit => <DiscoveryCard key={kit.id} kit={kit} />)}
+        <div className="row" style={nightMode ? theme.dmSecondary : theme.lmWhite}>
+            <div className="col s8" style={nightMode ? theme.dmSecondary : theme.lmWhite}>
+            <div className="height" style={nightMode ? theme.dmSecondary : theme.lmWhite}>
+                <div className="discovery-kits-feed" style={nightMode ? theme.dmSecondary : theme.lmWhite}>
+                    {[...kits].reverse().map(kit => <DiscoveryCard nightMode={nightMode} key={kit.id} kit={kit} />)}
                 </div>
             </div>
             </div>
 
-            <div className="col s4" style={{background: '#262633'}}>
-            <div className="height" style={{background: '#262633'}}>
+            <div className="col s4" style={nightMode ? theme.dmSecondary : theme.lmWhite}>
+            <div className="height" style={nightMode ? theme.dmSecondary : theme.lmWhite}>
                 <h3 className='grey-text'>4-columns</h3>
                 <h4 className='grey-text'>New Kits / Featured Kits</h4>
 
-                <div className="active-kits" style={{background: '#262633'}}>
+                <div className="active-kits" style={nightMode ? theme.dmSecondary : theme.lmWhite}>
                     {console.log('Active Kits - Discovery.js',activeKits)}
                 </div>
 
