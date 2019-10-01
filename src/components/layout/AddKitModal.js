@@ -42,6 +42,7 @@ const AddKitModal = ({ addKit, nightMode }) => {
                     <div className='input-field'>
                         <input 
                         type='text'
+                        style={{color: 'grey'}}
                         name='name'
                         id="name-input"
                         value={name}
@@ -54,6 +55,7 @@ const AddKitModal = ({ addKit, nightMode }) => {
                     <div className='input-field'>
                         <input 
                         type='text'
+                        style={{color: 'grey'}}
                         name='detail'
                         id="detail-input"
                         value={detail}
@@ -66,6 +68,7 @@ const AddKitModal = ({ addKit, nightMode }) => {
                     <div className='input-field'>
                         <input 
                         type='text'
+                        style={{color: 'grey'}}
                         name='image'
                         id="image-input"
                         value={image}

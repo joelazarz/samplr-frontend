@@ -19,7 +19,7 @@ const Navbar = ({ nightModeSwitch, nightMode }) => {
             On
             </label>
             </div>
-            {nightMode ? <i className="small material-icons">nights_stay</i> : <i className="sunny small material-icons">wb_sunny</i> }
+            {nightMode ? <i className="night small material-icons">nights_stay</i> : <i className="sunny small material-icons">wb_sunny</i> }
         </div>
     )
 }

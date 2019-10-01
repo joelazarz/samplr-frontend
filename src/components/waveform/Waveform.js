@@ -28,7 +28,7 @@ class Waveform extends Component {
         this.wavesurfer = WaveSurfer.create({
             container: '.wave',
             waveColor: 'rgb(193, 193, 193)',
-            progressColor: 'rgb(140, 140, 140)',
+            progressColor: '#757575',
             cursorColor: 'orange',
             cursorWidth: 2,
             hideScrollbar: false,
@@ -62,12 +62,12 @@ class Waveform extends Component {
     stopBtn = () => {
         this.wavesurfer.stop()
     }
-    skipBackward = () => {
-        this.wavesurfer.skipBackward(3)
-    }
-    skipForward = () => {
-        this.wavesurfer.skipForward(3)
-    }
+    // skipBackward = () => {
+    //     this.wavesurfer.skipBackward(3)
+    // }
+    // skipForward = () => {
+    //     this.wavesurfer.skipForward(3)
+    // }
     slowedSpeed = () => {
         this.wavesurfer.setPlaybackRate(0.75)
     }
@@ -222,7 +222,7 @@ class Waveform extends Component {
             start: `${dig.dig_pad_start}`,
             end: `${dig.dig_pad_end}`,
             loop: false,
-            color: 'rgb(255, 176, 176, 0.4)',
+            color: 'rgb(252, 206, 195, 0.4)',
             attributes: {
                 label: '[1]'
             }
@@ -238,7 +238,7 @@ class Waveform extends Component {
             start: `${dig.dig_pad_start}`,
             end: `${dig.dig_pad_end}`,
             loop: false,
-            color: 'rgb(255, 176, 176, 0.4)',
+            color: 'rgb(187, 255, 198, 0.4)',
             attributes: {
                 label: '[1]'
             }
@@ -254,7 +254,7 @@ class Waveform extends Component {
             start: `${dig.dig_pad_start}`,
             end: `${dig.dig_pad_end}`,
             loop: false,
-            color: 'rgb(255, 176, 176, 0.4)',
+            color: 'rgb(191, 253, 255, 0.4)',
             attributes: {
                 label: '[1]'
             }
@@ -270,7 +270,7 @@ class Waveform extends Component {
             start: `${dig.dig_pad_start}`,
             end: `${dig.dig_pad_end}`,
             loop: false,
-            color: 'rgb(255, 176, 176, 0.4)',
+            color: 'rgb(247, 161, 255, 0.4)',
             attributes: {
                 label: '[1]'
             }

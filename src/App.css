@@ -5,17 +5,17 @@
 }
 
 ::-webkit-scrollbar-track {
-    background: #ffffff;
+    background: #C4CACF;
 }
 
 
 ::-webkit-scrollbar-thumb {
-    background: #888;
+    background: #666D72;
 }
 
 
 ::-webkit-scrollbar-thumb:hover {
-    background: #555;
+    background: #6C828D;
 }
 /* scroll bar styling  */
 
@@ -44,12 +44,15 @@
 .sunny {
     color: lightgoldenrodyellow;
 }
+.night {
+    color: plum;
+}
 
 
 /* Discovery Page */
 .discovery-kits-feed{
     height: 100vh;
-    overflow: hidden;
+    overflow: scroll;
 }
 
 .graphic-container{
@@ -128,6 +131,10 @@
     margin-top: 1em;
     margin-bottom: 1em;
     max-height: 18em;
+}
+
+.card.small {
+    height: 25em;
 }
 /* Discovery Page */
 
@@ -312,9 +319,9 @@
 .material-icons.region2.true { color: rgb(187, 255, 198); }
 .material-icons.region3.true { color: rgb(191, 253, 255); }
 .material-icons.region4.true { color: rgb(247, 161, 255); }
-.material-icons.region5.true { color: rgb(207, 149, 255); }
-.material-icons.regionMemory.true { color: rgb(219, 0, 0); }
-.material-icons.regionNote.true { color: rgb(0, 110, 24); }
+.material-icons.region5.true { color: rgb(46, 99, 255); }
+.material-icons.regionMemory.true { color: rgb(255, 175, 14); }
+.material-icons.regionNote.true { color: rgb(165, 255, 21); }
 
 /* Below Regions Control */
 .color-block{
