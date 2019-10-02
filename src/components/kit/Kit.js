@@ -34,11 +34,6 @@ const Kit = ({ kit: { kit, loading }, user, getKit, nightMode }) => {
         setNotesButton(false)
         setCueViewButton(false)
     }
-    const viewCueButton = () => {
-        setCueViewButton(true)
-        setNotesButton(false)
-        setMemoryButton(false)
-    }
     const cueMemoryButton = (dig) => {
         !digCue.includes(dig) ? setDigCue([...digCue, dig]) : setDigCue([...digCue])
     }
@@ -101,7 +96,6 @@ const Kit = ({ kit: { kit, loading }, user, getKit, nightMode }) => {
             
                 <div className="regions-specs" style={nightMode ? theme.dmAccent : theme.lmWhite}>
                     <div className="specs-header" style={nightMode ? theme.dmSecondary : theme.lmGrey}></div>
-                        {/* { cueViewButton ? digCue.map(dig => dig.kit_id === kit.id ? <CueCard key={dig.id} removeHandler={removeFromCue} dig={dig}/> : <></>) : <></> } */}
                         { digCue.map(dig => dig.kit_id === kit.id ? <CueCard nightMode={nightMode} key={dig.id} removeHandler={removeFromCue} dig={dig}/> : <></>) }
                 </div>
 

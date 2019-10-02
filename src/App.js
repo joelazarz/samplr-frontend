@@ -12,8 +12,8 @@ import AddKitModal from './components/layout/AddKitModal';
 
 import 'materialize-css/dist/css/materialize.min.css'
 import M from 'materialize-css/dist/js/materialize.min.js'
-import './App.css';
 import Navbar from './components/layout/Navbar';
+import './App.css';
 
 const App = () => {
   const [user, setUser] = useState(null)
@@ -26,7 +26,6 @@ const App = () => {
   }, [])
 
   const setSessionUser = (sessionUser) => {
-    console.log(sessionUser)
     sessionUser.user.darkmode ? setNightMode(true) : setNightMode(false)
     setUser(sessionUser.user)
   }
