@@ -30,10 +30,9 @@ const LandingPage = ({ setSessionUser, user }) => {
 
             <div className="col s8 blue-grey lighten-4">
             <div className="height">
-                <h3>8-columns</h3>
-                <h4>Guide</h4>
+                
                 <div className="container">
-                    Scrollable Guide
+
 
                     <div className="container">
                     <Link to ="/discovery">Discovery</Link>
