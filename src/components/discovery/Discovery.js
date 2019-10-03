@@ -37,14 +37,15 @@ const Discovery = ({ kits: { kits, loading }, getKits, nightMode }) => {
             <div className="col s4" style={nightMode ? theme.dmPrimary : theme.lmAccentTwo}>
             <div className="height" style={nightMode ? theme.dmPrimary : theme.lmAccentTwo}>
 
-                <div className="graphic-container">
-
-                </div>
-
                 <div className="active-kits" style={nightMode ? theme.dmPrimary : theme.lmAccentTwo}>
                     <div className='random-kit-header' style={nightMode ? theme.dmSecondary : theme.lmLightBlue}>{randomKit.name}</div>
                     <Link to ={`/kits/${randomKit.id}`} ><img src={randomKit.image} alt={randomKit.name}></img></Link>
                 </div>
+                
+                <div className="graphic-container">
+
+                </div>
+
 
             </div>
             </div>

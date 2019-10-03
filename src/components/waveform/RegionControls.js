@@ -305,8 +305,8 @@ const RegionControls = ({
 
         <div 
         onClick={(notesModeStatus ? disableNotesMode : enableNotesMode)} 
-        className="region-control-presets" style={nightMode ? theme.dmSecondary : theme.lmGrey}>
-            <i className="small material-icons">
+        className="region-control-presets" style={nightMode ? theme.dmSecondary : theme.lmDarkGrey}>
+            <i className={'small material-icons notesMode' + (notesModeStatus ? ' true' : ' false')}>
             speaker_notes </i>
             Notes Mode
         </div>

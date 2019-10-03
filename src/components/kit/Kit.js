@@ -95,7 +95,10 @@ const Kit = ({ kit: { kit, loading }, user, getKit, nightMode }) => {
                 </div>
             
                 <div className="regions-specs" style={nightMode ? theme.dmAccent : theme.lmWhite}>
-                    <div className="specs-header" style={nightMode ? theme.dmSecondary : theme.lmGrey}></div>
+                    <div className="specs-header" style={nightMode ? theme.dmSecondary : theme.lmGrey}>
+                    <div className='specs-button'><button style={nightMode ? theme.dmBtnSidebar : theme.lmBtnSidebar} className="waves-effect waves-light btn-small">Cue</button></div>
+                    <div className='specs-button'><button style={nightMode ? theme.dmBtnSidebar : theme.lmBtnSidebar} className="waves-effect waves-light btn-small">Help</button></div>
+                    </div>
                         { digCue.map(dig => dig.kit_id === kit.id ? <CueCard nightMode={nightMode} key={dig.id} removeHandler={removeFromCue} dig={dig}/> : <></>) }
                 </div>
 

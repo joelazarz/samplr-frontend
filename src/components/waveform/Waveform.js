@@ -78,6 +78,18 @@ class Waveform extends Component {
     mute = () => {
         this.wavesurfer.toggleMute((this.wavesurfer.getMute ? false : true))
     }
+    skipForward = () => {
+        this.wavesurfer.skipForward(5)
+    }
+    skipBackward = () => {
+        this.wavesurfer.skipBackward(5)
+    }
+    zoomIn = () => {
+        this.wavesurfer.zoom(20)
+    }
+    zoomOut = () => {
+        this.wavesurfer.zoom(1)
+    }
     ///// Playback Controls //
 
     //////////////////////////
@@ -143,7 +155,6 @@ class Waveform extends Component {
 
     clearRegions = () => {
         this.wavesurfer.clearRegions()
-        this.wavesurfer.zoom(20)
         this.setState({ memoryStart: null, memoryEnd: null, noteStart: null, noteEnd: null })
         this.setState({ memoryForm: false, noteForm: false })
     }
@@ -329,9 +340,13 @@ class Waveform extends Component {
             speedDown={this.speedDown}
             speedUp={this.speedUp}
             mute={this.mute}
+            skipForward={this.skipForward}
+            skipBackward={this.skipBackward}
             nightMode={this.props.nightMode}
+            zoomIn={this.zoomIn}
+            zoomOut={this.zoomOut}
             />
-            <div className='wave' style={this.props.nightMode ? theme.dmSecondary : theme.lmWhite}>
+            <div className='wave' style={this.props.nightMode ? theme.dmSecondary : theme.lmWave}>
             <div id="waveform" ></div>
             <div id="wave-timeline"></div>
             </div>
@@ -369,7 +384,7 @@ class Waveform extends Component {
             nightMode={this.props.nightMode}
             />
             
-            <div className="color-block" style={this.props.nightMode ? theme.dmUtility : theme.lmAccentTwo}>
+            <div className="color-block" style={this.props.nightMode ? theme.dmUtility : theme.lmColorBlock}>
             {this.state.noteForm ? <NoteForm kitId={this.state.id} userId={this.props.userId} noteStart={this.state.noteStart} noteEnd={this.state.noteEnd} noteSubmit={this.onNoteSubmit} nightMode={this.props.nightMode}/> : <></>}
             {this.state.memoryForm ? <DigForm kitId={this.state.id} userId={this.props.userId} digPadStart={this.state.memoryStart} digPadEnd={this.state.memoryEnd} memorySubmit={this.onMemorySubmit} nightMode={this.props.nightMode}/> : <></>}
             </div>

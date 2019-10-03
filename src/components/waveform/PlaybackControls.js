@@ -13,6 +13,8 @@ const PlaybackControls = ({
     speedDown,
     speedUp,
     mute,
+    zoomIn,
+    zoomOut,
     nightMode }) => {
 
     useEffect(()=>{
@@ -113,7 +115,7 @@ const PlaybackControls = ({
 
     return (
         <>
-        <div className="playback-controls-secondary" style={nightMode ? theme.dmUtility : theme.lmBtnSidebar}>
+        <div className="playback-controls-secondary" style={nightMode ? theme.dmUtility : theme.lmPlayback}>
 
         </div>
         <div className="playback-controls" style={nightMode ? theme.dmAccent : theme.lmAccentTwo}>
@@ -124,6 +126,10 @@ const PlaybackControls = ({
             <i onClick={skipAhead} className={'medium material-icons ff' + (ffStatus ? ' true' : ' false')}>fast_forward </i>
             <i onClick={(slowedStatus ? slowedDisable : slowedEnable)} className={'medium material-icons speed' + (slowedStatus ? ' true' : ' false')}>slow_motion_video </i>
             <i onClick={toggleMute} className={'medium material-icons mute' + (muteStatus ? ' true' : ' false')}>volume_off </i>
+            <div className="zoom-div">
+            <i onClick={zoomIn} className='small material-icons zoomIn'>add </i>
+            <i onClick={zoomOut} className='small material-icons zoomOut'>remove </i>
+            </div>
         </div>
         </>
     )
