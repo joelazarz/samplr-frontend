@@ -9,8 +9,8 @@ const Navbar = ({ nightModeSwitch, nightMode }) => {
     }
 
     return (
-        <div className="nav-bar" style={nightMode ? theme.dmUtility : theme.lmLightBlue}>
-            <Link to ='/discovery'><button  className="waves-effect waves-black grey-text btn-flat">Discovery</button></Link>
+        <div className="nav-bar" style={nightMode ? theme.dmUtility : theme.lmNavBar}>
+            <Link to ='/discovery'><button  className="waves-effect waves-black white-text btn-flat">Discovery</button></Link>
             <div className="switch">
             <label>
             Off

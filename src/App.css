@@ -84,7 +84,7 @@
 .kit-name-container{
     background: rgb(181, 190, 202);
     height: 3em;
-    width: 42.7%;
+    width: 38%;
     margin-top: 1.2em;
     margin-left: 1em;
     margin-right: 1em;
@@ -227,6 +227,25 @@
     height: 0.5em;
 }
 
+.zoom-div {
+    display: flex;
+    flex-direction: column;
+    size: 0.5em;
+    margin-left: 1em;
+    margin-top: 0.3em;
+}
+
+.zoom-div i {
+    font-size: 1.4em;
+    background: rgba(255, 255, 255, 0.2);
+    border-radius: 3px;
+}
+
+.zoom-div i:hover {
+    background: rgba(255, 255, 255, 0.5)
+
+}
+
 /* Playback Control Icons */
 .material-icons.false { color: rgb(121, 121, 121); }
 .material-icons.play.true { color: rgb(0, 168, 14); }
@@ -326,6 +345,7 @@
 .material-icons.region5.true { color: rgb(46, 99, 255); }
 .material-icons.regionMemory.true { color: rgb(255, 175, 14); }
 .material-icons.regionNote.true { color: rgb(165, 255, 21); }
+.material-icons.notesMode.true { color: rgb(165, 255, 21); }
 
 /* Below Regions Control */
 .color-block{
