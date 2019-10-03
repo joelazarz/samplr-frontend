@@ -99,7 +99,9 @@ const Kit = ({ kit: { kit, loading }, user, getKit, nightMode }) => {
                     <div className='specs-button'><button style={nightMode ? theme.dmBtnSidebar : theme.lmBtnSidebar} className="waves-effect waves-light btn-small">Cue</button></div>
                     <div className='specs-button'><button style={nightMode ? theme.dmBtnSidebar : theme.lmBtnSidebar} className="waves-effect waves-light btn-small">Help</button></div>
                     </div>
+                    <div className='spec-content'>
                         { digCue.map(dig => dig.kit_id === kit.id ? <CueCard nightMode={nightMode} key={dig.id} removeHandler={removeFromCue} dig={dig}/> : <></>) }
+                    </div>
                 </div>
 
 
