@@ -180,6 +180,7 @@ html{cursor: pointer;}
     background: #ffffff;
     height: 46vh;
     margin: 1vw;
+    margin-top: -2em;
     /* overflow: scroll; */
 }
 
@@ -201,7 +202,6 @@ html{cursor: pointer;}
 }
 
 .notes-specs{
-    /* background: #ffffff; */
     height: 43vh;
     margin: 1vw;
     overflow: auto;
