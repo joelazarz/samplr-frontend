@@ -1,4 +1,4 @@
-
+html{cursor: pointer;}
 /* scroll bar styling  */
 ::-webkit-scrollbar {
     width: 10px;
@@ -57,10 +57,39 @@
 
 .graphic-container{
     height: 30%;
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+}
+.graphic-text{
+    margin-left: 1em;
+    margin-right: 1em;
+    font-family: 'VT323', monospace;
+    text-align: left;
+    text-shadow: 1px 1px rgb(255, 255, 255);
+    border-radius: 4px;
+    font-size: 3.5em;
+}
+.graphic-sub-text{
+    text-align: left;
+    margin-left: 3em;
+    font-size: 0.8em;
+}
+.graphic-dot{
+    color: rgb(255, 255, 255);
+    text-shadow: 1px 1px rgb(0, 0, 0);
+}
+.graphic-par{
+    color: orange;
+    text-shadow: 1px 1px rgb(255, 255, 255);
 }
 
 .active-kits{
     text-align: center;
+    margin-top: 2em;
+    height: 50%;
+    /* border: 0.5px dotted white; */
+
 }
 .random-kit-header{
     text-align: center;
@@ -71,6 +100,8 @@
 .active-kits img{
     max-height: 85%;
     max-width: 85%;
+    margin-top: 2em;
+    margin-bottom: 3em;;
 }
 
 .height {
@@ -136,6 +167,10 @@
 .card.small {
     height: 25em;
 }
+
+.graphic-container {
+    font-family: 'Source Code Pro', monospace;
+}
 /* Discovery Page */
 
 
@@ -153,13 +188,16 @@
     height: 3em;
     display: flex;  
     flex-direction: row;
-    justify-content: space-around;
-    /* position: inherit; */
-    /* width: 30%; */
+    justify-content: left;
+    position: absolute;
+    width: 30%;
 }
 
 .specs-button {
     margin: .4em;
+}
+.spec-content{
+    margin-top: 3.8em;
 }
 
 .notes-specs{

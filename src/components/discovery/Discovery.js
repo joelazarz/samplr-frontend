@@ -34,16 +34,21 @@ const Discovery = ({ kits: { kits, loading }, getKits, nightMode }) => {
             </div>
             </div>
 
-            <div className="col s4" style={nightMode ? theme.dmPrimary : theme.lmAccentTwo}>
-            <div className="height" style={nightMode ? theme.dmPrimary : theme.lmAccentTwo}>
+            <div className="col s4" style={nightMode ? theme.dmPrimary : theme.lmDiscoverySide}>
+            <div className="height" style={nightMode ? theme.dmPrimary : theme.lmDiscoverySide}>
 
-                <div className="active-kits" style={nightMode ? theme.dmPrimary : theme.lmAccentTwo}>
-                    <div className='random-kit-header' style={nightMode ? theme.dmSecondary : theme.lmLightBlue}>{randomKit.name}</div>
+                <div className="active-kits" style={nightMode ? theme.dmPrimary : theme.lmDiscoverySide}>
+                    <div className='random-kit-header' style={nightMode ? theme.dmPrimary : theme.lmDiscoverySide}></div>
                     <Link to ={`/kits/${randomKit.id}`} ><img src={randomKit.image} alt={randomKit.name}></img></Link>
                 </div>
-                
-                <div className="graphic-container">
 
+                <div className="graphic-container" style={nightMode ? theme.dmGraphic : theme.lmGraphic}>
+                <div className="graphic-text">
+                <span className='graphic-dot'>.</span>sampler<span className='graphic-par'>( )</span>
+                </div>
+                <div className='graphic-sub-text'>
+                    <span>p2p audio workstation</span>
+                </div>
                 </div>
 
 
