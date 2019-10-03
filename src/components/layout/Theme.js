@@ -10,11 +10,11 @@ const theme = {
     dmUtility: { background: '#0F121C', color: 'lightgrey' },
     dmKitDetail: { background: '#273642', color: 'lightgrey' },
     dmImgContainer: { background: '#0F0F0F' },
-    dmCueCard: { background: '#32383D', color: '#82D7FF' },
     
     dmGraphic: { color: '#ADBBBB' },
     dmSpecHeader: { background: '#202424' },
     dmBtnSidebar: { background: '#1A1D1D', color: 'lightgrey' },
+    dmCueCard: { background: '#32383D', color: '#82D7FF' },
 
 // Light Mode
     lmWhite: { background: '#E8ECEF' },
@@ -32,8 +32,9 @@ const theme = {
 
     lmGraphic: { color: '#0F1212' },
     lmRegionControl: { background: '#DCDCDC' },
-    lmSpecHeader: { background: '#DEF2F3' },
-    
+    lmSpecHeader: { background: '#DEF2F3' },    
+    lmDiscoveryCard: { background: '#F0F0F0' },    
+    lmCueCard: { background: '#9EC8C6' },    
 
 }
 

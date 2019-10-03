@@ -28,7 +28,7 @@ class Waveform extends Component {
         this.wavesurfer = WaveSurfer.create({
             container: '.wave',
             waveColor: 'rgb(193, 193, 193)',
-            progressColor: '#757575',
+            progressColor: '#B8D6DA',
             cursorColor: 'orange',
             cursorWidth: 2,
             hideScrollbar: false,
