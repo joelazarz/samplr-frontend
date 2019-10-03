@@ -1,10 +1,11 @@
 import React, { useState } from 'react'
 import { connect } from 'react-redux';
 import { addDig } from '../../actions/digActions';
+import { getKit } from '../../actions/kitActions';
 import M from 'materialize-css/dist/js/materialize.min.js'
 import theme from '../layout/Theme';
 
-const DigForm = ({ kitId, digPadStart, digPadEnd, memorySubmit, addDig, userId, nightMode }) => {
+const DigForm = ({ kitId, digPadStart, digPadEnd, memorySubmit, addDig, getKit, userId, nightMode }) => {
     const [name, setName] = useState('')
 
     let kit_id = kitId
@@ -24,6 +25,7 @@ const DigForm = ({ kitId, digPadStart, digPadEnd, memorySubmit, addDig, userId, 
                 dig_pad_end,
             }
             addDig(newDig)
+            .then(()=> getKit(kitId))
             M.toast({ html: 'Region Saved'})
         }
         setName('')
@@ -52,4 +54,4 @@ const DigForm = ({ kitId, digPadStart, digPadEnd, memorySubmit, addDig, userId, 
     )
 }
 
-export default connect(null, { addDig })(DigForm)
+export default connect(null, { addDig, getKit })(DigForm)
