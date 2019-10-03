@@ -44,10 +44,13 @@ const Discovery = ({ kits: { kits, loading }, getKits, nightMode }) => {
 
                 <div className="graphic-container" style={nightMode ? theme.dmGraphic : theme.lmGraphic}>
                 <div className="graphic-text">
-                <span className='graphic-dot'>.</span>sampler<span className='graphic-par'>( )</span>
+                <span className='graphic-dot'>.</span>sampler<span className='graphic-par'>()</span>
                 </div>
                 <div className='graphic-sub-text'>
-                    <span>p2p audio workstation</span>
+                    <ul>p2p audio workstation</ul>
+                    <ul> + upload samples</ul>
+                    <ul> + load/save loops//regions</ul>
+                    <ul> + annotate samples</ul>
                 </div>
                 </div>
 
