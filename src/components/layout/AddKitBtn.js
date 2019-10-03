@@ -9,6 +9,7 @@ const AddKitBtn = () => {
             <h6 className='grey-text'>Add Kit</h6>
         </div>
     )
+
 }
 
 export default AddKitBtn
