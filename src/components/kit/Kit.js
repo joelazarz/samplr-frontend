@@ -13,7 +13,7 @@ import theme from '../layout/Theme';
 const Kit = ({ kit: { kit, loading }, user, getKit, nightMode }) => {
 
     const [notesButton, setNotesButton] = useState(false)
-    const [memoryButton, setMemoryButton] = useState(false)
+    const [memoryButton, setMemoryButton] = useState(true)
     const [cueViewButton, setCueViewButton] = useState(false)
     const [digCue, setDigCue] = useState([])
 
@@ -82,20 +82,20 @@ const Kit = ({ kit: { kit, loading }, user, getKit, nightMode }) => {
             <div className="height">
 
             <div className="notes-specs" style={nightMode ? theme.dmAccent : theme.lmWhite}>
-                    <div className="specs-header" style={nightMode ? theme.dmSecondary : theme.lmGrey}>
+                    <div className="specs-header" style={nightMode ? theme.dmSpecHeader : theme.lmSpecHeader}>
                     <div className='specs-button'><button style={nightMode ? theme.dmBtnSidebar : theme.lmBtnSidebar} onClick={viewNotesButton} className="waves-effect waves-light btn-small">Notes</button></div>
                     <div className='specs-button'><button style={nightMode ? theme.dmBtnSidebar : theme.lmBtnSidebar} onClick={viewMemoryButton} className="waves-effect waves-light btn-small">Memory</button></div>
                     </div>
                     <>
+                    <div className='spec-content'>
                     { notesButton ? kit.notes.map(note => <NotesCard nightMode={nightMode} key={note.id} note={note} />) : <></> }
-
-
                     { memoryButton ? kit.digs.map(dig => <MemoryCard nightMode={nightMode} clickHandler={cueMemoryButton} key={dig.id} dig={dig} />) : <></> }
+                    </div>
                     </>
                 </div>
             
                 <div className="regions-specs" style={nightMode ? theme.dmAccent : theme.lmWhite}>
-                    <div className="specs-header" style={nightMode ? theme.dmSecondary : theme.lmGrey}>
+                    <div className="specs-header" style={nightMode ? theme.dmSpecHeader : theme.lmSpecHeader}>
                     <div className='specs-button'><button style={nightMode ? theme.dmBtnSidebar : theme.lmBtnSidebar} className="waves-effect waves-light btn-small">Cue</button></div>
                     <div className='specs-button'><button style={nightMode ? theme.dmBtnSidebar : theme.lmBtnSidebar} className="waves-effect waves-light btn-small">Help</button></div>
                     </div>

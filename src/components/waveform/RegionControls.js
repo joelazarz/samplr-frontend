@@ -238,7 +238,7 @@ const RegionControls = ({
 
     return (
         <>
-        <div className="region-controls" style={nightMode ? theme.dmSecondary : theme.lmGrey}>
+        <div className="region-controls" style={nightMode ? theme.dmSecondary : theme.lmRegionControl}>
 
         <div 
         onClick={(regionOneStatus ? regionOneDisable : regionOneEnable)} 
