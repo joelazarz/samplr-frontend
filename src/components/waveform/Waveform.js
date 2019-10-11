@@ -42,7 +42,6 @@ class Waveform extends Component {
             ]
         })
         this.wavesurfer.load(this.props.src);
-        // this.wavesurfer.regions.addEventListener('keydown', handlePlaybackKey);
     }
 
     componentWillUnmount(){
@@ -70,7 +69,8 @@ class Waveform extends Component {
         this.wavesurfer.setPlaybackRate(1)
     }
     speedDown = () => {
-        this.wavesurfer.setPlaybackRate((this.wavesurfer.getPlaybackRate(this.wavesurfer)) - 0.01)
+        let currentSpeed = this.wavesurfer.getPlaybackRate(this.wavesurfer)
+        this.wavesurfer.setPlaybackRate(currentSpeed - 0.01)
     }
     speedUp = () => {
         this.wavesurfer.setPlaybackRate((this.wavesurfer.getPlaybackRate(this.wavesurfer)) + 0.01)
@@ -210,12 +210,15 @@ class Waveform extends Component {
             end: `${note.note_pad_end}`,
             loop: false,
             drag: false,
+            data: note.note,
             resize: false,
             color: 'rgb(182, 255, 163, 0.4)',
             attributes: {
                 label: `${note.id}`
             }
         }))
+        // returning the data that will be displayed - find a place for that on interface
+        this.wavesurfer.on('region-in', region => console.log(region.data))
     }
 
     loadRegionOne = () => {

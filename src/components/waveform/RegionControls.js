@@ -184,6 +184,7 @@ const RegionControls = ({
     }
 
     const disableNotesMode = () => {
+        // a function that removes region event listeners on waveform 
         clearWaveRegions();
         setNotesModeStatus(false)
     }
