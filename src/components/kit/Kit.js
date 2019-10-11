@@ -97,7 +97,6 @@ const Kit = ({ kit: { kit, loading }, user, getKit, nightMode }) => {
                 <div className="regions-specs" style={nightMode ? theme.dmAccent : theme.lmWhite}>
                     <div className="specs-header" style={nightMode ? theme.dmSpecHeader : theme.lmSpecHeader}>
                     <div className='specs-button'><button style={nightMode ? theme.dmBtnSidebar : theme.lmBtnSidebar} className="waves-effect waves-light btn-small">Cue</button></div>
-                    {/* <div className='specs-button'><button style={nightMode ? theme.dmBtnSidebar : theme.lmBtnSidebar} className="waves-effect waves-light btn-small">Help</button></div> */}
                     </div>
                     <>
                     <div className='cue-content'>

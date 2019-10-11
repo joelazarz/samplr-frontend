@@ -4,7 +4,7 @@ import theme from '../layout/Theme';
 const NotesCard = ({ note, nightMode }) => {
     return (
         <>
-        <div className="notecard" style={nightMode ? theme.dmAccent : theme.lmGrey}>
+        <div className="notecard" style={nightMode ? theme.dmSecondary : theme.lmGrey}>
             <span className="notecard-name">{note.note}</span>
         </div>
         </>
