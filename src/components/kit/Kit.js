@@ -14,25 +14,23 @@ const Kit = ({ kit: { kit, loading }, user, getKit, nightMode }) => {
 
     const [notesButton, setNotesButton] = useState(false)
     const [memoryButton, setMemoryButton] = useState(true)
-    const [cueViewButton, setCueViewButton] = useState(false)
     const [digCue, setDigCue] = useState([])
+    // const [cueViewButton, setCueViewButton] = useState(false)
 
     useEffect(() => {
         getKit(window.location.pathname)
-    }, [])
-    // using the window.location.pathname to direct the action to the endpoint in the api :/
-    // console.log('Kit.js [window.location.pathname]', window.location.pathname)
+    }, [getKit])
 
     // kit state functions
     const viewNotesButton = () => {
         setNotesButton(true)
         setMemoryButton(false)
-        setCueViewButton(false)
+        // setCueViewButton(false)
     }
     const viewMemoryButton = () => {
         setMemoryButton(true)
         setNotesButton(false)
-        setCueViewButton(false)
+        // setCueViewButton(false)
     }
     const cueMemoryButton = (dig) => {
         !digCue.includes(dig) ? setDigCue([...digCue, dig]) : setDigCue([...digCue])

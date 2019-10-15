@@ -32,6 +32,11 @@ const AddKitModal = ({ addKit, nightMode }) => {
         setSample('')
     }
 
+    const fileOptions = {
+        fromSources: ['local_file_system'],
+        maxFiles: 1,
+    }
+
 
     return (
         <div id="add-kit-modal" className='modal' style={nightMode ? theme.dmSecondary : theme.lmWhite}>
@@ -80,11 +85,11 @@ const AddKitModal = ({ addKit, nightMode }) => {
                 <div className="file-field input-field">
                 <ReactFilestack
                 apikey={process.env.REACT_APP_FILESTACK_API_KEY}
+                options={fileOptions}
                 componentDisplayMode={{
                     type: 'button',
                     customText: 'Upload Sample',
-                    customClass: 'waves-effect blue-grey lighten-1 waves-light btn',
-                    facebook: false
+                    customClass: 'waves-effect blue-grey lighten-1 waves-light btn'
                 }}
                 onSuccess={(res) => setSample(res.filesUploaded[0].url)}
                 />
@@ -103,11 +108,6 @@ const AddKitModal = ({ addKit, nightMode }) => {
 
 AddKitModal.propTypes = {
     addKit: PropTypes.func.isRequired
-}
-
-const modalStyle = {
-    width: '65%',
-    height: '65%'
 }
 
 export default connect(null, { addKit })(AddKitModal)
