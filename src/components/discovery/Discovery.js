@@ -15,7 +15,7 @@ const Discovery = ({ kits: { kits, loading }, getKits, nightMode }) => {
     useEffect(() => {
         M.AutoInit();
         getKits()
-    }, [])
+    }, [getKits])
 
     if (loading || kits === null) {
         return <Spinner />

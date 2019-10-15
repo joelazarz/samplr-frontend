@@ -28,6 +28,7 @@ const Login = ({ setSessionUser, history }) => {
                 localStorage.setItem('token', data.token)
                 setSessionUser(data)
                 history.push('/discovery')
+                console.log(setSessionUser)
             })
         }
         setUsername('')
