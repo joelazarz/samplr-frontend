@@ -35,7 +35,7 @@ const AddKitModal = ({ addKit, nightMode }) => {
     const fileOptions = {
             fromSources: ['local_file_system', 'url', 'dropbox', 'googledrive'],
             accept: ["audio/*"],
-            maxSize: 10
+            maxSize: 10000000
     }
 
 
