@@ -33,7 +33,7 @@ const App = () => {
   const autoLogin = () => {
     const token = localStorage.getItem('token')
     if (token) {
-      fetch('/autologin', {
+      fetch('https://sampler-backend.herokuapp.com/autologin', {
         headers: {
           'accept': 'application/json',
           Authorization: token
@@ -54,7 +54,7 @@ const App = () => {
 
   const patchNightMode = () => {
     let darkmode = { darkmode: !nightMode }
-    fetch('http://localhost:3000/users', {
+    fetch('https://sampler-backend.herokuapp.com/users', {
       method: 'PATCH',
         body: JSON.stringify(darkmode),
         headers: {
