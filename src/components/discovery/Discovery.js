@@ -5,7 +5,7 @@ import Spinner from '../layout/Spinner';
 import { PropTypes } from 'prop-types';
 import { connect } from 'react-redux'
 import { getKits } from '../../actions/discoveryActions';
-// import { Link } from 'react-router-dom'
+import { Link } from 'react-router-dom'
 import M from 'materialize-css/dist/js/materialize.min.js'
 import theme from '../layout/Theme';
 
