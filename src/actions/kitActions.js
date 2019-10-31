@@ -5,7 +5,7 @@ import { GET_KIT, SET_LOADING, KIT_ERROR} from './types'
 export const getKit = (pathname) => async dispatch => {
     try {
     setLoading();
-    const res = await fetch(`https://sampler-backend.herokuapp.com/kits/${pathname}`)
+    const res = await fetch(`https://sampler-backend.herokuapp.com/${pathname}`)
     const data = await res.json()
     dispatch({
         type: GET_KIT,
