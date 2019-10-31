@@ -5,7 +5,7 @@ import Spinner from '../layout/Spinner';
 import { PropTypes } from 'prop-types';
 import { connect } from 'react-redux'
 import { getKits } from '../../actions/discoveryActions';
-import { Link } from 'react-router-dom'
+// import { Link } from 'react-router-dom'
 import M from 'materialize-css/dist/js/materialize.min.js'
 import theme from '../layout/Theme';
 
@@ -15,13 +15,14 @@ const Discovery = ({ kits: { kits, loading }, getKits, nightMode }) => {
     useEffect(() => {
         M.AutoInit();
         getKits()
+        // eslint-disable-next-line
     }, [getKits])
 
     if (loading || kits === null) {
         return <Spinner />
     }
 
-    const randomKit = kits[Math.floor(Math.random()*kits.length)]
+    // const randomKit = kits[Math.floor(Math.random()*kits.length)]
 
     return (
         <>
@@ -39,7 +40,7 @@ const Discovery = ({ kits: { kits, loading }, getKits, nightMode }) => {
 
                 <div className="active-kits" style={nightMode ? theme.dmPrimary : theme.lmDiscoverySide}>
                     <div className='random-kit-header' style={nightMode ? theme.dmPrimary : theme.lmDiscoverySide}></div>
-                    <Link to ={`/kits/${randomKit.id}`} ><img src={randomKit.image} alt={randomKit.name}></img></Link>
+                    {/* <Link to ={`/kits/${randomKit.id}`} ><img src={randomKit.image} alt={randomKit.name}></img></Link> */}
                 </div>
 
                 <div className="graphic-container" style={nightMode ? theme.dmGraphic : theme.lmGraphic}>

@@ -3,7 +3,7 @@ import { ADD_NOTE, NOTE_ERROR } from './types'
 // ADD NEW NOTE
 export const addNote = (newNote) => async dispatch => {
     try {
-        const res = await fetch('http://localhost:3000/notes', {
+        const res = await fetch('https://sampler-backend.herokuapp.com/notes', {
             method: 'POST',
             body: JSON.stringify(newNote),
             headers: {

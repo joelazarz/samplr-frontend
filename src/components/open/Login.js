@@ -15,7 +15,7 @@ const Login = ({ setSessionUser, history }) => {
                 username,
                 password
             }
-            fetch('/login', {
+            fetch('https://sampler-backend.herokuapp.com/login', {
                 method: 'POST',
                 body: JSON.stringify(logUser),
                 headers: {
@@ -28,7 +28,6 @@ const Login = ({ setSessionUser, history }) => {
                 localStorage.setItem('token', data.token)
                 setSessionUser(data)
                 history.push('/discovery')
-                console.log(setSessionUser)
             })
         }
         setUsername('')

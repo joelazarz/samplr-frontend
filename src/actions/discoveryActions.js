@@ -5,7 +5,7 @@ import { GET_KITS, SET_LOADING, KITS_ERROR, ADD_KIT } from './types'
 export const getKits = () => async dispatch => {
     try {
     setLoading();
-    const res = await fetch('/kits')
+    const res = await fetch('https://sampler-backend.herokuapp.com/kits')
     const data = await res.json()
     dispatch({
         type: GET_KITS,
@@ -24,7 +24,7 @@ export const getKits = () => async dispatch => {
 export const addKit = (newKit) => async dispatch => {
     try {
     setLoading();
-    const res = await fetch('/kits', {
+    const res = await fetch('https://sampler-backend.herokuapp.com/kits', {
         method: 'POST',
         body: JSON.stringify(newKit),
         headers: {

@@ -15,7 +15,7 @@ const Signup = ({ setSessionUser, history }) => {
                 username,
                 password
             }
-            fetch('/signup', {
+            fetch('https://sampler-backend.herokuapp.com/signup', {
                 method: 'POST',
                 body: JSON.stringify(newUser),
                 headers: {
