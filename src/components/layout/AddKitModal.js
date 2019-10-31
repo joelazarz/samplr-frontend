@@ -33,8 +33,9 @@ const AddKitModal = ({ addKit, nightMode }) => {
     }
 
     const fileOptions = {
-        fromSources: ['local_file_system'],
-        maxFiles: 1,
+            fromSources: ['local_file_system', 'url', 'dropbox', 'googledrive'],
+            accept: ["audio/*"],
+            maxSize: 10
     }
 
 
@@ -85,7 +86,7 @@ const AddKitModal = ({ addKit, nightMode }) => {
                 <div className="file-field input-field">
                 <ReactFilestack
                 apikey={process.env.REACT_APP_FILESTACK_API_KEY}
-                options={fileOptions}
+                actionOptions={fileOptions}
                 componentDisplayMode={{
                     type: 'button',
                     customText: 'Upload Sample',
