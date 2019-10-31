@@ -14,8 +14,8 @@ const AddKitModal = ({ addKit, nightMode }) => {
     const [sample, setSample] = useState('')
 
     const onSubmit = () => {
-        if(name === '' || detail === ''){
-            M.toast({ html: 'Please enter Name and Detail' })
+        if(name === '' || detail === '' || image === '' | sample === ''){
+            M.toast({ html: 'All fields required' })
         } else {
             const newKit = {
                 name,
