@@ -22,7 +22,7 @@ const Discovery = ({ kits: { kits, loading }, getKits, nightMode }) => {
         return <Spinner />
     }
 
-    // const randomKit = kits[Math.floor(Math.random()*kits.length)]
+    const randomKit = kits[Math.floor(Math.random()*kits.length)]
 
     return (
         <>
@@ -40,7 +40,7 @@ const Discovery = ({ kits: { kits, loading }, getKits, nightMode }) => {
 
                 <div className="active-kits" style={nightMode ? theme.dmPrimary : theme.lmDiscoverySide}>
                     <div className='random-kit-header' style={nightMode ? theme.dmPrimary : theme.lmDiscoverySide}></div>
-                    {/* <Link to ={`/kits/${randomKit.id}`} ><img src={randomKit.image} alt={randomKit.name}></img></Link> */}
+                    <Link to ={`/kits/${randomKit.id}`} ><img src={randomKit.image} alt={randomKit.name}></img></Link>
                 </div>
 
                 <div className="graphic-container" style={nightMode ? theme.dmGraphic : theme.lmGraphic}>
