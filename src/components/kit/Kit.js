@@ -19,6 +19,7 @@ const Kit = ({ kit: { kit, loading }, user, getKit, nightMode }) => {
 
     useEffect(() => {
         getKit(window.location.pathname)
+        // eslint-disable-next-line
     }, [getKit])
 
     // kit state functions

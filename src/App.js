@@ -78,7 +78,7 @@ const App = () => {
           <Fragment>
           <Navbar nightModeSwitch={nightModeSwitch} nightMode={nightMode}/>
           <Discovery nightMode={nightMode} />
-          <AddKitBtn />
+          {user ? <AddKitBtn /> : <></> }
           <AddKitModal nightMode={nightMode}/>
           </Fragment>
         )} />

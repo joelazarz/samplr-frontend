@@ -3,7 +3,7 @@ import { ADD_DIG, DIG_ERROR } from './types'
 // ADD NEW DIG
 export const addDig = (newDig) => async dispatch => {
     try {
-        const res = await fetch('http://localhost:3000/digs', {
+        const res = await fetch('https://sampler-backend.herokuapp.com/digs', {
             method: 'POST',
             body: JSON.stringify(newDig),
             headers: {
