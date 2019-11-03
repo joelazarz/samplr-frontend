@@ -6,6 +6,7 @@ const theme = {
     dmAccent: { background: '#0A151D', color: 'lightgrey' },
     dmPrimary: { background: '#101723' },
     dmSecondary: { background: '#242B35', color: 'lightgrey' },
+    dmRegionControl: { background: '#2E354A', color: 'lightgrey' },
     dmRegionSaveLoad: { background: '#28343F', color: '#F2F2F2' },
     dmUtility: { background: '#0F121C', color: 'lightgrey' },
     dmKitDetail: { background: '#273642', color: 'lightgrey' },
