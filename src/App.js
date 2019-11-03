@@ -42,6 +42,7 @@ const App = () => {
       .then(resp => resp.json())
       .then(data => {
         setUser(data)
+        // eslint-disable-next-line
         {data.darkmode ? setNightMode(true) : setNightMode(false)}
       })
     }

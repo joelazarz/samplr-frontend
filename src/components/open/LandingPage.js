@@ -10,10 +10,8 @@ const LandingPage = ({ setSessionUser, user }) => {
 
     return (
         <div className="row">
-
             <div className="col s4 yellow lighten-4">
                 <div className="height">
-
                 <div className="container">
                     {user ? <h3>Welcome {user.username}</h3> 
                     : 
@@ -24,22 +22,15 @@ const LandingPage = ({ setSessionUser, user }) => {
                     </>
                 }
                 </div>
-
                 </div>
             </div>
 
             <div className="col s8 blue-grey lighten-4">
             <div className="height">
-                
                 <div className="container">
-
-
-                    <div className="container">
                     <Link to ="/discovery">Discovery</Link>
-                    </div>
-
                 </div>
-                </div>
+            </div>
             </div>
 
         </div>
