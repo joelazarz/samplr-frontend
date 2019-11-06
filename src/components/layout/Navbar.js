@@ -4,7 +4,7 @@ import theme from './Theme';
 
 const Navbar = ({ nightModeSwitch, nightMode }) => {
 
-    const onSwitch = (e) => {
+    const onSwitch = () => {
         nightModeSwitch()
     }
 
