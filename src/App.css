@@ -190,7 +190,8 @@ html{cursor: pointer;}
     background: #ffffff;
     height: 35vh;
     margin: 1vw;
-    margin-top: -2.5em;
+    margin-top: 1.5em;
+    overflow: auto;
 }
 
 .specs-header {
@@ -210,7 +211,6 @@ html{cursor: pointer;}
     margin-top: 4em;
 }
 .cue-content {
-    margin-top: 4em;
     padding-top: 3.4em;
 }
 
