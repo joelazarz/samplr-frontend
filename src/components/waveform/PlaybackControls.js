@@ -1,5 +1,7 @@
 import React, { useState, useEffect } from 'react'
 import { PropTypes } from 'prop-types';
+import { Knob } from 'react-rotary-knob'
+import * as skins from 'react-rotary-knob-skin-pack'
 import theme from '../layout/Theme';
 
 const PlaybackControls = ({ 
@@ -8,14 +10,12 @@ const PlaybackControls = ({
     stopControl,
     skipBackward,
     skipForward,
-    slowedSpeed,
-    normalSpeed,
-    speedDown,
-    speedUp,
     mute,
     zoomIn,
     zoomOut,
-    nightMode }) => {
+    nightMode,
+    changeSpeed,
+    changeZoom }) => {
 
     useEffect(()=>{
         window.addEventListener('keydown', handlePlaybackKey);
@@ -26,7 +26,6 @@ const PlaybackControls = ({
     const [stopStatus, setStopStatus] = useState(true)
     const [rrStatus, setRRStatus] = useState(false)
     const [ffStatus, setFFStatus] = useState(false)
-    const [slowedStatus, setSlowedStatus] = useState(false)
     const [muteStatus, setMuteStatus] = useState(false)
 
     const playEnable = () => {
@@ -73,29 +72,17 @@ const PlaybackControls = ({
         }, 100)
     }
 
-    const slowedEnable = () => {
-        slowedSpeed();
-        setSlowedStatus(true)
-    }
-
-    const slowedDisable = () => {
-        normalSpeed();
-        setSlowedStatus(false)
-    }
-
-    const pitchDown = () => {
-        speedDown();
-        setSlowedStatus(true)
-    }
-
-    const pitchUp = () => {
-        speedUp();
-        setSlowedStatus(true)
-    }
-
     const toggleMute = () => {
         setMuteStatus((muteStatus ? false : true))
         mute();
+    }
+
+    const changeSpeedValue = (val) => {
+        changeSpeed(val)
+    }
+
+    const changeZoomValue = (val) => {
+        changeZoom(val)
     }
 
     const handlePlaybackKey = (e) => {
@@ -104,13 +91,7 @@ const PlaybackControls = ({
             playEnable()
         } else if (e.ctrlKey && e.keyCode === 83){
             stopEnable()
-        } else if (e.ctrlKey && e.keyCode === 188){
-            pitchDown()
-        } else if (e.ctrlKey && e.keyCode === 190){
-            slowedDisable()
-        } else if (e.ctrlKey && e.keyCode === 191){
-            pitchUp()
-        } 
+        }
     }
 
     return (
@@ -124,8 +105,33 @@ const PlaybackControls = ({
             <i onClick={stopEnable} className={'medium material-icons stop' + (stopStatus ? ' true' : ' false')}>stop </i>
             <i onClick={skipBack} className={'medium material-icons rr' + (rrStatus ? ' true' : ' false')}>fast_rewind </i>
             <i onClick={skipAhead} className={'medium material-icons ff' + (ffStatus ? ' true' : ' false')}>fast_forward </i>
-            <i onClick={(slowedStatus ? slowedDisable : slowedEnable)} className={'medium material-icons speed' + (slowedStatus ? ' true' : ' false')}>slow_motion_video </i>
             <i onClick={toggleMute} className={'medium material-icons mute' + (muteStatus ? ' true' : ' false')}>volume_off </i>
+            
+            <div className="knob-div">
+                <Knob 
+                skin={skins.s12}
+                unlockDistance={40}
+                defaultValue={1}
+                min={0.6}
+                max={2}
+                step={0.1}
+                rotateDegrees={360}
+                onChange={changeSpeedValue.bind(this)}
+                />
+            </div>
+            
+            <div className="knob-div">
+                <Knob 
+                skin={skins.s11}
+                unlockDistance={40}
+                defaultValue={20}
+                min={1}
+                max={100}
+                rotateDegrees={360}
+                onChange={changeZoomValue.bind(this)}
+                />
+            </div>
+            
             <div className="zoom-div">
             <i onClick={zoomIn} className='small material-icons zoomIn'>add </i>
             <i onClick={zoomOut} className='small material-icons zoomOut'>remove </i>

@@ -21,7 +21,8 @@ class Waveform extends Component {
         noteStart: null,
         noteEnd: null,
         digs: this.props.digs,
-        notes: this.props.notes
+        notes: this.props.notes,
+        playbackSpeed: 1
     }
 
     componentDidMount() {
@@ -62,19 +63,6 @@ class Waveform extends Component {
     stopBtn = () => {
         this.wavesurfer.stop()
     }
-    slowedSpeed = () => {
-        this.wavesurfer.setPlaybackRate(0.75)
-    }
-    normalSpeed = () => {
-        this.wavesurfer.setPlaybackRate(1)
-    }
-    speedDown = () => {
-        let currentSpeed = this.wavesurfer.getPlaybackRate(this.wavesurfer)
-        this.wavesurfer.setPlaybackRate(currentSpeed - 0.01)
-    }
-    speedUp = () => {
-        this.wavesurfer.setPlaybackRate((this.wavesurfer.getPlaybackRate(this.wavesurfer)) + 0.01)
-    }
     mute = () => {
         this.wavesurfer.toggleMute((this.wavesurfer.getMute ? false : true))
     }
@@ -90,6 +78,14 @@ class Waveform extends Component {
     zoomOut = () => {
         this.wavesurfer.zoom(1)
     }
+    // playback speed knob control
+    changeSpeed = (val) => {
+        this.wavesurfer.setPlaybackRate(val)
+    }
+    // zoom knob control
+    changeZoom = (val) => {
+        this.wavesurfer.zoom(val)
+    }
     ///// Playback Controls //
 
     //////////////////////////
@@ -102,7 +98,6 @@ class Waveform extends Component {
         let region = this.wavesurfer.regions.list.pad1
         region.remove()
     }
-
     onAddRegionTwo = () => {
         this.wavesurfer.addRegion(regionsObj[1])
     }
@@ -110,7 +105,6 @@ class Waveform extends Component {
         let region = this.wavesurfer.regions.list.pad2
         region.remove()
     }
-
     onAddRegionThree = () => {
         this.wavesurfer.addRegion(regionsObj[2])
     }
@@ -118,7 +112,6 @@ class Waveform extends Component {
         let region = this.wavesurfer.regions.list.pad3
         region.remove()
     }
-
     onAddRegionFour = () => {
         this.wavesurfer.addRegion(regionsObj[3])
     }
@@ -126,7 +119,6 @@ class Waveform extends Component {
         let region = this.wavesurfer.regions.list.pad4
         region.remove()
     }
-
     onAddRegionFive = () => {
         this.wavesurfer.addRegion(regionsObj[4])
     }
@@ -134,7 +126,6 @@ class Waveform extends Component {
         let region = this.wavesurfer.regions.list.pad5
         region.remove()
     }
-
     onAddMemoryRegion = () => {
         this.wavesurfer.addRegion(regionsObj[5])
     }
@@ -143,7 +134,6 @@ class Waveform extends Component {
         region.remove()
         this.setState({ memoryStart: null, memoryEnd: null })
     }
-
     onAddNoteRegion = () => {
         this.wavesurfer.addRegion(regionsObj[6])
     }
@@ -152,55 +142,46 @@ class Waveform extends Component {
         region.remove()
         this.setState({ noteStart: null, noteEnd: null })
     }
-
     clearRegions = () => {
         this.wavesurfer.clearRegions()
         this.setState({ memoryStart: null, memoryEnd: null, noteStart: null, noteEnd: null })
         this.setState({ memoryForm: false, noteForm: false })
     }
-
     triggerOne = () => {
         this.wavesurfer.stop()
         let clip = this.wavesurfer.regions.list.pad1;
         clip.play()
     }
-
     triggerTwo = () => {
         this.wavesurfer.stop()
         let clip = this.wavesurfer.regions.list.pad2;
         clip.play()
     }
-    
     triggerThree = () => {
         this.wavesurfer.stop()
         let clip = this.wavesurfer.regions.list.pad3;
         clip.play()
     }
-
     triggerFour = () => {
         this.wavesurfer.stop()
         let clip = this.wavesurfer.regions.list.pad4;
         clip.play()
     }
-
     triggerFive = () => {
         this.wavesurfer.stop()
         let clip = this.wavesurfer.regions.list.pad5;
         clip.play()
     }
-
     triggerMemory = () => {
         this.wavesurfer.stop()
         let clip = this.wavesurfer.regions.list.pad6;
         clip.play()
     }
-
     triggerNote = () => {
         this.wavesurfer.stop()
         let clip = this.wavesurfer.regions.list.pad7;
         clip.play()
     }
-
     notesMode = () => {
         this.wavesurfer.zoom(1)
         let waveNotes = this.props.notes
@@ -220,7 +201,6 @@ class Waveform extends Component {
         // returning the data that will be displayed - find a place for that on interface
         this.wavesurfer.on('region-in', region => console.log(region.data))
     }
-
     loadRegionOne = () => {
         let digToLoad = [this.props.digCue[0]];
         digToLoad.map(dig => this.wavesurfer.addRegion({
@@ -325,16 +305,14 @@ class Waveform extends Component {
             playControl={this.play}
             playPauseControl={this.playPause}
             stopControl={this.stopBtn}
-            slowedSpeed={this.slowedSpeed}
-            normalSpeed={this.normalSpeed}
-            speedDown={this.speedDown}
-            speedUp={this.speedUp}
             mute={this.mute}
             skipForward={this.skipForward}
             skipBackward={this.skipBackward}
             nightMode={this.props.nightMode}
             zoomIn={this.zoomIn}
             zoomOut={this.zoomOut}
+            changeSpeed={this.changeSpeed}
+            changeZoom={this.changeZoom}
             />
             <div className='wave' style={this.props.nightMode ? theme.dmSecondary : theme.lmWave}>
             <div id="waveform" ></div>
