@@ -294,7 +294,12 @@ html{cursor: pointer;}
 
 .zoom-div i:hover {
     background: rgba(255, 255, 255, 0.5)
+}
 
+.knob-div {
+    margin-left: 0.7em;
+    /* margin-right: 0.5em; */
+    margin-top: 0.4em;
 }
 
 /* Playback Control Icons */
