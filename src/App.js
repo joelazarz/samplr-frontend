@@ -9,10 +9,11 @@ import Kit from './components/kit/Kit';
 import User from './components/userDashboard/User';
 import AddKitBtn from './components/layout/AddKitBtn';
 import AddKitModal from './components/layout/AddKitModal';
+import GuideModal from './components/layout/GuideModal';
 
+import Navbar from './components/layout/Navbar';
 import 'materialize-css/dist/css/materialize.min.css'
 import M from 'materialize-css/dist/js/materialize.min.js'
-import Navbar from './components/layout/Navbar';
 import './App.css';
 
 const App = () => {
@@ -81,6 +82,7 @@ const App = () => {
           <Discovery nightMode={nightMode} />
           {user ? <AddKitBtn /> : <></> }
           <AddKitModal nightMode={nightMode}/>
+          <GuideModal nightMode={nightMode}/>
           </Fragment>
         )} />
 
@@ -88,6 +90,7 @@ const App = () => {
           <Fragment>
           <Navbar nightModeSwitch={nightModeSwitch} nightMode={nightMode}/>
           <Kit user={user} nightMode={nightMode} />
+          <GuideModal nightMode={nightMode}/>
           </Fragment>
         )} />
 
