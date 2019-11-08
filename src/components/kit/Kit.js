@@ -7,6 +7,7 @@ import Spinner from '../layout/Spinner';
 import { connect } from 'react-redux'
 
 import { getKit } from '../../actions/kitActions';
+import M from 'materialize-css/dist/js/materialize.min.js'
 import theme from '../layout/Theme';
 
 
@@ -17,9 +18,10 @@ const Kit = ({ kit: { kit, loading }, user, getKit, nightMode }) => {
     const [digCue, setDigCue] = useState([])
 
     useEffect(() => {
+        M.AutoInit();
         getKit(window.location.pathname)
         // eslint-disable-next-line
-    }, [getKit])
+    }, [])
 
     // kit state functions
     const viewNotesButton = () => {

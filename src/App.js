@@ -9,6 +9,7 @@ import Kit from './components/kit/Kit';
 import User from './components/userDashboard/User';
 import AddKitBtn from './components/layout/AddKitBtn';
 import AddKitModal from './components/layout/AddKitModal';
+import GuideBtn from './components/layout/GuideBtn';
 import GuideModal from './components/layout/GuideModal';
 
 import Navbar from './components/layout/Navbar';
@@ -82,7 +83,6 @@ const App = () => {
           <Discovery nightMode={nightMode} />
           {user ? <AddKitBtn /> : <></> }
           <AddKitModal nightMode={nightMode}/>
-          <GuideModal nightMode={nightMode}/>
           </Fragment>
         )} />
 
@@ -90,6 +90,7 @@ const App = () => {
           <Fragment>
           <Navbar nightModeSwitch={nightModeSwitch} nightMode={nightMode}/>
           <Kit user={user} nightMode={nightMode} />
+          <GuideBtn />
           <GuideModal nightMode={nightMode}/>
           </Fragment>
         )} />

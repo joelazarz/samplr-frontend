@@ -25,7 +25,7 @@ const DigForm = ({ kitId, digPadStart, digPadEnd, memorySubmit, addDig, getKit, 
                 dig_pad_end,
             }
             addDig(newDig)
-            .then(()=> getKit(`kits/${kitId}`))
+            .then(()=> getKit(`/kits/${kitId}`))
             M.toast({ html: 'Region Saved'})
         }
         setName('')
