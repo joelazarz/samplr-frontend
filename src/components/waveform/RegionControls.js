@@ -1,6 +1,5 @@
 import React, { useState, useEffect } from 'react'
 import { PropTypes } from 'prop-types';
-import Fade from 'react-reveal/Fade';
 import M from 'materialize-css/dist/js/materialize.min.js'
 import theme from '../layout/Theme';
 
@@ -52,7 +51,6 @@ const RegionControls = ({
     const [regionFiveStatus, setRegionFiveStatus] = useState(false)
     const [regionMemoryStatus, setRegionMemoryStatus] = useState(false)
     const [regionNoteStatus, setRegionNoteStatus] = useState(false)
-
     const [notesModeStatus, setNotesModeStatus] = useState(false)
 
     const regionOneEnable = () => {
@@ -184,7 +182,6 @@ const RegionControls = ({
     }
 
     const disableNotesMode = () => {
-        // a function that removes region event listeners on waveform 
         clearWaveRegions();
         setNotesModeStatus(false)
     }
@@ -348,25 +345,22 @@ const RegionControls = ({
             </div>
             </div>
             </div>
-
+        
             <div className="region-status-space" style={nightMode ? theme.dmRegionSaveLoad : theme.lmLightBlue}>
             <div className="region-control-small-save" style={nightMode ? theme.dmRegionSaveLoad : theme.lmLightBlue}>
             { regionMemoryStatus ?
-            <Fade >
             <div onClick={memorySaveClick} className="region-control-small-save-btn" style={nightMode ? theme.dmBlack : theme.lmGrey}>Save</div>
-            </Fade>
             : <></> }
             </div> 
             </div>
             <div className="region-status-space" style={nightMode ? theme.dmRegionSaveLoad : theme.lmLightBlue}>
             <div className="region-control-small-save" style={nightMode ? theme.dmRegionSaveLoad : theme.lmLightBlue}>
             { regionNoteStatus ? 
-            <Fade >
             <div onClick={noteSaveClick} className="region-control-small-save-btn" style={nightMode ? theme.dmBlack : theme.lmGrey}>Save</div>
-            </Fade>
             : <></> }
             </div> 
             </div>
+            
             <div className="region-status-space" style={nightMode ? theme.dmRegionSaveLoad : theme.lmLightBlue}></div>
             <div className="region-status-space" style={nightMode ? theme.dmRegionSaveLoad : theme.lmLightBlue}></div>
         </div>

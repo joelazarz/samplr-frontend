@@ -52,7 +52,7 @@ class Waveform extends Component {
     }
 
 
-
+    //////////////////////////
     // Playback Controls /////
     play = () => {
         this.wavesurfer.play()
@@ -79,17 +79,17 @@ class Waveform extends Component {
         this.wavesurfer.zoom(1)
     }
     // playback speed knob control
-    changeSpeed = (val) => {
-        this.wavesurfer.setPlaybackRate(val)
+    changeSpeed = (speed) => {
+        this.wavesurfer.setPlaybackRate(speed)
     }
     // zoom knob control
     changeZoom = (val) => {
         this.wavesurfer.zoom(val)
     }
     ///// Playback Controls //
-
     //////////////////////////
 
+    //////////////////////////
     // Region Controls /////
     onAddRegionOne = () => {
         this.wavesurfer.addRegion(regionsObj[0])
@@ -193,10 +193,7 @@ class Waveform extends Component {
             drag: false,
             data: note.note,
             resize: false,
-            color: 'rgb(182, 255, 163, 0.4)',
-            attributes: {
-                label: `${note.id}`
-            }
+            color: 'rgb(182, 255, 163, 0.4)'
         }))
         // returning the data that will be displayed - find a place for that on interface
         this.wavesurfer.on('region-in', region => console.log(region.data))
@@ -208,10 +205,7 @@ class Waveform extends Component {
             start: `${dig.dig_pad_start}`,
             end: `${dig.dig_pad_end}`,
             loop: false,
-            color: 'rgb(252, 206, 195, 0.4)',
-            attributes: {
-                label: '[1]'
-            }
+            color: 'rgb(252, 206, 195, 0.4)'
         }));
         this.props.shiftDig()
     }
@@ -222,10 +216,7 @@ class Waveform extends Component {
             start: `${dig.dig_pad_start}`,
             end: `${dig.dig_pad_end}`,
             loop: false,
-            color: 'rgb(187, 255, 198, 0.4)',
-            attributes: {
-                label: '[1]'
-            }
+            color: 'rgb(187, 255, 198, 0.4)'
         }))
         this.props.shiftDig()
     }
@@ -236,10 +227,7 @@ class Waveform extends Component {
             start: `${dig.dig_pad_start}`,
             end: `${dig.dig_pad_end}`,
             loop: false,
-            color: 'rgb(191, 253, 255, 0.4)',
-            attributes: {
-                label: '[1]'
-            }
+            color: 'rgb(191, 253, 255, 0.4)'
         }))
         this.props.shiftDig()
     }
@@ -250,10 +238,7 @@ class Waveform extends Component {
             start: `${dig.dig_pad_start}`,
             end: `${dig.dig_pad_end}`,
             loop: false,
-            color: 'rgb(247, 161, 255, 0.4)',
-            attributes: {
-                label: '[1]'
-            }
+            color: 'rgb(247, 161, 255, 0.4)'
         }))
         this.props.shiftDig()
     }
@@ -264,10 +249,7 @@ class Waveform extends Component {
             start: `${dig.dig_pad_start}`,
             end: `${dig.dig_pad_end}`,
             loop: false,
-            color: 'rgb(255, 176, 176, 0.4)',
-            attributes: {
-                label: '[1]'
-            }
+            color: 'rgb(255, 176, 176, 0.4)'
         }))
         this.props.shiftDig()
     }
@@ -292,13 +274,11 @@ class Waveform extends Component {
     onNoteSubmit = () => {
         this.setState({ noteForm: false })
     }
+    ///// Region Controls /////
+    //////////////////////////
 
-
-
-    ///// Region Controls //
 
     render() {
-
         return (
             <div className='waveform'>
             <PlaybackControls 

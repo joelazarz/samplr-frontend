@@ -15,7 +15,6 @@ const Kit = ({ kit: { kit, loading }, user, getKit, nightMode }) => {
     const [notesButton, setNotesButton] = useState(false)
     const [memoryButton, setMemoryButton] = useState(true)
     const [digCue, setDigCue] = useState([])
-    // const [cueViewButton, setCueViewButton] = useState(false)
 
     useEffect(() => {
         getKit(window.location.pathname)
@@ -26,12 +25,10 @@ const Kit = ({ kit: { kit, loading }, user, getKit, nightMode }) => {
     const viewNotesButton = () => {
         setNotesButton(true)
         setMemoryButton(false)
-        // setCueViewButton(false)
     }
     const viewMemoryButton = () => {
         setMemoryButton(true)
         setNotesButton(false)
-        // setCueViewButton(false)
     }
     const cueMemoryButton = (dig) => {
         !digCue.includes(dig) ? setDigCue([...digCue, dig]) : setDigCue([...digCue])

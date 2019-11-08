@@ -5,8 +5,6 @@ import theme from '../layout/Theme';
 
 const DiscoveryCard = ({ kit, nightMode }) => {
 
-    // props from Discovery, individual kit
-
     return (
         
         <div className="col s4">
