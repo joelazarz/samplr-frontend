@@ -11,7 +11,6 @@ const Navbar = ({ nightModeSwitch, nightMode }) => {
     return (
         <div className="nav-bar" style={nightMode ? theme.dmUtility : theme.lmNavBar}>
             <Link to ='/discovery'><button  className="waves-effect waves-black white-text btn-flat">Discovery</button></Link>
-            <button data-target='guide-modal' className="waves-effect waves-black white-text btn-flat modal-trigger">Guide</button>
             <div className="switch">
             <label>
             Off
