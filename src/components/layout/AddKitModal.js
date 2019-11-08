@@ -2,7 +2,6 @@ import React, { useState } from 'react'
 import { connect } from 'react-redux';
 import { PropTypes } from 'prop-types';
 import { addKit } from '../../actions/discoveryActions';
-
 import ReactFilestack from 'filestack-react'
 import M from 'materialize-css/dist/js/materialize.min.js'
 import theme from './Theme';

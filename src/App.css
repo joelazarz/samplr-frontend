@@ -20,7 +20,6 @@ html{cursor: pointer;}
 /* scroll bar styling  */
 
 .nav-bar{
-    /* height: 3em; */
     background: lightgray;
     display: flex;
     flex-direction: row;
@@ -278,27 +277,8 @@ html{cursor: pointer;}
     height: 0.5em;
 }
 
-.zoom-div {
-    display: flex;
-    flex-direction: column;
-    size: 0.5em;
-    margin-left: 1em;
-    margin-top: 0.3em;
-}
-
-.zoom-div i {
-    font-size: 1.4em;
-    background: rgba(255, 255, 255, 0.2);
-    border-radius: 3px;
-}
-
-.zoom-div i:hover {
-    background: rgba(255, 255, 255, 0.5)
-}
-
 .knob-div {
-    margin-left: 0.7em;
-    /* margin-right: 0.5em; */
+    margin-left: 1.4em;
     margin-top: 0.4em;
 }
 

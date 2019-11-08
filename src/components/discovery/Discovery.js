@@ -1,7 +1,6 @@
 import React, { useEffect } from 'react'
 import DiscoveryCard from './DiscoveryCard';
 import Spinner from '../layout/Spinner';
-
 import { PropTypes } from 'prop-types';
 import { connect } from 'react-redux'
 import { getKits } from '../../actions/discoveryActions';

@@ -11,8 +11,6 @@ const PlaybackControls = ({
     skipBackward,
     skipForward,
     mute,
-    zoomIn,
-    zoomOut,
     nightMode,
     changeSpeed,
     changeZoom }) => {
@@ -78,7 +76,8 @@ const PlaybackControls = ({
     }
 
     const changeSpeedValue = (val) => {
-        changeSpeed(val)
+        let speed = (val / 100)
+        changeSpeed(speed)
     }
 
     const changeZoomValue = (val) => {
@@ -97,8 +96,8 @@ const PlaybackControls = ({
     return (
         <>
         <div className="playback-controls-secondary" style={nightMode ? theme.dmUtility : theme.lmPlayback}>
-
         </div>
+
         <div className="playback-controls" style={nightMode ? theme.dmAccent : theme.lmAccentTwo}>
             <i onClick={playEnable} className={'medium material-icons play' + (playStatus ? ' true' : ' false')}>play_arrow </i>
             <i onClick={(pauseStatus ? PauseDisable : PauseEnable)} className={'medium material-icons pause' + (pauseStatus ? ' true' : ' false')}>pause </i>
@@ -111,13 +110,11 @@ const PlaybackControls = ({
                 <Knob 
                 skin={skins.s12}
                 unlockDistance={40}
-                defaultValue={1}
-                min={0.6}
-                max={2}
-                step={0.1}
+                defaultValue={100}
+                min={75}
+                max={125}
                 rotateDegrees={360}
-                onChange={changeSpeedValue.bind(this)}
-                />
+                onChange={changeSpeedValue.bind(this)}/>
             </div>
             
             <div className="knob-div">
@@ -125,16 +122,10 @@ const PlaybackControls = ({
                 skin={skins.s11}
                 unlockDistance={40}
                 defaultValue={20}
-                min={1}
+                min={0}
                 max={100}
                 rotateDegrees={360}
-                onChange={changeZoomValue.bind(this)}
-                />
-            </div>
-            
-            <div className="zoom-div">
-            <i onClick={zoomIn} className='small material-icons zoomIn'>add </i>
-            <i onClick={zoomOut} className='small material-icons zoomOut'>remove </i>
+                onChange={changeZoomValue.bind(this)}/>
             </div>
         </div>
         </>
@@ -146,10 +137,8 @@ PlaybackControls.propTypes = {
     playControl: PropTypes.func.isRequired,
     playPauseControl: PropTypes.func.isRequired,
     stopControl: PropTypes.func.isRequired,
-    slowedSpeed: PropTypes.func.isRequired,
-    normalSpeed: PropTypes.func.isRequired,
-    speedDown: PropTypes.func.isRequired,
-    speedUp: PropTypes.func.isRequired,
+    changeSpeed: PropTypes.func.isRequired,
+    changeZoom: PropTypes.func.isRequired,
     mute: PropTypes.func.isRequired
 }
 
