@@ -13,7 +13,7 @@ const DiscoveryCard = ({ kit, nightMode }) => {
             <img className="activator" src={kit.image} alt={kit.name}/>
         </div>
         <div className="card-content">
-            <span className="card-title activator grey-text ">{kit.name}<i className="material-icons right">more_vert</i></span>
+            <span className="card-title activator grey-text"><h6>{kit.name}</h6><i className="material-icons right">more_vert</i></span>
             <Link to={`/kits/${kit.id}`} className="btn btn-sm" style={nightMode ? theme.dmAccent : theme.lmGrey}>Load</Link>
         </div>
         <div className="card-reveal" style={nightMode ? theme.dmBlack : theme.lmDiscoveryCard}>
