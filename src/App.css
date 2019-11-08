@@ -54,6 +54,10 @@ html{cursor: pointer;}
     overflow: scroll;
 }
 
+.card-title{
+    font-size: 0.8em;
+}
+
 .graphic-container{
     height: 30%;
     text-align: center;
@@ -251,7 +255,30 @@ html{cursor: pointer;}
 /* Kit Sidebar */
 
 
-
+/* GuideModal */
+.guide-modal-cont-1{
+    display: flex;
+    justify-content: space-around;
+}
+.region-guide{
+    display: flex;
+    flex-direction: column;
+    width: 40%;
+}
+.playback-guide{
+    display: flex;
+    flex-direction: column;
+    width: 40%;
+}
+.guide-ins{
+    font-weight: bolder;
+    margin-left: 0.5em;
+}
+.guide-keys{
+    margin-left: 2em;
+    float: right;
+}
+/* GuideModal */
 
 
 /* Playback Controls Layout */
