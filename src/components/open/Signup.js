@@ -37,7 +37,8 @@ const Signup = ({ setSessionUser, history }) => {
     return (
         <>
         <div className="row">
-        <div className="input-field col s6">
+        <div className="landing-input-container">
+        <div className="input-field col s12">
             <input 
             placeholder="username" 
             type="text" 
@@ -46,7 +47,7 @@ const Signup = ({ setSessionUser, history }) => {
             onChange={e => setUsername(e.target.value)}></input>
             <label htmlFor="username"></label>
         </div>
-        <div className="input-field col s6">
+        <div className="input-field col s12">
             <input 
             placeholder="password" 
             type="password" 
@@ -59,6 +60,7 @@ const Signup = ({ setSessionUser, history }) => {
         className="waves-effect black waves-light btn"
         onClick={onSubmit}
         >signup</button>
+        </div>
         </div>
         </>
     )

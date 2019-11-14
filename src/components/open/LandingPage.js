@@ -13,12 +13,13 @@ const LandingPage = ({ setSessionUser, user }) => {
             <div className="col s4 blue-grey lighten-3">
                 <div className="height">
                 <div className="container">
-                    {user ? <h3>Welcome {user.username}</h3> 
+                    {user ? 
+                    <h3>Welcome {user.username}</h3> 
                     : 
                     <>
                     {login ? <Signup setSessionUser={setSessionUser} />
                     : <Login setSessionUser={setSessionUser} />}
-                    <button onClick={()=> setLogin(!login)} className="waves-effect waves-teal btn-flat">{login ? <>Already a User? Login</> : <>Not a User? Signup</> }</button>
+                    <button onClick={()=> setLogin(!login)} className="waves-effect waves-blue light-blue btn-flat">{login ? <>Already a User? Login</> : <>Not a User? Signup</> }</button>
                     </>
                 }
                 </div>
