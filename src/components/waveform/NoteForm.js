@@ -1,10 +1,11 @@
 import React, { useState } from 'react'
 import { connect } from 'react-redux';
 import { addNote } from '../../actions/noteActions';
+import { getKit } from '../../actions/kitActions';
 import M from 'materialize-css/dist/js/materialize.min.js'
 import theme from '../layout/Theme';
 
-const NoteForm = ({ kitId, noteStart, noteEnd, noteSubmit, addNote, userId, nightMode }) => {
+const NoteForm = ({ kitId, noteStart, noteEnd, noteSubmit, addNote, userId, getKit, nightMode }) => {
     const [note, setNote] = useState('')
 
     let kit_id = kitId
@@ -26,6 +27,7 @@ const NoteForm = ({ kitId, noteStart, noteEnd, noteSubmit, addNote, userId, nigh
                 note_pad_end
             }
             addNote(newNote)
+            .then(()=> getKit(`/kits/${kitId}`))
             M.toast({ html: 'Note Added'})
         }
         setNote('')
@@ -54,4 +56,4 @@ const NoteForm = ({ kitId, noteStart, noteEnd, noteSubmit, addNote, userId, nigh
     )
 }
 
-export default connect(null, { addNote })(NoteForm)
+export default connect(null, { addNote, getKit })(NoteForm)
