@@ -2,6 +2,7 @@ import React, { useState } from 'react'
 import { Link } from 'react-router-dom'
 import Login from './Login';
 import Signup from './Signup';
+import Guide from './Guide';
 
 
 const LandingPage = ({ setSessionUser, user }) => {
@@ -18,7 +19,7 @@ const LandingPage = ({ setSessionUser, user }) => {
                 <span className='graphic-dot'>.</span>sampler<span className='graphic-par'>()</span>
                 </div>
                 </div>
-                    {user ? <h4>Welcome {user.username}</h4> 
+                    {user ? <h5>Welcome {user.username}...continue to <Link to ="/discovery">Discovery</Link></h5>
                     : 
                     <>
                     {login ? <Signup setSessionUser={setSessionUser} />
@@ -33,7 +34,9 @@ const LandingPage = ({ setSessionUser, user }) => {
             <div className="col s8 blue-grey darken-4">
             <div className="height">
                 <div className="container">
-                    <Link to ="/discovery">Discovery</Link>
+                <div className="guide-container">
+                    <Guide />
+                </div>
                 </div>
             </div>
             </div>

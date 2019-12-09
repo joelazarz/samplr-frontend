@@ -63,6 +63,14 @@ html{cursor: pointer;}
     display: flex;
     flex-direction: column;
 }
+
+.landing-guide {
+    color: white;
+}
+
+.guide-container {
+    margin-top: 4em;
+}
 /* Landing Page */
 
 
@@ -70,7 +78,7 @@ html{cursor: pointer;}
 /* Discovery Page */
 .discovery-kits-feed{
     height: 100vh;
-    overflow: scroll;
+    overflow-y: auto;
 }
 
 .card-title{
