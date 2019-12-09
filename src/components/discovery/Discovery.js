@@ -8,7 +8,6 @@ import { Link } from 'react-router-dom'
 import M from 'materialize-css/dist/js/materialize.min.js'
 import theme from '../layout/Theme';
 
-
 const Discovery = ({ kits: { kits, loading }, getKits, nightMode }) => {
 
     useEffect(() => {
