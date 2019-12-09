@@ -10,11 +10,15 @@ const LandingPage = ({ setSessionUser, user }) => {
 
     return (
         <div className="row">
-            <div className="col s4 blue-grey lighten-3">
+            <div className="col s4 blue-grey lighten-4">
                 <div className="height">
                 <div className="container">
-                    {user ? 
-                    <h3>Welcome {user.username}</h3> 
+                <div className="landing-logo">
+                <div className="graphic-text">
+                <span className='graphic-dot'>.</span>sampler<span className='graphic-par'>()</span>
+                </div>
+                </div>
+                    {user ? <h4>Welcome {user.username}</h4> 
                     : 
                     <>
                     {login ? <Signup setSessionUser={setSessionUser} />
@@ -26,7 +30,7 @@ const LandingPage = ({ setSessionUser, user }) => {
                 </div>
             </div>
 
-            <div className="col s8 blue-grey lighten-4">
+            <div className="col s8 blue-grey darken-4">
             <div className="height">
                 <div className="container">
                     <Link to ="/discovery">Discovery</Link>

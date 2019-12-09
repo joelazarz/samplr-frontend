@@ -57,7 +57,7 @@ const Login = ({ setSessionUser, history }) => {
             <label htmlFor="password"></label>
         </div>
         <button 
-        className="waves-effect black waves-light btn"
+        className="landing-button waves-effect black waves-light btn"
         onClick={onSubmit}
         >login</button>
         </div>

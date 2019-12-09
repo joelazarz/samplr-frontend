@@ -47,11 +47,24 @@ html{cursor: pointer;}
     color: plum;
 }
 
+/* Landing Page */
+.landing-logo {
+    margin-top: 5em;
+}
+
+.landing-button {
+    margin-top: 1em;
+}
+
 .landing-input-container {
-    margin-top: 100px;
+    background: rgb(255, 255, 255);
+    border-radius: 5px;
+    margin-bottom: 1em;
     display: flex;
     flex-direction: column;
 }
+/* Landing Page */
+
 
 
 /* Discovery Page */
@@ -124,11 +137,11 @@ html{cursor: pointer;}
 }
 
 .height {
-    height: 97vh;
+    height: 98vh;
 }
 
 .kit-main-container {
-    height: 97vh;
+    height: 98vh;
 }
 
 .kit-name-container{
