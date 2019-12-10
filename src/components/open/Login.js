@@ -27,8 +27,8 @@ const Login = ({ setSessionUser, history }) => {
             .then(data => {
                 localStorage.setItem('token', data.token)
                 setSessionUser(data)
-                history.push('/discovery')
             })
+            .then(history.push('/discovery'))
         }
         setUsername('')
         setPassword('')
