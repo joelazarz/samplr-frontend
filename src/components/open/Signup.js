@@ -27,8 +27,8 @@ const Signup = ({ setSessionUser, history }) => {
             .then(data => {
                 localStorage.setItem('userId', data.id)
                 setSessionUser(data)
-                history.push('/discovery')
             })
+            .then(history.push('/discovery'))
         }
         setUsername('')
         setPassword('')
