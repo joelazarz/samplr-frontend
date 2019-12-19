@@ -34,20 +34,20 @@ const App = () => {
 
   const autoLogin = () => {
     const token = localStorage.getItem('token')
-    if (token) {
-      fetch('https://sampler-backend.herokuapp.com/autologin', {
-        headers: {
-          'accept': 'application/json',
-          Authorization: token
-        }
-      })
-      .then(resp => resp.json())
-      .then(data => {
-        setUser(data)
-        // eslint-disable-next-line
-        {data.darkmode ? setNightMode(true) : setNightMode(false)}
-      })
-    }
+    if(!token){ return; } 
+
+    fetch('https://sampler-backend.herokuapp.com/autologin', {
+      headers: {
+        'accept': 'application/json',
+        Authorization: token
+      }
+    })
+    .then(resp => resp.json())
+    .then(data => {
+      setUser(data)
+      // eslint-disable-next-line
+      {data.darkmode ? setNightMode(true) : setNightMode(false)}
+    })
   }
 
   const nightModeSwitch = () => {
