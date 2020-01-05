@@ -19,9 +19,7 @@ const LandingPage = ({ setSessionUser, user }) => {
                 <span className='graphic-dot'>.</span>sampler<span className='graphic-par'>()</span>
                 </div>
                 </div>
-                    {user ? <h5>Welcome {user.username}...continue to <Link to ="/discovery">Discovery</Link></h5>
-                    : 
-                    <>
+                    {user ? <h5>Welcome {user.username}...continue to <Link to ="/discovery">Discovery</Link></h5> : <>
                     {login ? <Signup setSessionUser={setSessionUser} />
                     : <Login setSessionUser={setSessionUser} />}
                     <button onClick={()=> setLogin(!login)} className="waves-effect waves-blue light-blue btn-flat">{login ? <>Already a User? Login</> : <>Not a User? Signup</> }</button>

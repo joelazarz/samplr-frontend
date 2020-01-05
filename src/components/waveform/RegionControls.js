@@ -192,43 +192,43 @@ const RegionControls = ({
         if(regionOneStatus && e.shiftKey && e.keyCode === 49){
             try {
                 triggerOne()
-            } catch (error) {
+            } catch {
                 regionOneEnable()
             }
         } else if (regionTwoStatus && e.shiftKey  && e.keyCode === 50){
             try {
                 triggerTwo()
-            } catch (error) {
+            } catch {
                 regionTwoEnable()
             }
         } else if (regionThreeStatus && e.shiftKey  && e.keyCode === 51){
             try {
                 triggerThree()
-            } catch (error) {
+            } catch {
                 regionThreeEnable()
             }
         } else if (regionFourStatus && e.shiftKey  && e.keyCode === 52){
             try {
                 triggerFour()
-            } catch (error) {
+            } catch {
                 regionFourEnable()
             }
         } else if (regionFiveStatus && e.shiftKey  && e.keyCode === 53){
             try {
                 triggerFive()
-            } catch (error) {
+            } catch {
                 regionFiveEnable()
             }
         } else if (regionMemoryStatus && e.shiftKey  && e.keyCode === 54){
             try {
                 triggerMemory()
-            } catch (error) {
+            } catch {
                 regionMemoryEnable()
             }
         } else if (regionNoteStatus && e.shiftKey  && e.keyCode === 55){
             try {
                 triggerNote()
-            } catch (error) {
+            } catch {
                 regionNoteEnable()
             }
         } 

@@ -16,9 +16,7 @@ const Discovery = ({ kits: { kits, loading }, getKits, nightMode }) => {
         // eslint-disable-next-line
     }, [getKits])
 
-    if (loading || kits === null) {
-        return <Spinner />
-    }
+    if (loading || kits === null) { return <Spinner /> }
 
     const randomKit = kits[Math.floor(Math.random()*kits.length)]
 
