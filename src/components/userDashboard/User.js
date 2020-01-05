@@ -6,9 +6,7 @@ import Spinner from '../layout/Spinner';
 
 const User = ({ user }) => {
     
-    if (user === null) {
-        return <Spinner />
-    }
+    if (!user) { return <Spinner /> }
 
     return (
         <>
