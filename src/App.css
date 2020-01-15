@@ -48,8 +48,15 @@ html{cursor: pointer;}
 }
 
 /* Landing Page */
+.demo-instructions {
+    background-color: white;
+    padding: 1em;
+    margin-top: 3em;
+    border-radius: 6px;
+}
+
 .landing-logo {
-    margin-top: 5em;
+    margin-top: 1em;
 }
 
 .landing-button {

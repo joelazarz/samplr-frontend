@@ -3,6 +3,7 @@ import { Link } from 'react-router-dom'
 import Login from './Login';
 import Signup from './Signup';
 import Guide from './Guide';
+import { DemoInstructions } from './DemoInstructions';
 
 
 const LandingPage = ({ setSessionUser, user }) => {
@@ -14,6 +15,7 @@ const LandingPage = ({ setSessionUser, user }) => {
             <div className="col s4 blue-grey lighten-4">
                 <div className="height">
                 <div className="container">
+                <DemoInstructions />
                 <div className="landing-logo">
                 <div className="graphic-text">
                 <span className='graphic-dot'>.</span>sampler<span className='graphic-par'>()</span>
