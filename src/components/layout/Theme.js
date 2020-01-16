@@ -19,12 +19,12 @@ const theme = {
 
 // Light Mode
     lmWhite: { background: '#E8ECEF' },
-    lmWave: { background: '#F7FAFA' },
+    lmWave: { background: '#FFFFFF' },
     lmAccentTwo: { background: '#D5D5DB' },
     lmAccent: { background: '#DEE3E3' },
     lmGrey: { background: '#B7B7BB' },
     lmDarkrey: { background: '#5D6469' },
-    lmLightBlue: { background: '#DFE1F3' },
+    lmLightBlue: { background: '#E1EFFD' },
     lmBtnSidebar: { background: '#87A3C5' },
     lmNavBar: { background: '#C9D4E0' },
     lmPlayback: { background: '#9299A5' },
