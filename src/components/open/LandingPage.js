@@ -1,10 +1,10 @@
 import React, { useState } from 'react'
-import { Link } from 'react-router-dom'
 import Login from './Login';
 import Signup from './Signup';
 import Guide from './Guide';
 import { DemoInstructions } from './DemoInstructions';
 import Spinner from '../layout/Spinner';
+import { WelcomeUser } from './WelcomeUser';
 
 
 const LandingPage = ({ setSessionUser, user, localStorageToken }) => {
@@ -26,7 +26,7 @@ const LandingPage = ({ setSessionUser, user, localStorageToken }) => {
                 {/* FIX */}
                 {
                 !user && localStorageToken ? <Spinner />  
-                : user && localStorageToken ? <h5>Welcome {user.username}, continue to <Link to ="/discovery">Discovery</Link></h5> 
+                : user && localStorageToken ? <WelcomeUser user={user} /> 
                 : <>
                 {login ? <Signup setSessionUser={setSessionUser} />
                 : <Login setSessionUser={setSessionUser} />}
