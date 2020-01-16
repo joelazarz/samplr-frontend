@@ -37,7 +37,7 @@ const App = () => {
   };
 
   const setSessionUser = (sessionUser) => {
-    // sessionUser.user.darkmode || null ? setNightMode(true) : setNightMode(false)
+    sessionUser.user.darkmode || null ? setNightMode(true) : setNightMode(false)
     setUser(sessionUser.user)
   }
 
