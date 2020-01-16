@@ -4,9 +4,10 @@ import Login from './Login';
 import Signup from './Signup';
 import Guide from './Guide';
 import { DemoInstructions } from './DemoInstructions';
+import Spinner from '../layout/Spinner';
 
 
-const LandingPage = ({ setSessionUser, user }) => {
+const LandingPage = ({ setSessionUser, user, localStorageToken }) => {
 
     const [login, setLogin] = useState(false)
 
@@ -21,13 +22,18 @@ const LandingPage = ({ setSessionUser, user }) => {
                 <span className='graphic-dot'>.</span>sampler<span className='graphic-par'>()</span>
                 </div>
                 </div>
+
                 {/* FIX */}
-                    {user ? <h5>Welcome {user.username}, continue to <Link to ="/discovery">Discovery</Link></h5> : <>
-                    {login ? <Signup setSessionUser={setSessionUser} />
-                    : <Login setSessionUser={setSessionUser} />}
-                    <button onClick={()=> setLogin(!login)} className="waves-effect waves-blue light-blue btn-flat">{login ? <>Already a User? Login</> : <>Not a User? Signup</> }</button>
-                    </>
+                {
+                !user && localStorageToken ? <Spinner />  
+                : user && localStorageToken ? <h5>Welcome {user.username}, continue to <Link to ="/discovery">Discovery</Link></h5> 
+                : <>
+                {login ? <Signup setSessionUser={setSessionUser} />
+                : <Login setSessionUser={setSessionUser} />}
+                <button onClick={()=> setLogin(!login)} className="waves-effect waves-blue light-blue btn-flat">{login ? <>Already a User? Login</> : <>Not a User? Signup</> }</button>
+                </>
                 }
+
                 </div>
                 </div>
             </div>
