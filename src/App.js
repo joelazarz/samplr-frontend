@@ -20,12 +20,21 @@ import './App.css';
 const App = () => {
   const [user, setUser] = useState(null)
   const [nightMode, setNightMode] = useState(false)
+  const [localStorageToken, setLocalStorageToken] = useState(false)
 
   useEffect(() => {
     //Init Materialize JS
     M.AutoInit();
+    checkLocalStorage();
     autoLogin();
   }, [])
+
+  const checkLocalStorage = () => {
+    let checkToken = localStorage.getItem('token');
+    if(checkToken) {
+      setLocalStorageToken(true)
+    };
+  };
 
   const setSessionUser = (sessionUser) => {
     // sessionUser.user.darkmode || null ? setNightMode(true) : setNightMode(false)
@@ -73,7 +82,7 @@ const App = () => {
 
         <Route exact path='/' render={props => (
           <Fragment>
-          <LandingPage user={user} setSessionUser={setSessionUser} />
+          <LandingPage user={user} localStorageToken={localStorageToken} setSessionUser={setSessionUser} />
           </Fragment>
         )} />
 
