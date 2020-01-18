@@ -102,7 +102,7 @@ const AddKitModal = ({ addKit, nightMode }) => {
                 { error  ? <span style={{marginRight: '3em', color: 'red'}}>Please fill out all fields</span> : <></> }
                     <a href='#!'
                     onClick={onSubmit}
-                    className={(error ? '' : 'modal-close ') + 'waves-effect black waves-light btn'}>Add Kit</a>
+                    className={(!error ? '' : 'modal-close ') + 'waves-effect black waves-light btn'}>Add Kit</a>
                 </div>
 
             </div>
