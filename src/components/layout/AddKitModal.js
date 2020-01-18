@@ -2,19 +2,23 @@ import React, { useState } from 'react'
 import { connect } from 'react-redux';
 import { PropTypes } from 'prop-types';
 import { addKit } from '../../actions/discoveryActions';
-import ReactFilestack from 'filestack-react'
-import M from 'materialize-css/dist/js/materialize.min.js'
+import ReactFilestack from 'filestack-react';
+import M from 'materialize-css/dist/js/materialize.min.js';
 import theme from './Theme';
 
 const AddKitModal = ({ addKit, nightMode }) => {
-    const [name, setName] = useState('')
-    const [detail, setDetail] = useState('')
-    const [image, setImage] = useState('')
-    const [sample, setSample] = useState('')
+    const [name, setName] = useState('');
+    const [detail, setDetail] = useState('');
+    const [image, setImage] = useState('');
+    const [sample, setSample] = useState('');
+    const [error, setError] = useState(false);
 
     const onSubmit = () => {
-        if(name === '' || detail === '' || image === '' | sample === ''){
-            M.toast({ html: 'All fields required' })
+        if(name === '' || detail === '' || image === '' | sample === '') {
+            setError(true);
+            setTimeout(() => {
+                setError(false);
+            }, 3000);
         } else {
             const newKit = {
                 name,
@@ -22,13 +26,13 @@ const AddKitModal = ({ addKit, nightMode }) => {
                 image,
                 sample
             }
-            addKit(newKit)
-            M.toast({ html: 'Kit Added'})
+            addKit(newKit);
+            M.toast({ html: 'Kit Added'});
         }
-        setName('')
-        setDetail('')
-        setImage('')
-        setSample('')
+        setName('');
+        setDetail('');
+        setImage('');
+        setSample('');
     }
 
     const fileOptions = {
@@ -36,7 +40,6 @@ const AddKitModal = ({ addKit, nightMode }) => {
             accept: ["audio/*"],
             maxSize: 10000000
     }
-
 
     return (
         <div id="add-kit-modal" className='modal' style={nightMode ? theme.dmSecondary : theme.lmWhite}>
@@ -95,19 +98,21 @@ const AddKitModal = ({ addKit, nightMode }) => {
                 />
                 </div>
 
-            </div>
-            <div className='modal-footer' style={nightMode ? theme.dmSecondary : theme.lmWhite}>
-                <a href='#!'
-                onClick={onSubmit}
-                className='modal-close waves-effect black waves-light btn'>Enter</a>
+                <div className='modal-footer' style={nightMode ? theme.dmSecondary : theme.lmWhite}>
+                { error  ? <span style={{marginRight: '3em', color: 'red'}}>Please fill out all fields</span> : <></> }
+                    <a href='#!'
+                    onClick={onSubmit}
+                    className={(error ? '' : 'modal-close ') + 'waves-effect black waves-light btn'}>Add Kit</a>
+                </div>
+
             </div>
         </div>
-    )
+    );
 
-}
+};
 
 AddKitModal.propTypes = {
     addKit: PropTypes.func.isRequired
-}
+};
 
-export default connect(null, { addKit })(AddKitModal)
+export default connect(null, { addKit })(AddKitModal);
