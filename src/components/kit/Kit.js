@@ -57,11 +57,11 @@ const Kit = ({ kit: { kit, loading }, user, getKit, nightMode }) => {
                     <Waveform nightMode={nightMode} key={kit.id} userId={user.id} id={kit.id} src={kit.sample} notes={kit.notes} digs={kit.digs} digCue={digCue} shiftDig={shiftDig} />
                 </div>
 
-                <div className="kit-name-container" style={nightMode ? theme.dmAccent : theme.lmLightBlue}>
+                {/* <div className="kit-name-container" style={nightMode ? theme.dmAccent : theme.lmLightBlue}>
                     <span>[ Kit Name ] : {kit.name}</span>
-                </div>
+                </div> */}
 
-                <div className= "kit-detail">
+                {/* <div className= "kit-detail">
                     <div className="kit-detail-container" style={nightMode ? theme.dmSecondary : theme.lmAccentTwo}>
                         <div className="kit-detail-text-container" style={nightMode ? theme.dmKitDetail : theme.lmAccent}>
                         {kit.detail}
@@ -71,7 +71,8 @@ const Kit = ({ kit: { kit, loading }, user, getKit, nightMode }) => {
                     <div className="kit-detail-image-container" style={nightMode ? theme.dmImgContainer : theme.lmGrey}>
                         <img src={kit.image} alt={kit.name} />
                     </div>
-                </div>
+                </div> */}
+                
                 </div>
             </div>
 
