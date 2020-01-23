@@ -424,6 +424,7 @@ html{cursor: pointer;}
     flex-direction: row;
     min-height: 2em;
     background: rgb(207, 223, 255);
+    overflow: hidden;
 }
 
 .region-status-space {
@@ -460,6 +461,19 @@ html{cursor: pointer;}
 
 .loop-station-container {
     height: min-content;
+}
+
+.loop-playback-controls {
+    min-height: 2em;
+}
+
+.loop-playback-controls i {
+    margin-left: 0.5em;
+    margin-top: 0.2em;
+}
+
+.loop-playback-controls i:hover {
+    background: rgba(255, 255, 255, 0.2)
 }
 
 /* LoopStation */

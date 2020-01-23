@@ -320,7 +320,6 @@ class Waveform extends Component {
 
     //////////////////////////
     ///// Loop Station Controls
-
     copyRegionOne = () => {
         let regionOne = this.wavesurfer.regions.list.pad1;
         this.copyBuffer(regionOne);
@@ -349,14 +348,14 @@ class Waveform extends Component {
     copyBuffer = (region) => {
         this.wavesurfer.stop();
         var originalBuffer = this.wavesurfer.backend.buffer;
+        
+        if (region.start === undefined || region.end === undefined) { 
+            console.log('padStart or padEnd is undefined');
+            return;
+        }
 
         var padStart = region.start;
         var padEnd = region.end;
-
-        if (padStart === undefined || padEnd === undefined) { 
-            console.log('padStart or padEnd is undefined')
-            return;
-        }
 
         var emptySegment = this.wavesurfer.backend.ac.createBuffer(
             originalBuffer.numberOfChannels,
@@ -409,15 +408,12 @@ class Waveform extends Component {
                     channel.set(newChannelData, dataIndex);
                     dataIndex += newChannelData.length; // position to store the next buffer values
                 } else {
-                    console.log('dataIndex:', dataIndex)
-                    console.log('channel.length:', channel.length)
-                    console.log('newChannelData.length:', newChannelData.length)
                     try {
                         channel.set(newChannelData, dataIndex - 1);
                     } catch (error) {
                         console.log(error); // FIX
                     };
-                }
+                };
             };
         };
         this.setState({concatenatedBuffers: joinedBuffer});

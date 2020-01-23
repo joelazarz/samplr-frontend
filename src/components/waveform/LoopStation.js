@@ -2,6 +2,7 @@ import React, { Component } from 'react'
 import ReactDOM from 'react-dom'
 import WaveSurfer from 'wavesurfer.js'
 import RegionsPlugin from 'wavesurfer.js/src/plugin/regions.js'
+import { LoopPlaybackControls } from './LoopPlaybackControls';
 import theme from '../layout/Theme';
 
 export class LoopStation extends Component {
@@ -49,10 +50,13 @@ export class LoopStation extends Component {
   render() {
     return (
       <div className="loop-station">
-        <button onClick={this.loadBuffer}>Load Buffer</button>
-        <button onClick={this.playLooped}>Play Loop</button>
-        <button onClick={this.stopLoop}>Stop Loop</button>
-        <button onClick={this.clearBuffer}>Clear Loop</button>
+        <LoopPlaybackControls 
+        nightMode={this.props.nightMode}
+        loadBuffer={this.loadBuffer}
+        playLooped={this.playLooped}
+        stopLoop={this.stopLoop}
+        clearBuffer={this.clearBuffer}
+        /> 
         <div className="loop-wave" style={this.props.nightMode ? theme.dmSecondary : theme.lmWave} >
           <div id="loop-waveform"></div>
         </div>
