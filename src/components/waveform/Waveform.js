@@ -8,6 +8,7 @@ import PlaybackControls from '../waveform/PlaybackControls';
 import RegionControls from '../waveform/RegionControls';
 import NoteForm from './NoteForm';
 import DigForm from './DigForm';
+import LoopStation from './LoopStation';
 import theme from '../layout/Theme';
 
 class Waveform extends Component {
@@ -22,7 +23,9 @@ class Waveform extends Component {
         noteEnd: null,
         digs: this.props.digs,
         notes: this.props.notes,
-        playbackSpeed: 1
+        playbackSpeed: 1,
+        bufferArr: [],
+        concatenatedBuffers: null
     }
 
     componentDidMount() {
@@ -99,7 +102,7 @@ class Waveform extends Component {
     ///// Playback Controls //
     //////////////////////////
 
-    //////////////////////////
+    /////////////////////////
     // Region Controls /////
     onAddRegionOne = () => {
         this.wavesurfer.addRegion(regionsObj[0])
@@ -315,6 +318,120 @@ class Waveform extends Component {
     ///// Region Controls /////
     //////////////////////////
 
+    //////////////////////////
+    ///// Loop Station Controls
+
+    copyRegionOne = () => {
+        let regionOne = this.wavesurfer.regions.list.pad1;
+        this.copyBuffer(regionOne);
+    };
+
+    copyRegionTwo = () => {
+        let regionTwo = this.wavesurfer.regions.list.pad2;
+        this.copyBuffer(regionTwo);
+    };
+
+    copyRegionThree = () => {
+        let regionThree = this.wavesurfer.regions.list.pad3;
+        this.copyBuffer(regionThree);
+    };
+
+    copyRegionFour = () => {
+        let regionFour = this.wavesurfer.regions.list.pad4;
+        this.copyBuffer(regionFour);
+    };
+
+    copyRegionFive = () => {
+        let regionFive = this.wavesurfer.regions.list.pad5;
+        this.copyBuffer(regionFive);
+    };
+
+    copyBuffer = (region) => {
+        this.wavesurfer.stop();
+        var originalBuffer = this.wavesurfer.backend.buffer;
+
+        var padStart = region.start;
+        var padEnd = region.end;
+
+        if (padStart === undefined || padEnd === undefined) { 
+            console.log('padStart or padEnd is undefined')
+            return;
+        }
+
+        var emptySegment = this.wavesurfer.backend.ac.createBuffer(
+            originalBuffer.numberOfChannels,
+            ((padEnd - padStart) * originalBuffer.sampleRate),
+            originalBuffer.sampleRate
+        );
+
+        for (var i = 0; i < originalBuffer.numberOfChannels; i++) {
+            var channelData = originalBuffer.getChannelData(i);
+            var emptySegmentData = emptySegment.getChannelData(i);
+            let newBufferData = channelData.subarray((padStart * originalBuffer.sampleRate), (padEnd * originalBuffer.sampleRate));
+            if (emptySegmentData.length === newBufferData.length) {
+                emptySegmentData.set(newBufferData); // occassionally throws RangeError: Source is too large
+            } else {
+                let newBufferData = channelData.subarray((padStart * originalBuffer.sampleRate), (padEnd * originalBuffer.sampleRate) - 1);
+                emptySegmentData.set(newBufferData); 
+            };
+        };
+        this.setState({bufferArr: [...this.state.bufferArr, emptySegment]}, () => {
+            this.concatBuffer()
+        });
+    };
+
+    concatBuffer = () => {
+        let stateBuffers = this.state.bufferArr;
+        let ogBuffer = this.wavesurfer.backend.ac;
+        let stateBuffersLength = stateBuffers.length;
+        let channels = [];
+        let totalDuration = 0;
+
+        if (stateBuffersLength === 0) {return;}
+    
+        for (var a = 0; a < stateBuffersLength; a++) {
+            channels.push(stateBuffers[a].numberOfChannels);
+            totalDuration += stateBuffers[a].duration;
+        };
+
+        let numberOfChannels = channels.reduce(function(a, b) { return Math.min(a, b); });;
+        let joinedBuffer = ogBuffer.createBuffer(numberOfChannels, ogBuffer.sampleRate * totalDuration, ogBuffer.sampleRate);
+
+        for (var b = 0; b < numberOfChannels; b++) {
+            var newChannelDataSum = 0;
+            var channel = joinedBuffer.getChannelData(b);
+            var dataIndex = 0;
+
+            for(var c = 0; c < stateBuffersLength; c++) {
+                var newChannelData = stateBuffers[c].getChannelData(b);
+                if (channel.length >= newChannelData.length + newChannelDataSum) {
+                    newChannelDataSum += newChannelData.length;
+                    channel.set(newChannelData, dataIndex);
+                    dataIndex += newChannelData.length; // position to store the next buffer values
+                } else {
+                    console.log('dataIndex:', dataIndex)
+                    console.log('channel.length:', channel.length)
+                    console.log('newChannelData.length:', newChannelData.length)
+                    try {
+                        channel.set(newChannelData, dataIndex - 1);
+                    } catch (error) {
+                        console.log(error); // FIX
+                    };
+                }
+            };
+        };
+        this.setState({concatenatedBuffers: joinedBuffer});
+    };
+
+    clearLoop = () => {
+        this.setState({bufferArr: []});
+        this.setState({concatenatedBuffers: null});
+    };
+    
+    ///// Loop Station Controls
+    //////////////////////////
+
+
 
     render() {
         return (
@@ -332,6 +449,7 @@ class Waveform extends Component {
             changeSpeed={this.changeSpeed}
             changeZoom={this.changeZoom}
             />
+
             <div className='wave' style={this.props.nightMode ? theme.dmSecondary : theme.lmWave}>
             <div id="waveform" ></div>
             <div id="wave-timeline"></div>
@@ -367,6 +485,13 @@ class Waveform extends Component {
             loadRegionThree={this.loadRegionThree}
             loadRegionFour={this.loadRegionFour}
             loadRegionFive={this.loadRegionFive}
+
+            copyRegionOne={this.copyRegionOne}
+            copyRegionTwo={this.copyRegionTwo}
+            copyRegionThree={this.copyRegionThree}
+            copyRegionFour={this.copyRegionFour}
+            copyRegionFive={this.copyRegionOne}
+
             nightMode={this.props.nightMode}
             />
             
@@ -375,6 +500,13 @@ class Waveform extends Component {
             {this.state.memoryForm ? <DigForm kitId={this.state.id} userId={this.props.userId} digPadStart={this.state.memoryStart} digPadEnd={this.state.memoryEnd} memorySubmit={this.onMemorySubmit} nightMode={this.props.nightMode}/> : <></>}
             </div>
 
+            <div className="loop-station-container">
+            <LoopStation 
+            nightMode={this.props.nightMode}
+            concatenatedBuffers={this.state.concatenatedBuffers} 
+            clearLoop={this.clearLoop} 
+            />
+            </div>
 
         </div>
         )

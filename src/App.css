@@ -365,13 +365,13 @@ html{cursor: pointer;}
     flex-direction: row;
     background: rgb(240, 240, 240);
     margin-top: 0em;
-    min-height: 6em;
-
+    min-height: 4.3em;
+    overflow: auto;
 }
 
 .region-controls i {
-    margin-top: 0.6em;
-    margin-bottom: 0.2em;
+    margin-top: 0.3em;
+    margin-bottom: 0.1em;
     margin-left: 1em;
     margin-right: 1em;
 }
@@ -422,7 +422,7 @@ html{cursor: pointer;}
 .region-status-bar {
     display: flex;
     flex-direction: row;
-    min-height: 2.6em;
+    min-height: 2em;
     background: rgb(207, 223, 255);
 }
 
@@ -454,6 +454,15 @@ html{cursor: pointer;}
     text-overflow: ellipsis;
 }
 /* Region Controls */
+
+
+/* LoopStation */
+
+.loop-station-container {
+    height: min-content;
+}
+
+/* LoopStation */
 
 
 
