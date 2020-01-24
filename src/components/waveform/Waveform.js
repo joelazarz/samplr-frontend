@@ -156,7 +156,7 @@ class Waveform extends Component {
     onRemoveMemoryRegion = () => {
         let region = this.wavesurfer.regions.list.pad6
         region.remove()
-        this.setState({ memoryStart: null, memoryEnd: null })
+        this.setState({ memoryStart: null, memoryEnd: null, memoryForm: false })
     }
 
     onAddNoteRegion = () => {
@@ -166,7 +166,7 @@ class Waveform extends Component {
     onRemoveNoteRegion = () => {
         let region = this.wavesurfer.regions.list.pad7
         region.remove()
-        this.setState({ noteStart: null, noteEnd: null })
+        this.setState({ noteStart: null, noteEnd: null, noteForm: false })
     }
 
     clearRegions = () => {
@@ -295,10 +295,10 @@ class Waveform extends Component {
     }
 
     onMemorySaveClick = () => {
-        let start = this.wavesurfer.regions.list.pad6.start
-        let end = this.wavesurfer.regions.list.pad6.end
-        this.setState({ memoryStart: start, memoryEnd: end })
-        this.setState({ memoryForm: true, noteForm: false })
+        let start = this.wavesurfer.regions.list.pad6.start;
+        let end = this.wavesurfer.regions.list.pad6.end;
+        this.setState({ memoryStart: start, memoryEnd: end });
+        this.setState({ memoryForm: true, noteForm: false });
     }
 
     onNoteSaveClick = () => {

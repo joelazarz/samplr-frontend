@@ -6,12 +6,13 @@ import M from 'materialize-css/dist/js/materialize.min.js'
 import theme from '../layout/Theme';
 
 const DigForm = ({ kitId, digPadStart, digPadEnd, memorySubmit, addDig, getKit, userId, nightMode }) => {
-    const [name, setName] = useState('')
 
-    let kit_id = kitId
-    let user_id = userId
-    let dig_pad_start = digPadStart
-    let dig_pad_end = digPadEnd
+    const [name, setName] = useState('');
+
+    let kit_id = kitId;
+    let user_id = userId;
+    let dig_pad_start = digPadStart;
+    let dig_pad_end = digPadEnd;
 
     const onSubmit = () => {
         if(name === '' ){
@@ -34,22 +35,22 @@ const DigForm = ({ kitId, digPadStart, digPadEnd, memorySubmit, addDig, getKit, 
 
     return (
         <>
-            <div className="input-field col s6">
+        <div className="input-field col s5">
             <i className="material-icons prefix">mode_edit</i>
-            <input 
-            id="icon_prefix2" 
-            className="materialize-input"
-            style={nightMode ? theme.dmUtility : theme.lmAccentTwo}
-            onChange={e => setName(e.target.value)} 
-            placeholder="Set Region Memory..."></input>
+                <input 
+                id="icon_prefix2" 
+                className="materialize-input"
+                style={nightMode ? theme.dmUtility : theme.lmAccentTwo}
+                onChange={e => setName(e.target.value)} 
+                placeholder="Set Region Memory..."></input>
             <label htmlFor="icon_prefix2"></label>
-            </div>
-            <div>
-                <a href='#!'
-                onClick={onSubmit}
-                id='dig-note-submit-btn'
-                className='waves-effect black waves-light btn-small'>Submit</a>
-            </div>
+        </div>
+        <div>
+            <a href='#!'
+            onClick={onSubmit}
+            id='dig-note-submit-btn'
+            className='waves-effect black waves-light btn-small'>Submit</a>
+        </div>
         </>
     )
 }
