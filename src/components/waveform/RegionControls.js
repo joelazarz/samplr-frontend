@@ -46,198 +46,202 @@ const RegionControls = ({
         window.addEventListener('keydown', handleRegionKey);
         return () => {
             window.removeEventListener('keydown', handleRegionKey);
-        }
-    })
+        };
+    });
 
-    const [regionOneStatus, setRegionOneStatus] = useState(false)
-    const [regionTwoStatus, setRegionTwoStatus] = useState(false)
-    const [regionThreeStatus, setRegionThreeStatus] = useState(false)
-    const [regionFourStatus, setRegionFourStatus] = useState(false)
-    const [regionFiveStatus, setRegionFiveStatus] = useState(false)
-    const [regionMemoryStatus, setRegionMemoryStatus] = useState(false)
-    const [regionNoteStatus, setRegionNoteStatus] = useState(false)
-    const [notesModeStatus, setNotesModeStatus] = useState(false)
+    const [regionOneStatus, setRegionOneStatus] = useState(false);
+    const [regionTwoStatus, setRegionTwoStatus] = useState(false);
+    const [regionThreeStatus, setRegionThreeStatus] = useState(false);
+    const [regionFourStatus, setRegionFourStatus] = useState(false);
+    const [regionFiveStatus, setRegionFiveStatus] = useState(false);
+    const [regionMemoryStatus, setRegionMemoryStatus] = useState(false);
+    const [regionNoteStatus, setRegionNoteStatus] = useState(false);
+    const [notesModeStatus, setNotesModeStatus] = useState(false);
 
     const regionOneEnable = () => {
-        setRegionOneStatus(true)
-        addRegionOne()
-    }
+        setRegionOneStatus(true);
+        addRegionOne();
+    };
 
     const regionOneDisable = () => {
-        setRegionOneStatus(false)
-        removeRegionOne()
-    }
+        setRegionOneStatus(false);
+        removeRegionOne();
+    };
 
     const regionTwoEnable = () => {
-        setRegionTwoStatus(true)
-        addRegionTwo()
-    }
+        setRegionTwoStatus(true);
+        addRegionTwo();
+    };
 
     const regionTwoDisable = () => {
-        setRegionTwoStatus(false)
-        removeRegionTwo()
-    }
+        setRegionTwoStatus(false);
+        removeRegionTwo();
+    };
 
     const regionThreeEnable = () => {
-        setRegionThreeStatus(true)
-        addRegionThree()
-    }
+        setRegionThreeStatus(true);
+        addRegionThree();
+    };
 
     const regionThreeDisable = () => {
-        setRegionThreeStatus(false)
-        removeRegionThree()
-    }
+        setRegionThreeStatus(false);
+        removeRegionThree();
+    };
 
     const regionFourEnable = () => {
-        setRegionFourStatus(true)
-        addRegionFour()
-    }
+        setRegionFourStatus(true);
+        addRegionFour();
+    };
 
     const regionFourDisable = () => {
-        setRegionFourStatus(false)
-        removeRegionFour()
-    }
+        setRegionFourStatus(false);
+        removeRegionFour();
+    };
 
     const regionFiveEnable = () => {
-        setRegionFiveStatus(true)
-        addRegionFive()
-    }
+        setRegionFiveStatus(true);
+        addRegionFive();
+    };
 
     const regionFiveDisable = () => {
-        setRegionFiveStatus(false)
-        removeRegionFive()
-    }
+        setRegionFiveStatus(false);
+        removeRegionFive();
+    };
 
     const regionMemoryEnable = () => {
-        setRegionMemoryStatus(true)
-        addMemoryRegion()
-    }
+        setRegionMemoryStatus(true);
+        addMemoryRegion();
+    };
 
     const regionMemoryDisable = () => {
-        setRegionMemoryStatus(false)
-        removeMemoryRegion()
-    }
+        setRegionMemoryStatus(false);
+        removeMemoryRegion();
+    };
 
     const loadMemoryRegionOne = () => {
         try {
-            loadRegionOne()
-            setRegionOneStatus(true)
+            loadRegionOne();
+            setRegionOneStatus(true);
         } catch (error) {
-            M.toast({html: 'Cue is empty'})
-        }
-    }
+            M.toast({html: 'Cue is empty'});
+        };
+    };
+
     const loadMemoryRegionTwo = () => {
         try {
-            loadRegionTwo()
-            setRegionTwoStatus(true)
+            loadRegionTwo();
+            setRegionTwoStatus(true);
         } catch (error) {
-            M.toast({html: 'Cue is empty'})
-        }
-    }
+            M.toast({html: 'Cue is empty'});
+        };
+    };
+
     const loadMemoryRegionThree = () => {
         try {
-            loadRegionThree()
-            setRegionThreeStatus(true)
+            loadRegionThree();
+            setRegionThreeStatus(true);
         } catch (error) {
-            M.toast({html: 'Cue is empty'})
-        }
-    }
+            M.toast({html: 'Cue is empty'});
+        };
+    };
+
     const loadMemoryRegionFour = () => {
         try {
-            loadRegionFour()
-            setRegionFourStatus(true)
+            loadRegionFour();
+            setRegionFourStatus(true);
         } catch (error) {
-            M.toast({html: 'Cue is empty'})
-        }
-    }
+            M.toast({html: 'Cue is empty'});
+        };
+    };
+
     const loadMemoryRegionFive = () => {
         try {
-            loadRegionFive()
-            setRegionFiveStatus(true)
+            loadRegionFive();
+            setRegionFiveStatus(true);
         } catch (error) {
-            M.toast({html: 'Cue is empty'})
-        }
-    }
+            M.toast({html: 'Cue is empty'});
+        };
+    };
 
     const regionNoteEnable = () => {
-        setRegionNoteStatus(true)
-        addNoteRegion()
-    }
+        setRegionNoteStatus(true);
+        addNoteRegion();
+    };
 
     const regionNoteDisable = () => {
-        setRegionNoteStatus(false)
-        removeNoteRegion()
-    }
+        setRegionNoteStatus(false);
+        removeNoteRegion();
+    };
 
     const clearWaveRegions = () => {
-        setRegionOneStatus(false)
-        setRegionTwoStatus(false)
-        setRegionThreeStatus(false)
-        setRegionFourStatus(false)
-        setRegionFiveStatus(false)
-        setRegionMemoryStatus(false)
-        setRegionNoteStatus(false)
-        clearRegions()
-    }
+        setRegionOneStatus(false);
+        setRegionTwoStatus(false);
+        setRegionThreeStatus(false);
+        setRegionFourStatus(false);
+        setRegionFiveStatus(false);
+        setRegionMemoryStatus(false);
+        setRegionNoteStatus(false);
+        clearRegions();
+    };
 
     const enableNotesMode = () => {
         clearWaveRegions();
         notesMode();
-        setNotesModeStatus(true)
-    }
+        setNotesModeStatus(true);
+    };
 
     const disableNotesMode = () => {
         clearWaveRegions();
-        setNotesModeStatus(false)
-    }
+        setNotesModeStatus(false);
+    };
 
 
     const handleRegionKey = (e) => {
-        e.stopPropagation()
+        e.stopPropagation();
         if(regionOneStatus && e.shiftKey && e.keyCode === 49){
             try {
-                triggerOne()
+                triggerOne();
             } catch {
-                regionOneEnable()
-            }
+                regionOneEnable();
+            };
         } else if (regionTwoStatus && e.shiftKey  && e.keyCode === 50){
             try {
-                triggerTwo()
+                triggerTwo();
             } catch {
-                regionTwoEnable()
-            }
+                regionTwoEnable();
+            };
         } else if (regionThreeStatus && e.shiftKey  && e.keyCode === 51){
             try {
-                triggerThree()
+                triggerThree();
             } catch {
-                regionThreeEnable()
-            }
+                regionThreeEnable();
+            };
         } else if (regionFourStatus && e.shiftKey  && e.keyCode === 52){
             try {
-                triggerFour()
+                triggerFour();
             } catch {
-                regionFourEnable()
-            }
+                regionFourEnable();
+            };
         } else if (regionFiveStatus && e.shiftKey  && e.keyCode === 53){
             try {
-                triggerFive()
+                triggerFive();
             } catch {
-                regionFiveEnable()
-            }
+                regionFiveEnable();
+            };
         } else if (regionMemoryStatus && e.shiftKey  && e.keyCode === 54){
             try {
-                triggerMemory()
+                triggerMemory();
             } catch {
-                regionMemoryEnable()
-            }
+                regionMemoryEnable();
+            };
         } else if (regionNoteStatus && e.shiftKey  && e.keyCode === 55){
             try {
-                triggerNote()
+                triggerNote();
             } catch {
-                regionNoteEnable()
-            }
-        } 
-    }
+                regionNoteEnable();
+            };
+        }; 
+    };
 
     return (
         <>
@@ -357,7 +361,7 @@ const RegionControls = ({
 
             <div onClick={memorySaveClick} className="region-control-small-save-btn" style={nightMode ? theme.dmBlack : theme.lmGrey}>Save</div>
             : <></> }
-            
+
             </div> 
             </div>
             <div className="region-status-space" style={nightMode ? theme.dmRegionSaveLoad : theme.lmLightBlue}>
@@ -447,6 +451,6 @@ RegionControls.propTypes = {
     loadRegionThree: PropTypes.func.isRequired,
     loadRegionFour: PropTypes.func.isRequired,
     loadRegionFive: PropTypes.func.isRequired
-}
+};
 
-export default RegionControls
+export default RegionControls;

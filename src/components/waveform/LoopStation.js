@@ -24,9 +24,9 @@ export class LoopStation extends Component {
         plugins: [
           RegionsPlugin.create()
         ]
-    })
+    });
     this.wavesurfer.on('finish', () => this.playLooped());
-  }
+  };
   
   playLooped = () => {
     this.wavesurfer.play();
@@ -38,6 +38,7 @@ export class LoopStation extends Component {
   
   loadBuffer = () => {
     if (this.props.concatenatedBuffers === null) {return;};
+    this.wavesurfer.stop()
     this.wavesurfer.loadDecodedBuffer(this.props.concatenatedBuffers);
   };
 
@@ -47,10 +48,8 @@ export class LoopStation extends Component {
   };
 
   changeSpeed = (speed) => {
-    this.wavesurfer.setPlaybackRate(speed)
-  }
-
-
+    this.wavesurfer.setPlaybackRate(speed);
+  };
 
   render() {
     return (

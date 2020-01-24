@@ -13,48 +13,53 @@ import theme from '../layout/Theme';
 
 const Kit = ({ kit: { kit, loading }, user, getKit, nightMode }) => {
 
-    const [notesButton, setNotesButton] = useState(false)
-    const [memoryButton, setMemoryButton] = useState(true)
-    const [detailButton, setDetailButton] = useState(false)
-    const [digCue, setDigCue] = useState([])
+    const [notesButton, setNotesButton] = useState(false);
+    const [memoryButton, setMemoryButton] = useState(true);
+    const [detailButton, setDetailButton] = useState(false);
+    const [digCue, setDigCue] = useState([]);
 
     useEffect(() => {
         M.AutoInit();
-        getKit(window.location.pathname)
+        getKit(window.location.pathname);
         // eslint-disable-next-line
-    }, [])
+    }, []);
 
     // kit state functions
     const viewNotesButton = () => {
-        setNotesButton(true)
-        setMemoryButton(false)
-        setDetailButton(false)
-    }
+        setNotesButton(true);
+        setMemoryButton(false);
+        setDetailButton(false);
+    };
+
     const viewMemoryButton = () => {
-        setMemoryButton(true)
-        setNotesButton(false)
-        setDetailButton(false)
-    }
+        setMemoryButton(true);
+        setNotesButton(false);
+        setDetailButton(false);
+    };
+
     const viewDetailButton = () => {
-        setDetailButton(true)
-        setMemoryButton(false)
-        setNotesButton(false)
-    }
+        setDetailButton(true);
+        setMemoryButton(false);
+        setNotesButton(false);
+    };
+
     const cueMemoryButton = (dig) => {
-        !digCue.includes(dig) ? setDigCue([...digCue, dig]) : setDigCue([...digCue])
-    }
+        !digCue.includes(dig) ? setDigCue([...digCue, dig]) : setDigCue([...digCue]);
+    };
+
     const removeFromCue = (dig) => {
         let digArray = digCue.filter(digObj => digObj !== dig);
-        setDigCue(digArray)
-    }
+        setDigCue(digArray);
+    };
+
     const shiftDig = () => {
-        digCue.shift()
-        setDigCue([...digCue])
-    }
+        digCue.shift();
+        setDigCue([...digCue]);
+    };
 
     if (loading || user === null || kit === null) {
-        return <Spinner />
-    }
+        return <Spinner />;
+    };
 
     return (
         <>
@@ -85,7 +90,7 @@ const Kit = ({ kit: { kit, loading }, user, getKit, nightMode }) => {
                     <div className='spec-content'>
                     { notesButton ? kit.notes.map(note => <NotesCard nightMode={nightMode} key={note.id} note={note} />) : <></> }
                     { memoryButton ? kit.digs.map(dig => <MemoryCard nightMode={nightMode} clickHandler={cueMemoryButton} key={dig.id} dig={dig} />) : <></> }
-                    { detailButton ? <><div style={{textAlign: 'center', width: '100%', marginBottom: '1em'}}><img style={{width: '50%'}} src={kit.image} alt={kit.name} /></div><span style={{padding: '1em'}}>{kit.detail}</span></> : <></> }
+                    { detailButton ? <><div style={{textAlign: 'center', width: '100%', marginBottom: '1em'}}><img style={{width: '50%'}} src={kit.image} alt={kit.name} /></div><div style={{padding: '1em'}}>{kit.detail}</div></> : <></> }
                     </div>
                     </>
             </div>
@@ -112,6 +117,6 @@ const Kit = ({ kit: { kit, loading }, user, getKit, nightMode }) => {
 
 const mapStateToProps = state => ({
     kit: state.kit
-})
+});
 
-export default connect(mapStateToProps, { getKit })(Kit)
+export default connect(mapStateToProps, { getKit })(Kit);

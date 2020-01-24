@@ -27,11 +27,11 @@ const NoteForm = ({ kitId, noteStart, noteEnd, noteSubmit, addNote, userId, getK
                 note_pad_end
             }
             addNote(newNote)
-            .then(()=> getKit(`/kits/${kitId}`))
-            M.toast({ html: 'Note Added'})
-        }
-        setNote('')
-    }
+            .then(()=> getKit(`/kits/${kitId}`));
+            M.toast({ html: 'Note Added'});
+        };
+        setNote('');
+    };
 
 
     return (
@@ -53,7 +53,7 @@ const NoteForm = ({ kitId, noteStart, noteEnd, noteSubmit, addNote, userId, getK
                 className='waves-effect black waves-light btn-small'>Leave Note</a>
             </div>
         </>
-    )
-}
+    );
+};
 
-export default connect(null, { addNote, getKit })(NoteForm)
+export default connect(null, { addNote, getKit })(NoteForm);
