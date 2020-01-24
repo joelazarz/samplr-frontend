@@ -45,6 +45,10 @@ export class LoopStation extends Component {
     this.props.clearLoop();
   };
 
+  changeSpeed = (speed) => {
+    this.wavesurfer.setPlaybackRate(speed)
+  }
+
 
 
   render() {
@@ -56,6 +60,7 @@ export class LoopStation extends Component {
         playLooped={this.playLooped}
         stopLoop={this.stopLoop}
         clearBuffer={this.clearBuffer}
+        changeSpeed={this.changeSpeed}
         /> 
         <div className="loop-wave" style={this.props.nightMode ? theme.dmSecondary : theme.lmWave} >
           <div id="loop-waveform"></div>
