@@ -9,7 +9,8 @@ export const LoopPlaybackControls = ({
   playLooped,
   stopLoop,
   clearBuffer,
-  changeSpeed
+  changeSpeed,
+  loopPlaying
 }) => {
 
   const changeSpeedValue = (val) => {
@@ -20,8 +21,8 @@ export const LoopPlaybackControls = ({
   return (
     <div className="loop-playback-controls" style={nightMode ? theme.dmAccent : theme.lmAccentTwo}>
       <i onClick={loadBuffer} className='small material-icons'>input </i>
-      <i onClick={playLooped} className='small material-icons'>play_arrow </i>
-      <i onClick={stopLoop} className={'small material-icons'}>stop </i>
+      <i onClick={playLooped} style={loopPlaying ? {color: 'rgb(0, 168, 14)'} : {color:'lightgrey'}} className='small material-icons'>play_arrow </i>
+      <i onClick={stopLoop} style={loopPlaying ? {color: 'lightgrey'} : {color:'rgb(211, 0, 0)'}} className='small material-icons'>stop </i>
       <i onClick={clearBuffer} className={'small material-icons'}>clear </i>
       <div className="loop-knob-div">
         <Knob 

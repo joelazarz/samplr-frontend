@@ -349,8 +349,8 @@ class Waveform extends Component {
         this.wavesurfer.stop();
         var originalBuffer = this.wavesurfer.backend.buffer;
         
-        if (region.start === undefined || region.end === undefined) { 
-            console.log('padStart or padEnd is undefined');
+        if (region === undefined || region.start === undefined || region.end === undefined) { 
+            console.log('region, padStart or padEnd is undefined');
             return;
         }
 
