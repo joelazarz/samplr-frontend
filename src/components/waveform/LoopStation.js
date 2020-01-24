@@ -7,6 +7,10 @@ import theme from '../layout/Theme';
 
 export class LoopStation extends Component {
 
+  state = {
+    loopPlaying: false
+  }
+
   componentDidMount() {
 
     this.el = ReactDOM.findDOMNode(this)
@@ -26,6 +30,7 @@ export class LoopStation extends Component {
         ]
     });
     this.wavesurfer.on('finish', () => this.playLooped());
+    this.wavesurfer.on('play', () => this.setState({loopPlaying: true}));
   };
   
   playLooped = () => {
@@ -34,6 +39,7 @@ export class LoopStation extends Component {
 
   stopLoop = () => {
     this.wavesurfer.stop();
+    this.setState({loopPlaying: false})
   };
   
   loadBuffer = () => {
@@ -45,6 +51,7 @@ export class LoopStation extends Component {
   clearBuffer = () => {
     this.wavesurfer.empty();
     this.props.clearLoop();
+    this.setState({loopPlaying: false})
   };
 
   changeSpeed = (speed) => {
@@ -61,6 +68,7 @@ export class LoopStation extends Component {
         stopLoop={this.stopLoop}
         clearBuffer={this.clearBuffer}
         changeSpeed={this.changeSpeed}
+        loopPlaying={this.state.loopPlaying}
         /> 
         <div className="loop-wave" style={this.props.nightMode ? theme.dmSecondary : theme.lmWave} >
           <div id="loop-waveform"></div>
