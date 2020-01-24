@@ -14,6 +14,7 @@ export class LoopStation extends Component {
     this.wavesurfer = WaveSurfer.create({
         container: this.waveform,
         waveColor: 'rgb(193, 193, 193)',
+        height: 115,
         progressColor: 'rgb(140, 140, 140)',
         cursorColor: 'orange',
         cursorWidth: 2,
