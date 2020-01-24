@@ -1,6 +1,7 @@
-import React, { useState } from 'react'
+// import React, { useState } from 'react'
+import React from 'react';
 import Login from './Login';
-import Signup from './Signup';
+// import Signup from './Signup';
 import Guide from './Guide';
 import { DemoInstructions } from './DemoInstructions';
 import Spinner from '../layout/Spinner';
@@ -9,7 +10,7 @@ import { WelcomeUser } from './WelcomeUser';
 
 const LandingPage = ({ setSessionUser, user, localStorageToken }) => {
 
-    const [login, setLogin] = useState(false)
+    // const [login, setLogin] = useState(false)
 
     return (
         <div className="row">
@@ -28,9 +29,11 @@ const LandingPage = ({ setSessionUser, user, localStorageToken }) => {
                 !user && localStorageToken ? <Spinner />  
                 : user && localStorageToken ? <WelcomeUser user={user} /> 
                 : <>
-                {login ? <Signup setSessionUser={setSessionUser} />
-                : <Login setSessionUser={setSessionUser} />}
-                <button onClick={()=> setLogin(!login)} className="waves-effect waves-blue light-blue btn-flat">{login ? <>Already a User? Login</> : <>Not a User? Signup</> }</button>
+                {/* {login ? <Signup setSessionUser={setSessionUser} /> */}
+                {/* :  */}
+                <Login setSessionUser={setSessionUser} />
+                {/* } */}
+                {/* <button onClick={()=> setLogin(!login)} className="waves-effect waves-blue light-blue btn-flat">{login ? <>Already a User? Login</> : <>Not a User? Signup</> }</button> */}
                 </>
                 }
 
