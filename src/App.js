@@ -39,12 +39,12 @@ const App = () => {
   const setSessionUser = (sessionUser) => {
     // sessionUser.user.darkmode || null ? setNightMode(true) : setNightMode(false);
     setUser(sessionUser.user);
-    nightModeSwitch()
-  }
+    nightModeSwitch();
+  };
 
   const autoLogin = () => {
     const token = localStorage.getItem('token');
-    if(!token){ return; } 
+    if(!token){ return; };
 
     fetch('https://sampler-backend.herokuapp.com/autologin', {
       headers: {
@@ -57,13 +57,13 @@ const App = () => {
       setUser(data)
       // eslint-disable-next-line
       {data.darkmode ? setNightMode(true) : setNightMode(false)}
-    })
-  }
+    });
+  };
 
   const nightModeSwitch = () => {
     setNightMode(nightMode ? false : true);
     patchNightMode();
-  }
+  };
 
   const patchNightMode = () => {
     let darkmode = { darkmode: !nightMode };
@@ -73,8 +73,8 @@ const App = () => {
         headers: {
           'Content-Type': 'application/json'
         }
-    })
-  }
+    });
+  };
 
   return (
     <Router>

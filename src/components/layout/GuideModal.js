@@ -27,6 +27,6 @@ const GuideModal = ({ nightMode }) => {
         </div>
     )
 
-}
+};
 
-export default GuideModal
+export default GuideModal;

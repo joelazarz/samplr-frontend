@@ -44,60 +44,60 @@ class Waveform extends Component {
                     regions: []
                 })
             ]
-        })
+        });
         this.wavesurfer.load(this.props.src);
-    }
+    };
 
     componentWillUnmount(){
-        this.wavesurfer.empty()
-        this.wavesurfer.destroy()
-        this.wavesurfer.cancelAjax()
-    }
+        this.wavesurfer.empty();
+        this.wavesurfer.destroy();
+        this.wavesurfer.cancelAjax();
+    };
 
 
     //////////////////////////
     // Playback Controls /////
     play = () => {
-        this.wavesurfer.play()
-    }
+        this.wavesurfer.play();
+    };
 
     playPause = () => {
-        this.wavesurfer.playPause()
-    }
+        this.wavesurfer.playPause();
+    };
 
     stopBtn = () => {
-        this.wavesurfer.stop()
-    }
+        this.wavesurfer.stop();
+    };
 
     mute = () => {
-        this.wavesurfer.toggleMute((this.wavesurfer.getMute ? false : true))
-    }
+        this.wavesurfer.toggleMute((this.wavesurfer.getMute ? false : true));
+    };
 
     skipForward = () => {
-        this.wavesurfer.skipForward(5)
+        this.wavesurfer.skipForward(5);
     }
 
     skipBackward = () => {
-        this.wavesurfer.skipBackward(5)
-    }
+        this.wavesurfer.skipBackward(5);
+    };
 
     zoomIn = () => {
-        this.wavesurfer.zoom(20)
-    }
+        this.wavesurfer.zoom(20);
+    };
 
     zoomOut = () => {
-        this.wavesurfer.zoom(1)
-    }
+        this.wavesurfer.zoom(1);
+    };
 
     // playback speed knob control
     changeSpeed = (speed) => {
-        this.wavesurfer.setPlaybackRate(speed)
-    }
+        this.wavesurfer.setPlaybackRate(speed);
+    };
 
     // zoom knob control
     changeZoom = (val) => {
-        this.wavesurfer.zoom(val)
-    }
+        this.wavesurfer.zoom(val);
+    };
 
     ///// Playback Controls //
     //////////////////////////
@@ -105,121 +105,121 @@ class Waveform extends Component {
     /////////////////////////
     // Region Controls /////
     onAddRegionOne = () => {
-        this.wavesurfer.addRegion(regionsObj[0])
-    }
+        this.wavesurfer.addRegion(regionsObj[0]);
+    };
 
     onRemoveRegionOne = () => {
-        let region = this.wavesurfer.regions.list.pad1
-        region.remove()
-    }
+        let region = this.wavesurfer.regions.list.pad1;
+        region.remove();
+    };
 
     onAddRegionTwo = () => {
-        this.wavesurfer.addRegion(regionsObj[1])
-    }
+        this.wavesurfer.addRegion(regionsObj[1]);
+    };
 
     onRemoveRegionTwo = () => {
-        let region = this.wavesurfer.regions.list.pad2
-        region.remove()
-    }
+        let region = this.wavesurfer.regions.list.pad2;
+        region.remove();
+    };
 
     onAddRegionThree = () => {
-        this.wavesurfer.addRegion(regionsObj[2])
-    }
+        this.wavesurfer.addRegion(regionsObj[2]);
+    };
 
     onRemoveRegionThree = () => {
-        let region = this.wavesurfer.regions.list.pad3
-        region.remove()
-    }
+        let region = this.wavesurfer.regions.list.pad3;
+        region.remove();
+    };
 
     onAddRegionFour = () => {
-        this.wavesurfer.addRegion(regionsObj[3])
-    }
+        this.wavesurfer.addRegion(regionsObj[3]);
+    };
 
     onRemoveRegionFour = () => {
-        let region = this.wavesurfer.regions.list.pad4
-        region.remove()
-    }
+        let region = this.wavesurfer.regions.list.pad4;
+        region.remove();
+    };
 
     onAddRegionFive = () => {
-        this.wavesurfer.addRegion(regionsObj[4])
-    }
+        this.wavesurfer.addRegion(regionsObj[4]);
+    };
 
     onRemoveRegionFive = () => {
-        let region = this.wavesurfer.regions.list.pad5
-        region.remove()
-    }
+        let region = this.wavesurfer.regions.list.pad5;
+        region.remove();
+    };
 
     onAddMemoryRegion = () => {
-        this.wavesurfer.addRegion(regionsObj[5])
-    }
+        this.wavesurfer.addRegion(regionsObj[5]);
+    };
 
     onRemoveMemoryRegion = () => {
-        let region = this.wavesurfer.regions.list.pad6
-        region.remove()
-        this.setState({ memoryStart: null, memoryEnd: null, memoryForm: false })
-    }
+        let region = this.wavesurfer.regions.list.pad6;
+        region.remove();
+        this.setState({ memoryStart: null, memoryEnd: null, memoryForm: false });
+    };
 
     onAddNoteRegion = () => {
-        this.wavesurfer.addRegion(regionsObj[6])
-    }
+        this.wavesurfer.addRegion(regionsObj[6]);
+    };
 
     onRemoveNoteRegion = () => {
-        let region = this.wavesurfer.regions.list.pad7
-        region.remove()
-        this.setState({ noteStart: null, noteEnd: null, noteForm: false })
-    }
+        let region = this.wavesurfer.regions.list.pad7;
+        region.remove();
+        this.setState({ noteStart: null, noteEnd: null, noteForm: false });
+    };
 
     clearRegions = () => {
-        this.wavesurfer.clearRegions()
-        this.setState({ memoryStart: null, memoryEnd: null, noteStart: null, noteEnd: null })
-        this.setState({ memoryForm: false, noteForm: false })
-    }
+        this.wavesurfer.clearRegions();
+        this.setState({ memoryStart: null, memoryEnd: null, noteStart: null, noteEnd: null });
+        this.setState({ memoryForm: false, noteForm: false });
+    };
 
     triggerOne = () => {
-        this.wavesurfer.stop()
+        this.wavesurfer.stop();
         let clip = this.wavesurfer.regions.list.pad1;
-        clip.play()
-    }
+        clip.play();
+    };
 
     triggerTwo = () => {
-        this.wavesurfer.stop()
+        this.wavesurfer.stop();
         let clip = this.wavesurfer.regions.list.pad2;
-        clip.play()
-    }
+        clip.play();
+    };
 
     triggerThree = () => {
-        this.wavesurfer.stop()
+        this.wavesurfer.stop();
         let clip = this.wavesurfer.regions.list.pad3;
-        clip.play()
-    }
+        clip.play();
+    };
 
     triggerFour = () => {
-        this.wavesurfer.stop()
+        this.wavesurfer.stop();
         let clip = this.wavesurfer.regions.list.pad4;
-        clip.play()
-    }
+        clip.play();
+    };
 
     triggerFive = () => {
-        this.wavesurfer.stop()
+        this.wavesurfer.stop();
         let clip = this.wavesurfer.regions.list.pad5;
-        clip.play()
-    }
+        clip.play();
+    };
 
     triggerMemory = () => {
-        this.wavesurfer.stop()
+        this.wavesurfer.stop();
         let clip = this.wavesurfer.regions.list.pad6;
-        clip.play()
-    }
+        clip.play();
+    };
 
     triggerNote = () => {
-        this.wavesurfer.stop()
+        this.wavesurfer.stop();
         let clip = this.wavesurfer.regions.list.pad7;
-        clip.play()
-    }
+        clip.play();
+    };
 
     notesMode = () => {
-        this.wavesurfer.zoom(1)
-        let waveNotes = this.props.notes
+        this.wavesurfer.zoom(1);
+        let waveNotes = this.props.notes;
         waveNotes.map(note => this.wavesurfer.addRegion({
             id: `note-${note.id}`,
             start: `${note.note_pad_start}`,
@@ -229,10 +229,10 @@ class Waveform extends Component {
             data: note.note,
             resize: false,
             color: 'rgb(182, 255, 163, 0.4)'
-        }))
+        }));
         // returning the data that will be displayed - find a place for that on interface
-        this.wavesurfer.on('region-in', region => console.log(region.data))
-    }
+        this.wavesurfer.on('region-in', region => console.log(region.data));
+    };
 
     loadRegionOne = () => {
         let digToLoad = [this.props.digCue[0]];
@@ -243,8 +243,8 @@ class Waveform extends Component {
             loop: false,
             color: 'rgb(252, 206, 195, 0.4)'
         }));
-        this.props.shiftDig()
-    }
+        this.props.shiftDig();
+    };
 
     loadRegionTwo = () => {
         let digToLoad = [this.props.digCue[0]];
@@ -254,9 +254,9 @@ class Waveform extends Component {
             end: `${dig.dig_pad_end}`,
             loop: false,
             color: 'rgb(187, 255, 198, 0.4)'
-        }))
-        this.props.shiftDig()
-    }
+        }));
+        this.props.shiftDig();
+    };
 
     loadRegionThree = () => {
         let digToLoad = [this.props.digCue[0]];
@@ -266,9 +266,9 @@ class Waveform extends Component {
             end: `${dig.dig_pad_end}`,
             loop: false,
             color: 'rgb(191, 253, 255, 0.4)'
-        }))
-        this.props.shiftDig()
-    }
+        }));
+        this.props.shiftDig();
+    };
 
     loadRegionFour = () => {
         let digToLoad = [this.props.digCue[0]];
@@ -278,9 +278,9 @@ class Waveform extends Component {
             end: `${dig.dig_pad_end}`,
             loop: false,
             color: 'rgb(247, 161, 255, 0.4)'
-        }))
-        this.props.shiftDig()
-    }
+        }));
+        this.props.shiftDig();
+    };
 
     loadRegionFive = () => {
         let digToLoad = [this.props.digCue[0]];
@@ -290,9 +290,9 @@ class Waveform extends Component {
             end: `${dig.dig_pad_end}`,
             loop: false,
             color: 'rgb(255, 176, 176, 0.4)'
-        }))
-        this.props.shiftDig()
-    }
+        }));
+        this.props.shiftDig();
+    };
 
     onMemorySaveClick = () => {
         let start = this.wavesurfer.regions.list.pad6.start;
@@ -302,19 +302,19 @@ class Waveform extends Component {
     }
 
     onNoteSaveClick = () => {
-        let start = this.wavesurfer.regions.list.pad7.start
-        let end = this.wavesurfer.regions.list.pad7.end
-        this.setState({ noteStart: start, noteEnd: end })
-        this.setState({ noteForm: true, memoryForm: false })
+        let start = this.wavesurfer.regions.list.pad7.start;
+        let end = this.wavesurfer.regions.list.pad7.end;
+        this.setState({ noteStart: start, noteEnd: end });
+        this.setState({ noteForm: true, memoryForm: false });
     }
 
     onMemorySubmit = () => {
-        this.setState({ memoryForm: false })
-    }
+        this.setState({ memoryForm: false });
+    };
     
     onNoteSubmit = () => {
-        this.setState({ noteForm: false })
-    }
+        this.setState({ noteForm: false });
+    };
     ///// Region Controls /////
     //////////////////////////
 
@@ -375,7 +375,7 @@ class Waveform extends Component {
             };
         };
         this.setState({bufferArr: [...this.state.bufferArr, emptySegment]}, () => {
-            this.concatBuffer()
+            this.concatBuffer();
         });
     };
 
@@ -386,7 +386,7 @@ class Waveform extends Component {
         let channels = [];
         let totalDuration = 0;
 
-        if (stateBuffersLength === 0) {return;}
+        if (stateBuffersLength === 0) {return;};
     
         for (var a = 0; a < stateBuffersLength; a++) {
             channels.push(stateBuffers[a].numberOfChannels);
@@ -506,9 +506,9 @@ class Waveform extends Component {
 
         </div>
         )
-    }
+    };
 
-}
+};
 
 
-export default Waveform
+export default Waveform;

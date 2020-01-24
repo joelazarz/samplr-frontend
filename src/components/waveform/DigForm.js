@@ -24,14 +24,14 @@ const DigForm = ({ kitId, digPadStart, digPadEnd, memorySubmit, addDig, getKit, 
                 name,
                 dig_pad_start,
                 dig_pad_end,
-            }
+            };
             addDig(newDig)
-            .then(()=> getKit(`/kits/${kitId}`))
-            M.toast({ html: 'Region Saved'})
-        }
-        setName('')
-        memorySubmit()
-    }
+            .then(()=> getKit(`/kits/${kitId}`));
+            M.toast({ html: 'Region Saved'});
+        };
+        setName('');
+        memorySubmit();
+    };
 
     return (
         <>
