@@ -32,6 +32,12 @@ export class LoopStation extends Component {
     this.wavesurfer.on('finish', () => this.playLooped());
     this.wavesurfer.on('play', () => this.setState({loopPlaying: true}));
   };
+
+  componentWillUnmount(){
+    this.wavesurfer.empty();
+    this.wavesurfer.destroy();
+    this.wavesurfer.cancelAjax();
+  };
   
   playLooped = () => {
     this.wavesurfer.play();
