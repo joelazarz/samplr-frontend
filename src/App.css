@@ -407,15 +407,16 @@ html{cursor: pointer;}
 }
 .region-control-small-save-btn {
     text-align: center;
-    color: white;
+    background-color: rgb(34, 34, 34);
+    color: rgb(255, 255, 255);
     font-size: 0.7em;
     width: 6em;
     padding: 0.3em;
     border-radius: 4px;
 }
 
-.region-control-small-save-btn:hover {
-    background-color: rgb(255, 255, 255);
+.region-control-small-save-btn:active {
+    background-color: rgba(158, 158, 158);
 }
 
 .region-status-bar {
