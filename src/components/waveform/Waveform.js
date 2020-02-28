@@ -401,7 +401,7 @@ class Waveform extends Component {
             var channel = joinedBuffer.getChannelData(b);
             var dataIndex = 0;
 
-            for(var c = 0; c < stateBuffersLength; c++) {
+            for (var c = 0; c < stateBuffersLength; c++) {
                 var newChannelData = stateBuffers[c].getChannelData(b);
                 if (channel.length >= newChannelData.length + newChannelDataSum) {
                     newChannelDataSum += newChannelData.length;
@@ -410,8 +410,8 @@ class Waveform extends Component {
                 } else {
                     try {
                         channel.set(newChannelData, dataIndex - 1);
-                    } catch (error) {
-                        console.log(error); // FIX
+                    } catch {
+                        return;
                     };
                 };
             };
