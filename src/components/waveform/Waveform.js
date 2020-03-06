@@ -51,7 +51,6 @@ class Waveform extends Component {
     componentWillUnmount(){
         this.wavesurfer.empty();
         this.wavesurfer.destroy();
-        this.wavesurfer.cancelAjax();
     };
 
 
