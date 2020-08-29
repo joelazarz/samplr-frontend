@@ -11,13 +11,13 @@ export default (state = initialState, action) => {
                 ...state,
                 notes: [...state.notes, action.payload],
             }
-            case NOTE_ERROR:
-                    return {
-                        ...state,
-                        error: action.payload
-                    }
-                default:
-                    return state;
+        case NOTE_ERROR:
+            return {
+                ...state,
+                error: action.payload
+            }
+        default:
+            return state;
     }
 
 }

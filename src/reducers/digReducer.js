@@ -12,12 +12,12 @@ export default (state = initialState, action) => {
                 digs: [...state.digs, action.payload],
             }
             case DIG_ERROR:
-                    return {
-                        ...state,
-                        error: action.payload
-                    }
-                default:
-                    return state;
+                return {
+                ...state,
+                error: action.payload
+            }
+            default:
+                return state;
     }
 
 }

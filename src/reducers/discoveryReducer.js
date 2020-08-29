@@ -15,10 +15,10 @@ export default (state = initialState, action) => {
             }
         case ADD_KIT:
                 return {
-                    ...state,
-                    kits: [...state.kits, action.payload],
-                    loading: false
-                }
+                ...state,
+                kits: [...state.kits, action.payload],
+                loading: false
+            }
         case SET_LOADING:
             return {
                 ...state,
