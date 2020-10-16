@@ -9,9 +9,9 @@ import theme from './Theme';
 let fileStackKey;
     
     if (process.env.NODE_ENV !== 'production') {
-        fileStackKey = process.env.REACT_APP_FILESTACK_API_KEY;
+        fileStackKey = process.env.REACT_APP_FILESTACK_API_KEY_DEV;
     } else {
-        fileStackKey = process.env.REACT_APP_FILESTACK;
+        fileStackKey = process.env.REACT_APP_FILESTACK_API_KEY_PROD;
     };
     
 const AddKitModal = ({ addKit, nightMode }) => {
