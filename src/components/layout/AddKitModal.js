@@ -6,6 +6,16 @@ import ReactFilestack from 'filestack-react';
 import M from 'materialize-css/dist/js/materialize.min.js';
 import theme from './Theme';
 
+let fileStackKey;
+    
+    if (process.env.NODE_ENV !== 'production') {
+        console.log('not production')
+        fileStackKey = process.env.REACT_APP_FILESTACK_API_KEY;
+    } else {
+        console.log('production')
+        fileStackKey = process.env.FILESTACK_API_KEY;
+    };
+
 const AddKitModal = ({ addKit, nightMode }) => {
     const [name, setName] = useState('');
     const [detail, setDetail] = useState('');
@@ -87,7 +97,7 @@ const AddKitModal = ({ addKit, nightMode }) => {
 
                 <div className="file-field input-field">
                 <ReactFilestack
-                apikey={process.env.REACT_APP_FILESTACK_API_KEY}
+                apikey={fileStackKey}
                 actionOptions={fileOptions}
                 componentDisplayMode={{
                     type: 'button',
